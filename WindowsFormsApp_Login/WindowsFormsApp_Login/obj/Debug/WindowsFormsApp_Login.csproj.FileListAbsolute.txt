@@ -1,0 +1,11 @@
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\bin\Debug\WindowsFormsApp_Login.exe.config
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\bin\Debug\WindowsFormsApp_Login.exe
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\bin\Debug\WindowsFormsApp_Login.pdb
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\obj\Debug\WindowsFormsApp_Login.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\obj\Debug\WindowsFormsApp_Login.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\obj\Debug\WindowsFormsApp_Login.Form1.resources
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\obj\Debug\WindowsFormsApp_Login.Properties.Resources.resources
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\obj\Debug\WindowsFormsApp_Login.csproj.GenerateResource.cache
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\obj\Debug\WindowsFormsApp_Login.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\obj\Debug\WindowsFormsApp_Login.exe
+C:\Users\user\source\repos\WindowsFormsApp_Login\WindowsFormsApp_Login\obj\Debug\WindowsFormsApp_Login.pdb
