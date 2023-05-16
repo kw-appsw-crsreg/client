@@ -1,0 +1,11 @@
+C:\Users\user\source\repos\Login form\Login form\bin\Debug\Login form.exe.config
+C:\Users\user\source\repos\Login form\Login form\bin\Debug\Login form.exe
+C:\Users\user\source\repos\Login form\Login form\bin\Debug\Login form.pdb
+C:\Users\user\source\repos\Login form\Login form\obj\Debug\Login form.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Login form\Login form\obj\Debug\Login form.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\source\repos\Login form\Login form\obj\Debug\Login_form.Form1.resources
+C:\Users\user\source\repos\Login form\Login form\obj\Debug\Login_form.Properties.Resources.resources
+C:\Users\user\source\repos\Login form\Login form\obj\Debug\Login form.csproj.GenerateResource.cache
+C:\Users\user\source\repos\Login form\Login form\obj\Debug\Login form.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Login form\Login form\obj\Debug\Login form.exe
+C:\Users\user\source\repos\Login form\Login form\obj\Debug\Login form.pdb
