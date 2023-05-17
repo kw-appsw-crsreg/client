@@ -16,7 +16,8 @@ namespace _2023AppSWClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Login form 부터 등장 하는걸로 변경합니다
+            Application.Run(new Login_Form());
         }
     }
 }
