@@ -102,5 +102,16 @@ namespace _2023AppSWClient
         {
 
         }
+
+        private void btn_ViewLectPlan_Click(object sender, EventArgs e)
+        {
+            //U 2023   1   0969   H030    02    3 
+            //U 년도 학기 과목 개설학과 분반 난이도
+            //string lectCode = lvw_search_res.Items[lvw_search_res.FocusedItem.Index].SubItems[0].Text.ToString();
+            string lectCode = "U202310969H030023";
+            string lectPlanURLBase = "https://klas.kw.ac.kr/std/cps/atnlc/popup/LectrePlanStdView.do?selectSubj=";
+
+            System.Diagnostics.Process.Start(lectPlanURLBase + lectCode);
+        }
     }
 }
