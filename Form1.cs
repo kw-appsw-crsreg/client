@@ -14,6 +14,7 @@ namespace _2023AppSWClient
     {
         public Form1()
         {
+            Connection.Run();
             InitializeComponent();
         }
 
