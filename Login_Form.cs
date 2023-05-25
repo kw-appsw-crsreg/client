@@ -36,7 +36,7 @@ namespace _2023AppSWClient
 
             try
             {
-                MySqlConnection connection = new MySqlConnection("Server = localhost;Database=sugang;Uid=root;Pwd=yong1031;");
+                MySqlConnection connection = new MySqlConnection("Server = localhost;Database=sugang;Uid=root;Pwd=root;");
                 connection.Open();
 
                 int login_status = 0;
