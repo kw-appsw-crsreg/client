@@ -48,6 +48,35 @@ namespace WindowsFormsApp_Login
 
         private void ClientToServer_Connector()
         {
+        
+        /*
+        비번받아서 SHA 해싱하고 패킷만드는 코드
+        적당히 고쳐서 쓰시면돼요
+        서버프로그램에서 해볼려고 만든거라 변수명 안맞음
+        
+        맨위에 using System.Security.Cryptography;
+        추가필요
+        
+        Console.Write("사용자 ID입력 >> ");
+                string studentID = Console.ReadLine();
+                Console.Write("사용자 PW입력 >> ");
+                string studentPWPlain = Console.ReadLine();
+
+                //From String to byte array
+                SHA1 sha = SHA1.Create();
+                byte[] sourceBytes = Encoding.UTF8.GetBytes(studentPWPlain);
+                byte[] hashBytes = sha.ComputeHash(sourceBytes);
+                string studentPWHash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
+
+                Console.WriteLine(studentPWHash);
+
+                user tst = new user();
+                tst.SetStuID(studentID); tst.SetPwd(studentPWHash);
+
+                if (QueryProcess.DBLogin(tst) == LoginResult.OK)
+                    Console.WriteLine("성공");
+                else { Console.WriteLine("없음"); }
+        */
             try
             {
                 client = new TcpClient();
