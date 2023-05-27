@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Runtime.Remoting;
 
 namespace _2023AppSWClient
 {
@@ -14,10 +15,10 @@ namespace _2023AppSWClient
     {
         private static TcpClient client = null;
         private static Thread rcvThread;
-        private static Thread sndThread;
         public static NetworkStream stream;
         public static StreamReader reader;
         public static StreamWriter writer;
+        public static Packet init;
         static byte[] readBuffer = new byte[1024 * 4];
         static byte[] sendBuffer = new byte[1024 * 4];
         static public void Run()
@@ -31,12 +32,10 @@ namespace _2023AppSWClient
 
                 stream = client.GetStream();
                 rcvThread = new Thread(new ThreadStart(ReceiverThread));
-                sndThread = new Thread(new ThreadStart(SendThread));
-
                 rcvThread.Start();
-                sndThread.Start();
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                throw new ServerException();            }
         }
 
         static void ReceiverThread()
@@ -44,14 +43,13 @@ namespace _2023AppSWClient
             try
             {
                 int bs = 0;
-                Initialize init = new Initialize();
                 reader = new StreamReader(stream);
 
                 while (true)
                 {
                     bs = stream.Read(readBuffer, 0, 1024 * 4);
                     Packet packet = (Packet)Packet.Desserialize(readBuffer);
-                    init = (Initialize)ServerRst(packet);
+                    init = ServerRst(packet);
                 }
             }
             catch (Exception e)
@@ -64,18 +62,17 @@ namespace _2023AppSWClient
             }
         }
 
-        static void SendThread()
+        public static void SendThread(Object init)
         {
             try
             {
                 int bs = 0;
-                Initialize init = new Initialize();
                 writer = new StreamWriter(stream);
 
                 while (true)
                 {
                     // Winform에서 버튼 누른 후 해당 작동과 관련된 패킷이 할당됨
-                    Packet.Serialize(init).CopyTo(sendBuffer, 0);
+                    Packet.Serialize((Packet)init).CopyTo(sendBuffer, 0);
 
                     stream.Write(sendBuffer, 0, sendBuffer.Length);
                     stream.Flush();
@@ -164,21 +161,25 @@ namespace _2023AppSWClient
                 case (int)LoginResult.OK:
                     {
                         Login login = new Login();
+                        login.Type = (int)LoginResult.OK;
                         return login;
                     }
                 case (int)LoginResult.WrongPassword:
                     {
                         Login login = new Login();
+                        login.Type = (int)LoginResult.WrongPassword;
                         return login;
                     }
                 case (int)LoginResult.NotYourDate:
                     {
                         Login login = new Login();
+                        login.Type = (int)LoginResult.NotYourDate;
                         return login;
                     }
                 case (int)LoginResult.ServerOff:
                     {
                         Login login = new Login();
+                        login.Type = (int)LoginResult.ServerOff;
                         return login;
                     }
                 case (int)FavoritesResult.OK:

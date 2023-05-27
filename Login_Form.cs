@@ -19,19 +19,27 @@ namespace _2023AppSWClient
     public partial class Login_Form : Form
     {
         Form1 form1;
-        private static TcpClient client = null;
-        private static Thread rcvThread;
+        Login login;
         private static Thread sndThread;
         public static NetworkStream stream;
 
         public Login_Form()
         {
-            InitializeComponent();
+            try
+            {
+                Connection.Run();
+                sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
+                InitializeComponent();
+                label3.Text = "Server Connect Success! " + DateTime.Now;
+            } catch (Exception e) {
+                InitializeComponent();
+                label3.Text = "Server Connect Fail!";
+            }
         }
         //로그인하면 로그인 창 사리짐
         private void button1_Click(object sender, EventArgs e)
         {
-
+            /*
             try
             {
                 MySqlConnection connection = new MySqlConnection("Server = localhost;Database=sugang;Uid=root;Pwd=root;");
@@ -72,6 +80,28 @@ namespace _2023AppSWClient
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }*/
+
+            login = new Login();
+            login.stuID = " ";
+            login.pwd = " ";
+            sndThread.Start(login);
+
+            if(Connection.init.Type == (int)LoginResult.OK )
+            {
+
+            }
+            else if(Connection.init.Type == (int)LoginResult.WrongPassword)
+            {
+
+            }
+            else if(Connection.init.Type == (int)LoginResult.NotYourDate)
+            {
+
+            }
+            else if(Connection.init.Type == (int)LoginResult.ServerOff)
+            {
+
             }
         }
 

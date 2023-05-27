@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Data;
@@ -83,12 +79,10 @@ namespace _2023AppSWClient
     [Serializable]
     public class Packet
     {
-        public int Length;
         public int Type;
 
         public Packet()
         {
-            this.Length = 0;
             this.Type = 0;
         }
 
@@ -122,7 +116,7 @@ namespace _2023AppSWClient
     public class Initialize : Packet
     {
         public string stuID;
-        public DataSet ds;
+        public String  ds;
     }
 
     [Serializable]
@@ -130,7 +124,7 @@ namespace _2023AppSWClient
     {
         public string stuID;
         public string pwd;
-        public DataSet ds;
+        public String ds;
     }
 
     [Serializable]
@@ -139,7 +133,7 @@ namespace _2023AppSWClient
         public string stuID;
         public string ci;
         public string var;
-        public DataSet ds;
+        public String  ds;
     }
 
     [Serializable]
@@ -147,7 +141,7 @@ namespace _2023AppSWClient
     {
         public string stuID;
         public string ci;
-        public DataSet ds;
+        public String ds;
     }
 
     [Serializable]
@@ -156,7 +150,7 @@ namespace _2023AppSWClient
         public string stuID;
         public string ci;
         public short idx;
-        public DataSet ds;
+        public String ds;
     }
 
     sealed class AllowAllAssembly : System.Runtime.Serialization.SerializationBinder

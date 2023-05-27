@@ -12,9 +12,10 @@ namespace _2023AppSWClient
 {
     public partial class Form1 : Form
     {
+        Packet init;
         public Form1()
         {
-            Connection.Run();
+            init = Connection.init;
             InitializeComponent();
         }
 
