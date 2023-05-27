@@ -12,13 +12,13 @@ namespace _2023AppSWClient
 {
     public partial class Form1 : Form
     {
-        Packet init;
+        Packet packcet;
         public Form1()
         {
-            init = Connection.init;
+            packcet = Connection.init;
             InitializeComponent();
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             lvw_search_res.View = View.Details;
