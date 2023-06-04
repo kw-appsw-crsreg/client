@@ -18,6 +18,11 @@ namespace _2023AppSWClient
             return JSONString;
         }
 
+        public static DataSet DeserializeFromJSON(string sourceJson)
+        {
+            DataSet dataSet = JsonConvert.DeserializeObject<DataSet> (sourceJson);
+            return dataSet;
+        }
 
     }
 }
