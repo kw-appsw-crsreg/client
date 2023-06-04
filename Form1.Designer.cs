@@ -31,40 +31,41 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lvw_done = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_ViewLectPlan = new System.Windows.Forms.Button();
             this.lvw_search_res = new System.Windows.Forms.ListView();
             this.txt_subject = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_SearchCourse = new System.Windows.Forms.Button();
             this.chk_only_valid = new System.Windows.Forms.CheckBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbBox_LectType = new System.Windows.Forms.ComboBox();
+            this.cbBox_Department = new System.Windows.Forms.ComboBox();
+            this.cbBox_CollegeOf = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btn_AddToFav = new System.Windows.Forms.Button();
+            this.cbBox_FavNum = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox74 = new System.Windows.Forms.TextBox();
-            this.textBox73 = new System.Windows.Forms.TextBox();
+            this.txt_CourseLectRoom = new System.Windows.Forms.TextBox();
+            this.txt_CourseTime = new System.Windows.Forms.TextBox();
             this.textBox72 = new System.Windows.Forms.TextBox();
             this.textBox71 = new System.Windows.Forms.TextBox();
             this.textBox70 = new System.Windows.Forms.TextBox();
-            this.textBox69 = new System.Windows.Forms.TextBox();
-            this.textBox68 = new System.Windows.Forms.TextBox();
-            this.textBox67 = new System.Windows.Forms.TextBox();
-            this.textBox66 = new System.Windows.Forms.TextBox();
+            this.txt_InstructorName = new System.Windows.Forms.TextBox();
+            this.txt_CourseCredit = new System.Windows.Forms.TextBox();
+            this.txt_CourseName = new System.Windows.Forms.TextBox();
+            this.txt_CourseType = new System.Windows.Forms.TextBox();
             this.textBox65 = new System.Windows.Forms.TextBox();
             this.textBox64 = new System.Windows.Forms.TextBox();
-            this.textBox63 = new System.Windows.Forms.TextBox();
+            this.txt_Hakjung = new System.Windows.Forms.TextBox();
             this.textBox62 = new System.Windows.Forms.TextBox();
             this.textBox61 = new System.Windows.Forms.TextBox();
             this.textBox60 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txt_YearSemester = new System.Windows.Forms.TextBox();
+            this.txt_StuName = new System.Windows.Forms.TextBox();
+            this.txt_StuID = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -144,7 +145,6 @@
             this.textBox57 = new System.Windows.Forms.TextBox();
             this.textBox58 = new System.Windows.Forms.TextBox();
             this.textBox59 = new System.Windows.Forms.TextBox();
-            this.btn_ViewLectPlan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -178,13 +178,13 @@
             this.groupBox2.Controls.Add(this.btn_ViewLectPlan);
             this.groupBox2.Controls.Add(this.lvw_search_res);
             this.groupBox2.Controls.Add(this.txt_subject);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.btn_SearchCourse);
             this.groupBox2.Controls.Add(this.chk_only_valid);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cbBox_LectType);
+            this.groupBox2.Controls.Add(this.cbBox_Department);
+            this.groupBox2.Controls.Add(this.cbBox_CollegeOf);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.groupBox7);
@@ -195,6 +195,17 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "과목검색";
+            // 
+            // btn_ViewLectPlan
+            // 
+            this.btn_ViewLectPlan.ForeColor = System.Drawing.Color.Black;
+            this.btn_ViewLectPlan.Location = new System.Drawing.Point(6, 291);
+            this.btn_ViewLectPlan.Name = "btn_ViewLectPlan";
+            this.btn_ViewLectPlan.Size = new System.Drawing.Size(202, 23);
+            this.btn_ViewLectPlan.TabIndex = 3;
+            this.btn_ViewLectPlan.Text = "KLAS에서 강의계획서 조회";
+            this.btn_ViewLectPlan.UseVisualStyleBackColor = true;
+            this.btn_ViewLectPlan.Click += new System.EventHandler(this.btn_ViewLectPlan_Click);
             // 
             // lvw_search_res
             // 
@@ -212,15 +223,15 @@
             this.txt_subject.Size = new System.Drawing.Size(199, 21);
             this.txt_subject.TabIndex = 10;
             // 
-            // button4
+            // btn_SearchCourse
             // 
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(383, 17);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(51, 42);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "검색";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_SearchCourse.ForeColor = System.Drawing.Color.Black;
+            this.btn_SearchCourse.Location = new System.Drawing.Point(383, 17);
+            this.btn_SearchCourse.Name = "btn_SearchCourse";
+            this.btn_SearchCourse.Size = new System.Drawing.Size(51, 42);
+            this.btn_SearchCourse.TabIndex = 9;
+            this.btn_SearchCourse.Text = "검색";
+            this.btn_SearchCourse.UseVisualStyleBackColor = true;
             // 
             // chk_only_valid
             // 
@@ -251,30 +262,30 @@
             this.textBox3.TabIndex = 6;
             this.textBox3.Text = "이수";
             // 
-            // comboBox4
+            // cbBox_LectType
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(307, 19);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(70, 20);
-            this.comboBox4.TabIndex = 5;
+            this.cbBox_LectType.FormattingEnabled = true;
+            this.cbBox_LectType.Location = new System.Drawing.Point(307, 19);
+            this.cbBox_LectType.Name = "cbBox_LectType";
+            this.cbBox_LectType.Size = new System.Drawing.Size(70, 20);
+            this.cbBox_LectType.TabIndex = 5;
             // 
-            // comboBox3
+            // cbBox_Department
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(152, 17);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(105, 20);
-            this.comboBox3.TabIndex = 4;
+            this.cbBox_Department.FormattingEnabled = true;
+            this.cbBox_Department.Location = new System.Drawing.Point(152, 17);
+            this.cbBox_Department.Name = "cbBox_Department";
+            this.cbBox_Department.Size = new System.Drawing.Size(105, 20);
+            this.cbBox_Department.TabIndex = 4;
             // 
-            // comboBox2
+            // cbBox_CollegeOf
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(59, 17);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(87, 20);
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cbBox_CollegeOf.FormattingEnabled = true;
+            this.cbBox_CollegeOf.Location = new System.Drawing.Point(59, 17);
+            this.cbBox_CollegeOf.Name = "cbBox_CollegeOf";
+            this.cbBox_CollegeOf.Size = new System.Drawing.Size(87, 20);
+            this.cbBox_CollegeOf.TabIndex = 3;
+            this.cbBox_CollegeOf.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -298,8 +309,8 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button5);
-            this.groupBox7.Controls.Add(this.comboBox1);
+            this.groupBox7.Controls.Add(this.btn_AddToFav);
+            this.groupBox7.Controls.Add(this.cbBox_FavNum);
             this.groupBox7.Location = new System.Drawing.Point(440, 9);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(200, 50);
@@ -307,38 +318,38 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "즐겨찾기 추가";
             // 
-            // button5
+            // btn_AddToFav
             // 
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(71, 18);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(123, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "즐겨찾기 추가";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_AddToFav.ForeColor = System.Drawing.Color.Black;
+            this.btn_AddToFav.Location = new System.Drawing.Point(71, 18);
+            this.btn_AddToFav.Name = "btn_AddToFav";
+            this.btn_AddToFav.Size = new System.Drawing.Size(123, 23);
+            this.btn_AddToFav.TabIndex = 2;
+            this.btn_AddToFav.Text = "즐겨찾기 추가";
+            this.btn_AddToFav.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbBox_FavNum
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(59, 20);
-            this.comboBox1.TabIndex = 1;
+            this.cbBox_FavNum.FormattingEnabled = true;
+            this.cbBox_FavNum.Location = new System.Drawing.Point(6, 18);
+            this.cbBox_FavNum.Name = "cbBox_FavNum";
+            this.cbBox_FavNum.Size = new System.Drawing.Size(59, 20);
+            this.cbBox_FavNum.TabIndex = 1;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox74);
-            this.groupBox3.Controls.Add(this.textBox73);
+            this.groupBox3.Controls.Add(this.txt_CourseLectRoom);
+            this.groupBox3.Controls.Add(this.txt_CourseTime);
             this.groupBox3.Controls.Add(this.textBox72);
             this.groupBox3.Controls.Add(this.textBox71);
             this.groupBox3.Controls.Add(this.textBox70);
-            this.groupBox3.Controls.Add(this.textBox69);
-            this.groupBox3.Controls.Add(this.textBox68);
-            this.groupBox3.Controls.Add(this.textBox67);
-            this.groupBox3.Controls.Add(this.textBox66);
+            this.groupBox3.Controls.Add(this.txt_InstructorName);
+            this.groupBox3.Controls.Add(this.txt_CourseCredit);
+            this.groupBox3.Controls.Add(this.txt_CourseName);
+            this.groupBox3.Controls.Add(this.txt_CourseType);
             this.groupBox3.Controls.Add(this.textBox65);
             this.groupBox3.Controls.Add(this.textBox64);
-            this.groupBox3.Controls.Add(this.textBox63);
+            this.groupBox3.Controls.Add(this.txt_Hakjung);
             this.groupBox3.Controls.Add(this.textBox62);
             this.groupBox3.Controls.Add(this.textBox61);
             this.groupBox3.Controls.Add(this.textBox60);
@@ -349,19 +360,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "과목선택";
             // 
-            // textBox74
+            // txt_CourseLectRoom
             // 
-            this.textBox74.Location = new System.Drawing.Point(131, 106);
-            this.textBox74.Name = "textBox74";
-            this.textBox74.Size = new System.Drawing.Size(210, 21);
-            this.textBox74.TabIndex = 36;
+            this.txt_CourseLectRoom.Location = new System.Drawing.Point(131, 106);
+            this.txt_CourseLectRoom.Name = "txt_CourseLectRoom";
+            this.txt_CourseLectRoom.Size = new System.Drawing.Size(210, 21);
+            this.txt_CourseLectRoom.TabIndex = 36;
             // 
-            // textBox73
+            // txt_CourseTime
             // 
-            this.textBox73.Location = new System.Drawing.Point(131, 79);
-            this.textBox73.Name = "textBox73";
-            this.textBox73.Size = new System.Drawing.Size(210, 21);
-            this.textBox73.TabIndex = 35;
+            this.txt_CourseTime.Location = new System.Drawing.Point(131, 79);
+            this.txt_CourseTime.Name = "txt_CourseTime";
+            this.txt_CourseTime.Size = new System.Drawing.Size(210, 21);
+            this.txt_CourseTime.TabIndex = 35;
             // 
             // textBox72
             // 
@@ -392,33 +403,33 @@
             this.textBox70.TabIndex = 32;
             this.textBox70.Text = "수강현황";
             // 
-            // textBox69
+            // txt_InstructorName
             // 
-            this.textBox69.Location = new System.Drawing.Point(359, 39);
-            this.textBox69.Name = "textBox69";
-            this.textBox69.Size = new System.Drawing.Size(78, 21);
-            this.textBox69.TabIndex = 31;
+            this.txt_InstructorName.Location = new System.Drawing.Point(359, 39);
+            this.txt_InstructorName.Name = "txt_InstructorName";
+            this.txt_InstructorName.Size = new System.Drawing.Size(78, 21);
+            this.txt_InstructorName.TabIndex = 31;
             // 
-            // textBox68
+            // txt_CourseCredit
             // 
-            this.textBox68.Location = new System.Drawing.Point(227, 38);
-            this.textBox68.Name = "textBox68";
-            this.textBox68.Size = new System.Drawing.Size(67, 21);
-            this.textBox68.TabIndex = 30;
+            this.txt_CourseCredit.Location = new System.Drawing.Point(227, 38);
+            this.txt_CourseCredit.Name = "txt_CourseCredit";
+            this.txt_CourseCredit.Size = new System.Drawing.Size(67, 21);
+            this.txt_CourseCredit.TabIndex = 30;
             // 
-            // textBox67
+            // txt_CourseName
             // 
-            this.textBox67.Location = new System.Drawing.Point(227, 15);
-            this.textBox67.Name = "textBox67";
-            this.textBox67.Size = new System.Drawing.Size(210, 21);
-            this.textBox67.TabIndex = 29;
+            this.txt_CourseName.Location = new System.Drawing.Point(227, 15);
+            this.txt_CourseName.Name = "txt_CourseName";
+            this.txt_CourseName.Size = new System.Drawing.Size(210, 21);
+            this.txt_CourseName.TabIndex = 29;
             // 
-            // textBox66
+            // txt_CourseType
             // 
-            this.textBox66.Location = new System.Drawing.Point(83, 38);
-            this.textBox66.Name = "textBox66";
-            this.textBox66.Size = new System.Drawing.Size(90, 21);
-            this.textBox66.TabIndex = 28;
+            this.txt_CourseType.Location = new System.Drawing.Point(83, 38);
+            this.txt_CourseType.Name = "txt_CourseType";
+            this.txt_CourseType.Size = new System.Drawing.Size(90, 21);
+            this.txt_CourseType.TabIndex = 28;
             // 
             // textBox65
             // 
@@ -442,12 +453,12 @@
             this.textBox64.TabIndex = 26;
             this.textBox64.Text = "학  점";
             // 
-            // textBox63
+            // txt_Hakjung
             // 
-            this.textBox63.Location = new System.Drawing.Point(83, 14);
-            this.textBox63.Name = "textBox63";
-            this.textBox63.Size = new System.Drawing.Size(90, 21);
-            this.textBox63.TabIndex = 25;
+            this.txt_Hakjung.Location = new System.Drawing.Point(83, 14);
+            this.txt_Hakjung.Name = "txt_Hakjung";
+            this.txt_Hakjung.Size = new System.Drawing.Size(90, 21);
+            this.txt_Hakjung.TabIndex = 25;
             // 
             // textBox62
             // 
@@ -484,9 +495,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox18);
-            this.groupBox4.Controls.Add(this.textBox17);
-            this.groupBox4.Controls.Add(this.textBox16);
+            this.groupBox4.Controls.Add(this.txt_YearSemester);
+            this.groupBox4.Controls.Add(this.txt_StuName);
+            this.groupBox4.Controls.Add(this.txt_StuID);
             this.groupBox4.Controls.Add(this.textBox8);
             this.groupBox4.Controls.Add(this.textBox7);
             this.groupBox4.Controls.Add(this.textBox6);
@@ -497,26 +508,26 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "신청자정보";
             // 
-            // textBox18
+            // txt_YearSemester
             // 
-            this.textBox18.Location = new System.Drawing.Point(94, 69);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(90, 21);
-            this.textBox18.TabIndex = 28;
+            this.txt_YearSemester.Location = new System.Drawing.Point(94, 69);
+            this.txt_YearSemester.Name = "txt_YearSemester";
+            this.txt_YearSemester.Size = new System.Drawing.Size(90, 21);
+            this.txt_YearSemester.TabIndex = 28;
             // 
-            // textBox17
+            // txt_StuName
             // 
-            this.textBox17.Location = new System.Drawing.Point(94, 44);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(90, 21);
-            this.textBox17.TabIndex = 27;
+            this.txt_StuName.Location = new System.Drawing.Point(94, 44);
+            this.txt_StuName.Name = "txt_StuName";
+            this.txt_StuName.Size = new System.Drawing.Size(90, 21);
+            this.txt_StuName.TabIndex = 27;
             // 
-            // textBox16
+            // txt_StuID
             // 
-            this.textBox16.Location = new System.Drawing.Point(94, 17);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(90, 21);
-            this.textBox16.TabIndex = 26;
+            this.txt_StuID.Location = new System.Drawing.Point(94, 17);
+            this.txt_StuID.Name = "txt_StuID";
+            this.txt_StuID.Size = new System.Drawing.Size(90, 21);
+            this.txt_StuID.TabIndex = 26;
             // 
             // textBox8
             // 
@@ -1270,17 +1281,6 @@
             this.textBox59.Text = "* 즐겨찾기 수강신청 : 신청하고자 하는 과목조회 버튼(클릭) => 수강신청 버튼(클릭)";
             this.textBox59.TextChanged += new System.EventHandler(this.textBox59_TextChanged);
             // 
-            // btn_ViewLectPlan
-            // 
-            this.btn_ViewLectPlan.ForeColor = System.Drawing.Color.Black;
-            this.btn_ViewLectPlan.Location = new System.Drawing.Point(6, 291);
-            this.btn_ViewLectPlan.Name = "btn_ViewLectPlan";
-            this.btn_ViewLectPlan.Size = new System.Drawing.Size(202, 23);
-            this.btn_ViewLectPlan.TabIndex = 3;
-            this.btn_ViewLectPlan.Text = "KLAS에서 강의계획서 조회";
-            this.btn_ViewLectPlan.UseVisualStyleBackColor = true;
-            this.btn_ViewLectPlan.Click += new System.EventHandler(this.btn_ViewLectPlan_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1331,17 +1331,17 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_apply;
         private System.Windows.Forms.TextBox txt_subject;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_SearchCourse;
         private System.Windows.Forms.CheckBox chk_only_valid;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbBox_LectType;
+        private System.Windows.Forms.ComboBox cbBox_Department;
+        private System.Windows.Forms.ComboBox cbBox_CollegeOf;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btn_AddToFav;
+        private System.Windows.Forms.ComboBox cbBox_FavNum;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
@@ -1416,23 +1416,23 @@
         private System.Windows.Forms.TextBox textBox59;
         private System.Windows.Forms.TextBox textBox60;
         private System.Windows.Forms.ListView lvw_done;
-        private System.Windows.Forms.TextBox textBox74;
-        private System.Windows.Forms.TextBox textBox73;
+        private System.Windows.Forms.TextBox txt_CourseLectRoom;
+        private System.Windows.Forms.TextBox txt_CourseTime;
         private System.Windows.Forms.TextBox textBox72;
         private System.Windows.Forms.TextBox textBox71;
         private System.Windows.Forms.TextBox textBox70;
-        private System.Windows.Forms.TextBox textBox69;
-        private System.Windows.Forms.TextBox textBox68;
-        private System.Windows.Forms.TextBox textBox67;
-        private System.Windows.Forms.TextBox textBox66;
+        private System.Windows.Forms.TextBox txt_InstructorName;
+        private System.Windows.Forms.TextBox txt_CourseCredit;
+        private System.Windows.Forms.TextBox txt_CourseName;
+        private System.Windows.Forms.TextBox txt_CourseType;
         private System.Windows.Forms.TextBox textBox65;
         private System.Windows.Forms.TextBox textBox64;
-        private System.Windows.Forms.TextBox textBox63;
+        private System.Windows.Forms.TextBox txt_Hakjung;
         private System.Windows.Forms.TextBox textBox62;
         private System.Windows.Forms.TextBox textBox61;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txt_YearSemester;
+        private System.Windows.Forms.TextBox txt_StuName;
+        private System.Windows.Forms.TextBox txt_StuID;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox19;
