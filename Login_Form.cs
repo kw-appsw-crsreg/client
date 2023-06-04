@@ -14,6 +14,7 @@ using System.Threading;
 using MySqlConnector;
 using MySqlX.XDevAPI;
 using System.Security.Cryptography;
+using AppswPacket;
 
 namespace _2023AppSWClient
 {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Runtime.Remoting;
+using AppswPacket;
 
 namespace _2023AppSWClient
 {
