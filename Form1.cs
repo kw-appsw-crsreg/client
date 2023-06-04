@@ -128,8 +128,11 @@ namespace _2023AppSWClient
              */
             /*
              * 패킷으로부터 결과 받아오면
-             * lvw_search_res 작성필요
+             * lvw_search_res 내용채우기 필요
+             * 밑에꺼쓰시면됨요
              */
+            string sourceJson = "";
+            DataSet dataSet = DatasetConvertor.DeserializeFromJSON( sourceJson);
         }
 
         private void btn_AddToFav_Click(object sender, EventArgs e)
@@ -141,6 +144,10 @@ namespace _2023AppSWClient
             txt_lec_codeN    txt_lec_nameN   txt_credN   txt_profN   txt_lectN(강의시간)
             요 5개 채우기
             */
+            if(cbBox_FavNum.SelectedIndex == 0)
+            {
+                /////////////
+            }
         }
 
         private void btn_delN_Click(object sender, EventArgs e)
