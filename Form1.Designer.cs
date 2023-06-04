@@ -232,6 +232,7 @@
             this.btn_SearchCourse.TabIndex = 9;
             this.btn_SearchCourse.Text = "검색";
             this.btn_SearchCourse.UseVisualStyleBackColor = true;
+            this.btn_SearchCourse.Click += new System.EventHandler(this.btn_SearchCourse_Click);
             // 
             // chk_only_valid
             // 
@@ -327,6 +328,7 @@
             this.btn_AddToFav.TabIndex = 2;
             this.btn_AddToFav.Text = "즐겨찾기 추가";
             this.btn_AddToFav.UseVisualStyleBackColor = true;
+            this.btn_AddToFav.Click += new System.EventHandler(this.btn_AddToFav_Click);
             // 
             // cbBox_FavNum
             // 
@@ -459,6 +461,7 @@
             this.txt_Hakjung.Name = "txt_Hakjung";
             this.txt_Hakjung.Size = new System.Drawing.Size(90, 21);
             this.txt_Hakjung.TabIndex = 25;
+            this.txt_Hakjung.TextChanged += new System.EventHandler(this.txt_Hakjung_TextChanged);
             // 
             // textBox62
             // 
@@ -1017,6 +1020,7 @@
             this.btn_inq8.TabIndex = 23;
             this.btn_inq8.Text = "과목조회8";
             this.btn_inq8.UseVisualStyleBackColor = true;
+            this.btn_inq8.Click += new System.EventHandler(this.btn_inqN);
             // 
             // btn_inq7
             // 
@@ -1027,6 +1031,7 @@
             this.btn_inq7.TabIndex = 22;
             this.btn_inq7.Text = "과목조회7";
             this.btn_inq7.UseVisualStyleBackColor = true;
+            this.btn_inq7.Click += new System.EventHandler(this.btn_inqN);
             // 
             // btn_inq6
             // 
@@ -1037,6 +1042,7 @@
             this.btn_inq6.TabIndex = 21;
             this.btn_inq6.Text = "과목조회6";
             this.btn_inq6.UseVisualStyleBackColor = true;
+            this.btn_inq6.Click += new System.EventHandler(this.btn_inqN);
             // 
             // btn_inq5
             // 
@@ -1047,6 +1053,7 @@
             this.btn_inq5.TabIndex = 20;
             this.btn_inq5.Text = "과목조회5";
             this.btn_inq5.UseVisualStyleBackColor = true;
+            this.btn_inq5.Click += new System.EventHandler(this.btn_inqN);
             // 
             // btn_inq4
             // 
@@ -1057,6 +1064,7 @@
             this.btn_inq4.TabIndex = 19;
             this.btn_inq4.Text = "과목조회4";
             this.btn_inq4.UseVisualStyleBackColor = true;
+            this.btn_inq4.Click += new System.EventHandler(this.btn_inqN);
             // 
             // btn_inq3
             // 
@@ -1067,6 +1075,7 @@
             this.btn_inq3.TabIndex = 18;
             this.btn_inq3.Text = "과목조회3";
             this.btn_inq3.UseVisualStyleBackColor = true;
+            this.btn_inq3.Click += new System.EventHandler(this.btn_inqN);
             // 
             // btn_inq2
             // 
@@ -1077,6 +1086,7 @@
             this.btn_inq2.TabIndex = 17;
             this.btn_inq2.Text = "과목조회2";
             this.btn_inq2.UseVisualStyleBackColor = true;
+            this.btn_inq2.Click += new System.EventHandler(this.btn_inqN);
             // 
             // btn_inq1
             // 
@@ -1087,6 +1097,7 @@
             this.btn_inq1.TabIndex = 16;
             this.btn_inq1.Text = "과목조회1";
             this.btn_inq1.UseVisualStyleBackColor = true;
+            this.btn_inq1.Click += new System.EventHandler(this.btn_inqN);
             // 
             // btn_del8
             // 
@@ -1097,6 +1108,7 @@
             this.btn_del8.TabIndex = 15;
             this.btn_del8.Text = "삭제";
             this.btn_del8.UseVisualStyleBackColor = true;
+            this.btn_del8.Click += new System.EventHandler(this.btn_delN_Click);
             // 
             // btn_del7
             // 
@@ -1107,6 +1119,7 @@
             this.btn_del7.TabIndex = 14;
             this.btn_del7.Text = "삭제";
             this.btn_del7.UseVisualStyleBackColor = true;
+            this.btn_del7.Click += new System.EventHandler(this.btn_delN_Click);
             // 
             // btn_del6
             // 
@@ -1117,6 +1130,7 @@
             this.btn_del6.TabIndex = 13;
             this.btn_del6.Text = "삭제";
             this.btn_del6.UseVisualStyleBackColor = true;
+            this.btn_del6.Click += new System.EventHandler(this.btn_delN_Click);
             // 
             // btn_del3
             // 
@@ -1127,6 +1141,7 @@
             this.btn_del3.TabIndex = 12;
             this.btn_del3.Text = "삭제";
             this.btn_del3.UseVisualStyleBackColor = true;
+            this.btn_del3.Click += new System.EventHandler(this.btn_delN_Click);
             // 
             // btn_del4
             // 
@@ -1137,6 +1152,7 @@
             this.btn_del4.TabIndex = 11;
             this.btn_del4.Text = "삭제";
             this.btn_del4.UseVisualStyleBackColor = true;
+            this.btn_del4.Click += new System.EventHandler(this.btn_delN_Click);
             // 
             // btn_del5
             // 
@@ -1147,6 +1163,7 @@
             this.btn_del5.TabIndex = 10;
             this.btn_del5.Text = "삭제";
             this.btn_del5.UseVisualStyleBackColor = true;
+            this.btn_del5.Click += new System.EventHandler(this.btn_delN_Click);
             // 
             // btn_del2
             // 
@@ -1157,6 +1174,7 @@
             this.btn_del2.TabIndex = 9;
             this.btn_del2.Text = "삭제";
             this.btn_del2.UseVisualStyleBackColor = true;
+            this.btn_del2.Click += new System.EventHandler(this.btn_delN_Click);
             // 
             // btn_del1
             // 
@@ -1167,6 +1185,7 @@
             this.btn_del1.TabIndex = 8;
             this.btn_del1.Text = "삭제";
             this.btn_del1.UseVisualStyleBackColor = true;
+            this.btn_del1.Click += new System.EventHandler(this.btn_delN_Click);
             // 
             // textBox15
             // 
@@ -1227,6 +1246,7 @@
             this.btn_close.TabIndex = 6;
             this.btn_close.Text = "종료";
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // btn_delete
             // 
@@ -1236,6 +1256,7 @@
             this.btn_delete.TabIndex = 7;
             this.btn_delete.Text = "수강삭제";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_apply
             // 
@@ -1245,6 +1266,7 @@
             this.btn_apply.TabIndex = 8;
             this.btn_apply.Text = "수강신청";
             this.btn_apply.UseVisualStyleBackColor = true;
+            this.btn_apply.Click += new System.EventHandler(this.btn_apply_Click);
             // 
             // textBox57
             // 
