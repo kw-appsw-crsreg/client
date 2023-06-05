@@ -22,6 +22,7 @@ namespace _2023AppSWClient
         public static Packet init;
         static byte[] readBuffer = new byte[1024 * 4];
         static byte[] sendBuffer = new byte[1024 * 4];
+        public static Stack<Packet> stack = new Stack<Packet>();
         static public void Run()
         {
             try
@@ -35,8 +36,10 @@ namespace _2023AppSWClient
                 rcvThread = new Thread(new ThreadStart(ReceiverThread));
                 rcvThread.Start();
             }
-            catch (Exception e) {
-                throw new ServerException();            }
+            catch (Exception e)
+            {
+                throw new ServerException();
+            }
         }
 
         static void ReceiverThread()
@@ -50,7 +53,12 @@ namespace _2023AppSWClient
                 {
                     bs = stream.Read(readBuffer, 0, 1024 * 4);
                     Packet packet = (Packet)Packet.Desserialize(readBuffer);
-                    init = ServerRst(packet);
+
+                    if (packet != null)
+                    {
+                        init = ServerRst(packet);
+                        stack.Push(init);
+                    }
                 }
             }
             catch (Exception e)
@@ -70,20 +78,19 @@ namespace _2023AppSWClient
                 int bs = 0;
                 writer = new StreamWriter(stream);
 
-                while (true)
+
+                // Winform에서 버튼 누른 후 해당 작동과 관련된 패킷이 할당됨
+                Packet.Serialize((Packet)init).CopyTo(sendBuffer, 0);
+
+                stream.Write(sendBuffer, 0, sendBuffer.Length);
+                stream.Flush();
+
+                for (int i = 0; i < sendBuffer.Length; i++)
                 {
-                    // Winform에서 버튼 누른 후 해당 작동과 관련된 패킷이 할당됨
-                    Packet.Serialize((Packet)init).CopyTo(sendBuffer, 0);
-
-                    stream.Write(sendBuffer, 0, sendBuffer.Length);
-                    stream.Flush();
-
-                    for (int i = 0; i < sendBuffer.Length; i++)
-                    {
-                        sendBuffer[i] = 0;
-                    }
-                    stream.Flush();
+                    sendBuffer[i] = 0;
                 }
+                stream.Flush();
+
             }
             catch (Exception e)
             {
@@ -211,6 +218,12 @@ namespace _2023AppSWClient
             }
             return null;
 
+        }
+
+        public static Packet GetServerPacket()
+        {
+            Packet p = stack.Pop();
+            return p;
         }
     }
 }

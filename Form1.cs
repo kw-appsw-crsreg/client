@@ -267,5 +267,13 @@ namespace _2023AppSWClient
         {
             //프로그램 종료하기
         }
+
+        private void wait()
+        {
+            while (Connection.stack.Count == 0)
+            {
+                continue;
+            }
+        }
     }
 }
