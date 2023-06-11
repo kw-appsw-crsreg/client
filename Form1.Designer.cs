@@ -50,7 +50,7 @@
             this.txt_CourseLectRoom = new System.Windows.Forms.TextBox();
             this.txt_CourseTime = new System.Windows.Forms.TextBox();
             this.textBox72 = new System.Windows.Forms.TextBox();
-            this.textBox71 = new System.Windows.Forms.TextBox();
+            this.txt_isajesugang = new System.Windows.Forms.TextBox();
             this.textBox70 = new System.Windows.Forms.TextBox();
             this.txt_InstructorName = new System.Windows.Forms.TextBox();
             this.txt_CourseCredit = new System.Windows.Forms.TextBox();
@@ -274,6 +274,44 @@
             // cbBox_Department
             // 
             this.cbBox_Department.FormattingEnabled = true;
+            this.cbBox_Department.Items.AddRange(new object[] {
+            "전체 검색",
+            "건축공학과",
+            "건축학과",
+            "경영학부",
+            "국어국문학과",
+            "국제통상학부",
+            "국제학부",
+            "국제학부",
+            "동북아문화산업학부",
+            "로봇학부",
+            "미디어커뮤니케이션학부",
+            "법학부",
+            "법학부",
+            "산업심리학과",
+            "소프트웨어학부",
+            "소프트웨어학부",
+            "수학과",
+            "스포츠융합과학과",
+            "영어산업학과",
+            "자산관리학과",
+            "전기공학과",
+            "전자공학과",
+            "전자바이오물리학과",
+            "전자융합공학과",
+            "전자재료공학과",
+            "전자통신공학과",
+            "정보융합학부",
+            "정보콘텐츠학과",
+            "컴퓨터공학과",
+            "컴퓨터소프트웨어학과",
+            "컴퓨터정보공학부",
+            "컴퓨터정보공학부",
+            "행정학과",
+            "행정학과",
+            "화학공학과",
+            "화학과",
+            "환경공학과"});
             this.cbBox_Department.Location = new System.Drawing.Point(152, 17);
             this.cbBox_Department.Name = "cbBox_Department";
             this.cbBox_Department.Size = new System.Drawing.Size(105, 20);
@@ -282,6 +320,15 @@
             // cbBox_CollegeOf
             // 
             this.cbBox_CollegeOf.FormattingEnabled = true;
+            this.cbBox_CollegeOf.Items.AddRange(new object[] {
+            "전체검색",
+            "경영대학",
+            "공과대학",
+            "소프트웨어융합대학",
+            "인문사회과학대학",
+            "자연과학대학",
+            "전자정보공과대학",
+            "정책법학대학"});
             this.cbBox_CollegeOf.Location = new System.Drawing.Point(59, 17);
             this.cbBox_CollegeOf.Name = "cbBox_CollegeOf";
             this.cbBox_CollegeOf.Size = new System.Drawing.Size(87, 20);
@@ -333,6 +380,15 @@
             // cbBox_FavNum
             // 
             this.cbBox_FavNum.FormattingEnabled = true;
+            this.cbBox_FavNum.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"});
             this.cbBox_FavNum.Location = new System.Drawing.Point(6, 18);
             this.cbBox_FavNum.Name = "cbBox_FavNum";
             this.cbBox_FavNum.Size = new System.Drawing.Size(59, 20);
@@ -343,7 +399,7 @@
             this.groupBox3.Controls.Add(this.txt_CourseLectRoom);
             this.groupBox3.Controls.Add(this.txt_CourseTime);
             this.groupBox3.Controls.Add(this.textBox72);
-            this.groupBox3.Controls.Add(this.textBox71);
+            this.groupBox3.Controls.Add(this.txt_isajesugang);
             this.groupBox3.Controls.Add(this.textBox70);
             this.groupBox3.Controls.Add(this.txt_InstructorName);
             this.groupBox3.Controls.Add(this.txt_CourseCredit);
@@ -387,12 +443,12 @@
             this.textBox72.TabIndex = 34;
             this.textBox72.Text = "강의시간, 강의실";
             // 
-            // textBox71
+            // txt_isajesugang
             // 
-            this.textBox71.Location = new System.Drawing.Point(227, 175);
-            this.textBox71.Name = "textBox71";
-            this.textBox71.Size = new System.Drawing.Size(67, 21);
-            this.textBox71.TabIndex = 33;
+            this.txt_isajesugang.Location = new System.Drawing.Point(227, 175);
+            this.txt_isajesugang.Name = "txt_isajesugang";
+            this.txt_isajesugang.Size = new System.Drawing.Size(67, 21);
+            this.txt_isajesugang.TabIndex = 33;
             // 
             // textBox70
             // 
@@ -1441,7 +1497,7 @@
         private System.Windows.Forms.TextBox txt_CourseLectRoom;
         private System.Windows.Forms.TextBox txt_CourseTime;
         private System.Windows.Forms.TextBox textBox72;
-        private System.Windows.Forms.TextBox textBox71;
+        private System.Windows.Forms.TextBox txt_isajesugang;
         private System.Windows.Forms.TextBox textBox70;
         private System.Windows.Forms.TextBox txt_InstructorName;
         private System.Windows.Forms.TextBox txt_CourseCredit;

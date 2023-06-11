@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppswPacket;
+using Newtonsoft.Json;
 
 
 namespace _2023AppSWClient
@@ -367,10 +368,35 @@ namespace _2023AppSWClient
                 txt_Hakjung.Text = txt_lec_code8.Text;
             }
         }
+        public class CourseInfo
+        {
+            public int Year { get; set; }
+            public int Semester { get; set; }
+            public string Department { get; set; }
+            public int Level { get; set; }
+            public string Subject { get; set; }
+            public int Class { get; set; }
+            public string CourseId { get; set; }
+            public string Type { get; set; }
+            public string CourseName { get; set; }
+            public int Credit { get; set; }
+            public string InstructorName { get; set; }
+            public int NumOfStudents { get; set; }
+            public int RemainingCapacity { get; set; }
+            public string Time { get; set; }
+            public string LectRoom { get; set; }
+            public bool IsForeignerOnly { get; set; }
+        }
+
+        public class Root
+        {
+            public List<CourseInfo> CourseInfo { get; set; }
+        }
 
         //학정번호 수동조회칸이 꽉 찼다면 체크
         private void txt_Hakjung_TextChanged(object sender, EventArgs e)
         {
+            string search_res; // 검색결과 저장할 string
             if (txt_Hakjung.TextLength == 16)
             {
                 //서버에 학번, 20231+학정번호로 요청보내서 과목정보 조회
@@ -378,8 +404,28 @@ namespace _2023AppSWClient
             //서버로부터받은 data예제
             string test = "{\"course_info\":[{\"year\":2023,\"semester\":1,\"department\":\"H040\",\"level\":3,\"subject\":\"7737\",\"class\":1,\"course_id\":\"20231H0403773701\",\"type\":\"전선\",\"course_name\":\"UX/UI디자인\",\"credit\":3,\"instructor_name\":\"김현경\",\"num_of_students\":0,\"remaining_capacity\":2,\"time\":\"월2.수1.\",\"lect_room\":\"미지정\",\"is_foreignerOnly\":false}]}";
 
+            Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(search_res);
+
+            foreach (var course in myDeserializedClass.CourseInfo)
+            {
+                txt_Hakjung.Text = course.CourseId;
+                txt_CourseName.Text = course.CourseName;
+                txt_CourseType.Text = course.Type;
+                txt_CourseCredit.Text = course.Credit.ToString();
+                txt_InstructorName.Text = course.InstructorName;
+                txt_CourseTime.Text = course.Time;
+                txt_CourseLectRoom.Text = course.LectRoom;
+                if (course.RemainingCapacity > 0)
+                {
+                    Form2 form2 = new Form2();
+                    form2.ShowDialog();
+                    txt_Hakjung.Clear();
+                }
+
+            }
             //여기에 Winform 핸들러 작성
             //만석이면 만석입니다 띄워야함 txt_Hakjung.Clear();
+            
         }
 
         private void btn_apply_Click(object sender, EventArgs e)
@@ -399,6 +445,8 @@ namespace _2023AppSWClient
         private void btn_close_Click(object sender, EventArgs e)
         {
             //프로그램 종료하기
+            Form1 form1 = new Form1();
+            form1.Close();
         }
 
         private void wait()
