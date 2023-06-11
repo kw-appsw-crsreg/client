@@ -14,6 +14,8 @@ namespace _2023AppSWClient
 {
     public partial class Form1 : Form
     {
+        string testSearch = "{\"Table\":[{\"course_id\":\"20231H0001295701\",\"type\":\"전선\",\"course_name\":\"공학설계입문\",\"credit\":3,\"instructor_name\":\"최상\r\n호\",\"remaining_capacity\":2,\"time\":\"화2.목1.\"},{\"course_id\":\"20231H0001295702\",\"type\":\"전선\",\"course_name\":\"공학설계입문\",\"credit\":3,\"instructor_name\":\"\",\"remaining_capacity\":2,\"time\":\"월3.수4.\"},{\"course_id\":\"20231H0001309501\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"허연실\",\"remaining_capacity\":2,\"time\":\"월1.수2.\"},{\"course_id\":\"20231H0001309502\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"전도현\",\"remaining_capacity\":2,\"time\":\"월2.수1.\"},{\"course_id\":\"20231H0001309503\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"유승호\",\"remaining_capacity\":2,\"time\":\"월5.수6.\"},{\"course_id\":\"20231H0001309504\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"이주영\",\"remaining_capacity\":2,\"time\":\"월6.수5.\"},{\"course_id\":\"20231H0001309505\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"김광섭\",\"remaining_capacity\":2,\"time\":\"화2.목1.\"},{\"course_id\":\"20231H0001309506\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"조영복\",\"remaining_capacity\":2,\"time\":\"화5.목6.\"},{\"course_id\":\"20231H0001309507\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"이지은\",\"remaining_capacity\":2,\"time\":\"화6.목5.\"},{\"course_id\":\"20231H0001309508\",\"type\":\"교필\",\"course_name\":\"융합적사 고와글쓰기\",\"credit\":3,\"instructor_name\":\"이은경\",\"remaining_capacity\":2,\"time\":\"금1.금2.\"},{\"course_id\":\"20231H0001309509\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"신정은\",\"remaining_capacity\":2,\"time\":\"금3.금4.\"},{\"course_id\":\"20231H0001341501\",\"type\":\"기필\",\"course_name\":\"대학화학및실험1\",\"credit\":3,\"instructor_name\":\"사영진\",\"remaining_capacity\":2,\"time\":\"화5.\"},{\"course_id\":\"20231H0001341502\",\"type\":\"기필\",\"course_name\":\"대학화학및실험1\",\"credit\":3,\"instructor_name\":\"사영진\",\"remaining_capacity\":2,\"time\":\"화6.\"},{\"course_id\":\"20231H0001367401\",\"type\":\"전선\",\"course_name\":\"창의설계입문\",\"credit\":3,\"instructor_name\":\"신원경\",\"remaining_capacity\":2,\"time\":\"월2.수1.\"},{\"course_id\":\"20231H0001367402\",\"type\":\"전선\",\"course_name\":\"창의설계입문\",\"credit\":3,\"instructor_name\":\"김미화\",\"remaining_capacity\":2,\"time\":\"금3.금4.\"},{\"course_id\":\"20231H0001462501\",\"type\":\"기필\",\"course_name\":\"대학수학및연습1\",\"credit\":3,\"instructor_name\":\"김순영\",\"remaining_capacity\":2,\"time\":\"월2.수1.\"},{\"course_id\":\"20231H0001462502\",\"type\":\"기필\",\"course_name\":\"대학수학및연습1\",\"credit\":3,\"instructor_name\":\"채형직\",\"remaining_capacity\":2,\"time\":\"월4.수3.\"}]}";
+
         Packet packcet;
         public Form1()
         {
@@ -128,16 +130,16 @@ namespace _2023AppSWClient
              * chk_onlyvalid (여석있는것만조회할지?)
              * 이거 5개 묶어서 서버에 패킷으로 쏘는 핸들러 필요
              */
-            /*
-             * 패킷으로부터 결과 받아오면
-             * lvw_search_res 내용채우기 필요
-             * 밑에꺼쓰시면됨요
-             */
+
+            //받아온 검색결과 Listview에 띄워주기
             string sourceJson = "";
+            sourceJson = testSearch;
             System.Data.DataSet dataSet = DatasetConvertor.DeserializeFromJSON( sourceJson);
+            long i = 1;
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
-                ListViewItem item = new ListViewItem(row[0].ToString());
+                ListViewItem item = new ListViewItem(i.ToString());
+                item.SubItems.Add(row[0].ToString());
                 item.SubItems.Add(row[1].ToString());
                 item.SubItems.Add(row[2].ToString());
                 item.SubItems.Add(row[3].ToString());
@@ -146,7 +148,9 @@ namespace _2023AppSWClient
                 item.SubItems.Add(row[6].ToString());
 
                 lvw_search_res.Items.Add(item);
+                i++;
             }
+            lvw_search_res.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent); //모든 열 사이즈 자동조절
         }
 
         private void btn_AddToFav_Click(object sender, EventArgs e)
