@@ -120,7 +120,7 @@ namespace _2023AppSWClient
             System.Diagnostics.Process.Start(lectPlanURLBase + lectCode);
         }
 
-        private void btn_SearchCourse_Click(object sender, EventArgs e)
+        private void btn_SearchCourse_Click(object sender, EventArgs e) //Winform조작 작동 확인 완료
         {
             /*
              * cbbox_collegeof
@@ -130,7 +130,7 @@ namespace _2023AppSWClient
              * chk_onlyvalid (여석있는것만조회할지?)
              * 이거 5개 묶어서 서버에 패킷으로 쏘는 핸들러 필요
              */
-
+            ////////////////////////////////////////////////////////////////////////
             //받아온 검색결과 Listview에 띄워주기
             string sourceJson = "";
             sourceJson = testSearch;
@@ -153,7 +153,7 @@ namespace _2023AppSWClient
             lvw_search_res.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent); //모든 열 사이즈 자동조절
         }
 
-        private void btn_AddToFav_Click(object sender, EventArgs e)
+        private void btn_AddToFav_Click(object sender, EventArgs e) //Winform조작 작동 확인 완료
         {
             /*
              cbbox_favnum(즐겨찾기번호)
@@ -162,11 +162,15 @@ namespace _2023AppSWClient
             txt_lec_codeN    txt_lec_nameN   txt_credN   txt_profN   txt_lectN(강의시간)
             요 5개 채우기
             */
-            int index = cbBox_FavNum.SelectedIndex;
+            int index = int.Parse(cbBox_FavNum.SelectedText);
+
+            index = 1; //임시변수
+
             ListViewItem selectedItem = lvw_search_res.SelectedItems.Cast<ListViewItem>().FirstOrDefault();
 
             if (selectedItem != null)
             {
+                // 여기에 패킷 추가(서버에 즐겨찾기 추가)!!!!!!)!!!!!!)!!!!!!)!!!!!!)!!!!!!
                 if (index == 1)
                 {
                     txt_lec_code1.Text = selectedItem.SubItems[1].Text;
@@ -237,9 +241,13 @@ namespace _2023AppSWClient
                     return;
                 }
             }
+            else
+            {
+                //선택된 과목이 없다고 경고메시지 띄우기
+            }
         }
 
-        private void btn_delN_Click(object sender, EventArgs e)
+        private void btn_delN_Click(object sender, EventArgs e) //Winform조작 작동 확인 완료
         {
             /*
              * 몇번버튼이 눌렸는지에 따라서 핸들링 필요
@@ -248,6 +256,8 @@ namespace _2023AppSWClient
              * txt_lec_codeN    txt_lec_nameN   txt_credN   txt_profN   txt_lectN(강의시간)
              * 요 5개 텍스트 비우기
              */
+
+            // 서버 통신부분 여기에 추가하기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! (서버에 삭제요청 보내도록)
             Button whichPushed = (Button) sender;
             if(whichPushed== btn_del1)
             {
@@ -326,47 +336,50 @@ namespace _2023AppSWClient
             Button whichPushed = (Button)sender;
             if (whichPushed == btn_inq1)
             {
-                txt_Hakjung = txt_lec_code1;
+                txt_Hakjung.Text = txt_lec_code1.Text;
             }
             else if (whichPushed == btn_inq2)
             {
-                txt_Hakjung = txt_lec_code2;
+                txt_Hakjung.Text = txt_lec_code2.Text;
             }
             else if (whichPushed == btn_inq3)
             {
-                txt_Hakjung = txt_lec_code3;
+                txt_Hakjung.Text = txt_lec_code3.Text;
             }
             else if (whichPushed == btn_inq4)
             {
-                txt_Hakjung = txt_lec_code4;
+                txt_Hakjung.Text = txt_lec_code4.Text;
             }
             else if (whichPushed == btn_inq5)
             {
-                txt_Hakjung = txt_lec_code5;
+                txt_Hakjung.Text = txt_lec_code5.Text;
             }
             else if (whichPushed == btn_inq6)
             {
-                txt_Hakjung = txt_lec_code6;
+                txt_Hakjung.Text = txt_lec_code6.Text;
             }
             else if (whichPushed == btn_inq7)
             {
-                txt_Hakjung = txt_lec_code7;
+                txt_Hakjung.Text = txt_lec_code7.Text;
             }
             else if (whichPushed == btn_inq8)
             {
-                txt_Hakjung = txt_lec_code8;
+                txt_Hakjung.Text = txt_lec_code8.Text;
             }
         }
 
         //학정번호 수동조회칸이 꽉 찼다면 체크
         private void txt_Hakjung_TextChanged(object sender, EventArgs e)
         {
-            if (txt_Hakjung.TextLength == 11)
+            if (txt_Hakjung.TextLength == 16)
             {
                 //서버에 학번, 20231+학정번호로 요청보내서 과목정보 조회
-                //과목 남았으면 과목명 이수구분 시간 강의실... 등 띄우기
-                //만석이면 만석입니다 띄우고 txt_Hakjung.Clear();
             }
+            //서버로부터받은 data예제
+            string test = "{\"course_info\":[{\"year\":2023,\"semester\":1,\"department\":\"H040\",\"level\":3,\"subject\":\"7737\",\"class\":1,\"course_id\":\"20231H0403773701\",\"type\":\"전선\",\"course_name\":\"UX/UI디자인\",\"credit\":3,\"instructor_name\":\"김현경\",\"num_of_students\":0,\"remaining_capacity\":2,\"time\":\"월2.수1.\",\"lect_room\":\"미지정\",\"is_foreignerOnly\":false}]}";
+
+            //여기에 Winform 핸들러 작성
+            //만석이면 만석입니다 띄워야함 txt_Hakjung.Clear();
         }
 
         private void btn_apply_Click(object sender, EventArgs e)
