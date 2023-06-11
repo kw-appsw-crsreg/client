@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppswPacket;
 
+
 namespace _2023AppSWClient
 {
     public partial class Form1 : Form
@@ -133,7 +134,19 @@ namespace _2023AppSWClient
              * 밑에꺼쓰시면됨요
              */
             string sourceJson = "";
-            DataSet dataSet = DatasetConvertor.DeserializeFromJSON( sourceJson);
+            System.Data.DataSet dataSet = DatasetConvertor.DeserializeFromJSON( sourceJson);
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                ListViewItem item = new ListViewItem(row[0].ToString());
+                item.SubItems.Add(row[1].ToString());
+                item.SubItems.Add(row[2].ToString());
+                item.SubItems.Add(row[3].ToString());
+                item.SubItems.Add(row[4].ToString());
+                item.SubItems.Add(row[5].ToString());
+                item.SubItems.Add(row[6].ToString());
+
+                lvw_search_res.Items.Add(item);
+            }
         }
 
         private void btn_AddToFav_Click(object sender, EventArgs e)
@@ -145,9 +158,80 @@ namespace _2023AppSWClient
             txt_lec_codeN    txt_lec_nameN   txt_credN   txt_profN   txt_lectN(강의시간)
             요 5개 채우기
             */
-            if(cbBox_FavNum.SelectedIndex == 0)
+            int index = cbBox_FavNum.SelectedIndex;
+            ListViewItem selectedItem = lvw_search_res.SelectedItems.Cast<ListViewItem>().FirstOrDefault();
+
+            if (selectedItem != null)
             {
-                /////////////
+                if (index == 1)
+                {
+                    txt_lec_code1.Text = selectedItem.SubItems[1].Text;
+                    txt_lec_name1.Text = selectedItem.SubItems[3].Text;
+                    txt_cred1.Text = selectedItem.SubItems[4].Text;
+                    txt_prof1.Text = selectedItem.SubItems[5].Text;
+                    txt_lect1.Text = selectedItem.SubItems[7].Text;
+
+                }
+                else if (index == 2)
+                {
+                    txt_lec_code2.Text = selectedItem.SubItems[1].Text;
+                    txt_lec_name2.Text = selectedItem.SubItems[3].Text;
+                    txt_cred2.Text = selectedItem.SubItems[4].Text;
+                    txt_prof2.Text = selectedItem.SubItems[5].Text;
+                    txt_lect2.Text = selectedItem.SubItems[7].Text;
+                }
+                else if (index == 3)
+                {
+                    txt_lec_code3.Text = selectedItem.SubItems[1].Text;
+                    txt_lec_name3.Text = selectedItem.SubItems[3].Text;
+                    txt_cred3.Text = selectedItem.SubItems[4].Text;
+                    txt_prof3.Text = selectedItem.SubItems[5].Text;
+                    txt_lect3.Text = selectedItem.SubItems[7].Text;
+                }
+                else if (index == 4)
+                {
+                    txt_lec_code4.Text = selectedItem.SubItems[1].Text;
+                    txt_lec_name4.Text = selectedItem.SubItems[3].Text;
+                    txt_cred4.Text = selectedItem.SubItems[4].Text;
+                    txt_prof4.Text = selectedItem.SubItems[5].Text;
+                    txt_lect4.Text = selectedItem.SubItems[7].Text;
+                }
+                else if (index == 5)
+                {
+                    txt_lec_code5.Text = selectedItem.SubItems[1].Text;
+                    txt_lec_name5.Text = selectedItem.SubItems[3].Text;
+                    txt_cred5.Text = selectedItem.SubItems[4].Text;
+                    txt_prof5.Text = selectedItem.SubItems[5].Text;
+                    txt_lect5.Text = selectedItem.SubItems[7].Text;
+                }
+                else if (index == 6)
+                {
+                    txt_lec_code6.Text = selectedItem.SubItems[1].Text;
+                    txt_lec_name6.Text = selectedItem.SubItems[3].Text;
+                    txt_cred6.Text = selectedItem.SubItems[4].Text;
+                    txt_prof6.Text = selectedItem.SubItems[5].Text;
+                    txt_lect6.Text = selectedItem.SubItems[7].Text;
+                }
+                else if (index == 7)
+                {
+                    txt_lec_code7.Text = selectedItem.SubItems[1].Text;
+                    txt_lec_name7.Text = selectedItem.SubItems[3].Text;
+                    txt_cred7.Text = selectedItem.SubItems[4].Text;
+                    txt_prof7.Text = selectedItem.SubItems[5].Text;
+                    txt_lect7.Text = selectedItem.SubItems[7].Text;
+                }
+                else if (index == 8)
+                {
+                    txt_lec_code8.Text = selectedItem.SubItems[1].Text;
+                    txt_lec_name8.Text = selectedItem.SubItems[3].Text;
+                    txt_cred8.Text = selectedItem.SubItems[4].Text;
+                    txt_prof8.Text = selectedItem.SubItems[5].Text;
+                    txt_lect8.Text = selectedItem.SubItems[7].Text;
+                }
+                else
+                {
+                    return;
+                }
             }
         }
 
@@ -163,35 +247,67 @@ namespace _2023AppSWClient
             Button whichPushed = (Button) sender;
             if(whichPushed== btn_del1)
             {
-                
+                txt_lec_code1.Text = "";
+                txt_lec_name1.Text = "";
+                txt_cred1.Text = "";
+                txt_prof1.Text = "";
+                txt_lect1.Text = "";
             }
             else if (whichPushed == btn_del2)
             {
-
+                txt_lec_code2.Text = "";
+                txt_lec_name2.Text = "";
+                txt_cred2.Text = "";
+                txt_prof2.Text = "";
+                txt_lect2.Text = "";
             }
             else if (whichPushed == btn_del3)
             {
-
+                txt_lec_code3.Text = "";
+                txt_lec_name3.Text = "";
+                txt_cred3.Text = "";
+                txt_prof3.Text = "";
+                txt_lect3.Text = "";
             }
             else if (whichPushed == btn_del4)
             {
-
+                txt_lec_code4.Text = "";
+                txt_lec_name4.Text = "";
+                txt_cred4.Text = "";
+                txt_prof4.Text = "";
+                txt_lect4.Text = "";
             }
             else if (whichPushed == btn_del5)
             {
-
+                txt_lec_code5.Text = "";
+                txt_lec_name5.Text = "";
+                txt_cred5.Text = "";
+                txt_prof5.Text = "";
+                txt_lect5.Text = "";
             }
             else if (whichPushed == btn_del6)
             {
-
+                txt_lec_code6.Text = "";
+                txt_lec_name6.Text = "";
+                txt_cred6.Text = "";
+                txt_prof6.Text = "";
+                txt_lect6.Text = "";
             }
             else if (whichPushed == btn_del7)
             {
-
+                txt_lec_code7.Text = "";
+                txt_lec_name7.Text = "";
+                txt_cred7.Text = "";
+                txt_prof7.Text = "";
+                txt_lect7.Text = "";
             }
             else if (whichPushed == btn_del8)
             {
-
+                txt_lec_code8.Text = "";
+                txt_lec_name8.Text = "";
+                txt_cred8.Text = "";
+                txt_prof8.Text = "";
+                txt_lect8.Text = "";
             }
         }
 
@@ -206,35 +322,35 @@ namespace _2023AppSWClient
             Button whichPushed = (Button)sender;
             if (whichPushed == btn_inq1)
             {
-
+                txt_Hakjung = txt_lec_code1;
             }
             else if (whichPushed == btn_inq2)
             {
-
+                txt_Hakjung = txt_lec_code2;
             }
             else if (whichPushed == btn_inq3)
             {
-
+                txt_Hakjung = txt_lec_code3;
             }
             else if (whichPushed == btn_inq4)
             {
-
+                txt_Hakjung = txt_lec_code4;
             }
             else if (whichPushed == btn_inq5)
             {
-
+                txt_Hakjung = txt_lec_code5;
             }
             else if (whichPushed == btn_inq6)
             {
-
+                txt_Hakjung = txt_lec_code6;
             }
             else if (whichPushed == btn_inq7)
             {
-
+                txt_Hakjung = txt_lec_code7;
             }
             else if (whichPushed == btn_inq8)
             {
-
+                txt_Hakjung = txt_lec_code8;
             }
         }
 

@@ -11,16 +11,16 @@ namespace _2023AppSWClient
 {
     internal class DatasetConvertor
     {
-        public static string SerializeToJSON(DataSet argDs)
+        public static string SerializeToJSON(System.Data.DataSet argDs)
         {
             string JSONString = string.Empty;
             JSONString = JsonConvert.SerializeObject(argDs);
             return JSONString;
         }
 
-        public static DataSet DeserializeFromJSON(string sourceJson)
+        public static System.Data.DataSet DeserializeFromJSON(string sourceJson)
         {
-            DataSet dataSet = JsonConvert.DeserializeObject<DataSet> (sourceJson);
+            System.Data.DataSet dataSet = JsonConvert.DeserializeObject<System.Data.DataSet> (sourceJson);
             return dataSet;
         }
 
