@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using AppswPacket;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using AppswPacket;
-using Newtonsoft.Json;
 
 
 namespace _2023AppSWClient
@@ -23,7 +17,7 @@ namespace _2023AppSWClient
             packcet = Connection.init;
             InitializeComponent();
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             lvw_search_res.View = View.Details;
@@ -83,6 +77,12 @@ namespace _2023AppSWClient
             lvw_done.Columns[9].TextAlign = HorizontalAlignment.Center;
             lvw_done.Columns[10].TextAlign = HorizontalAlignment.Left;
             lvw_done.Columns[11].TextAlign = HorizontalAlignment.Center;
+
+            //즐겨찾기 번호추가
+            for(int i =1; i <= 8; i++)
+            {
+                cbBox_FavNum.Items.Add(i);
+            }
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
@@ -135,7 +135,7 @@ namespace _2023AppSWClient
             //받아온 검색결과 Listview에 띄워주기
             string sourceJson = "";
             sourceJson = testSearch;
-            System.Data.DataSet dataSet = DatasetConvertor.DeserializeFromJSON( sourceJson);
+            System.Data.DataSet dataSet = DatasetConvertor.DeserializeFromJSON(sourceJson);
             long i = 1;
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
@@ -163,15 +163,18 @@ namespace _2023AppSWClient
             txt_lec_codeN    txt_lec_nameN   txt_credN   txt_profN   txt_lectN(강의시간)
             요 5개 채우기
             */
-            int index = int.Parse(cbBox_FavNum.SelectedText);
-
-            index = 1; //임시변수
+            int index = (int)cbBox_FavNum.SelectedItem;
 
             ListViewItem selectedItem = lvw_search_res.SelectedItems.Cast<ListViewItem>().FirstOrDefault();
 
             if (selectedItem != null)
             {
+                int favRes= (int)FavoritesResult.OK;
                 // 여기에 패킷 추가(서버에 즐겨찾기 추가)!!!!!!)!!!!!!)!!!!!!)!!!!!!)!!!!!!
+                if (favRes != (int)FavoritesResult.OK)
+                {
+                    MessageBox.Show("오류!!");
+                }
                 if (index == 1)
                 {
                     txt_lec_code1.Text = selectedItem.SubItems[1].Text;
@@ -245,6 +248,7 @@ namespace _2023AppSWClient
             else
             {
                 //선택된 과목이 없다고 경고메시지 띄우기
+                MessageBox.Show("즐겨찾기에 추가할 과목을 선택하세요!");
             }
         }
 
@@ -259,8 +263,8 @@ namespace _2023AppSWClient
              */
 
             // 서버 통신부분 여기에 추가하기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! (서버에 삭제요청 보내도록)
-            Button whichPushed = (Button) sender;
-            if(whichPushed== btn_del1)
+            Button whichPushed = (Button)sender;
+            if (whichPushed == btn_del1)
             {
                 txt_lec_code1.Text = "";
                 txt_lec_name1.Text = "";
@@ -388,49 +392,57 @@ namespace _2023AppSWClient
             public bool IsForeignerOnly { get; set; }
         }
 
-        public class Root
-        {
-            public List<CourseInfo> CourseInfo { get; set; }
-        }
-
         //학정번호 수동조회칸이 꽉 찼다면 체크
         private void txt_Hakjung_TextChanged(object sender, EventArgs e)
         {
             string search_res; // 검색결과 저장할 string
+            string test = "{\"course_info\":[{\"year\":2023,\"semester\":1,\"department\":\"H040\",\"level\":3,\"subject\":\"7737\",\"class\":1,\"course_id\":\"20231H0403773701\",\"type\":\"전선\",\"course_name\":\"UX/UI디자인\",\"credit\":3,\"instructor_name\":\"김현경\",\"num_of_students\":0,\"remaining_capacity\":3,\"time\":\"월2.수1.\",\"lect_room\":\"미지정\",\"is_foreignerOnly\":false}]}";
+
             if (txt_Hakjung.TextLength == 16)
             {
                 //서버에 학번, 20231+학정번호로 요청보내서 과목정보 조회
-            }
-            //서버로부터받은 data예제
-            string test = "{\"course_info\":[{\"year\":2023,\"semester\":1,\"department\":\"H040\",\"level\":3,\"subject\":\"7737\",\"class\":1,\"course_id\":\"20231H0403773701\",\"type\":\"전선\",\"course_name\":\"UX/UI디자인\",\"credit\":3,\"instructor_name\":\"김현경\",\"num_of_students\":0,\"remaining_capacity\":2,\"time\":\"월2.수1.\",\"lect_room\":\"미지정\",\"is_foreignerOnly\":false}]}";
 
-            Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(search_res);
+                //서버로부터받은 data예제
 
-            foreach (var course in myDeserializedClass.CourseInfo)
-            {
-                txt_Hakjung.Text = course.CourseId;
-                txt_CourseName.Text = course.CourseName;
-                txt_CourseType.Text = course.Type;
-                txt_CourseCredit.Text = course.Credit.ToString();
-                txt_InstructorName.Text = course.InstructorName;
-                txt_CourseTime.Text = course.Time;
-                txt_CourseLectRoom.Text = course.LectRoom;
-                if (course.RemainingCapacity > 0)
+                DataSet classinfo = DatasetConvertor.DeserializeFromJSON(test);
+
+                txt_Hakjung.Text = classinfo.Tables[0].Rows[0]["course_id"].ToString();
+                txt_CourseName.Text = classinfo.Tables[0].Rows[0]["course_name"].ToString();
+                txt_CourseType.Text = classinfo.Tables[0].Rows[0]["type"].ToString();
+                txt_CourseCredit.Text = classinfo.Tables[0].Rows[0]["credit"].ToString();
+                txt_InstructorName.Text = classinfo.Tables[0].Rows[0]["instructor_name"].ToString();
+                txt_CourseTime.Text = classinfo.Tables[0].Rows[0]["course_name"].ToString();
+                txt_CourseLectRoom.Text = classinfo.Tables[0].Rows[0]["lect_room"].ToString();
+
+                if (int.Parse(classinfo.Tables[0].Rows[0]["remaining_capacity"].ToString()) == 0)
                 {
-                    Form2 form2 = new Form2();
-                    form2.ShowDialog();
+                    MessageBox.Show("만석입니다!");
                     txt_Hakjung.Clear();
+                    txt_CourseName.Clear();
+                    txt_CourseType.Clear();
+                    txt_CourseCredit.Clear();
+                    txt_InstructorName.Clear();
+                    txt_CourseTime.Clear();
+                    txt_CourseLectRoom.Clear();
                 }
-
             }
-            //여기에 Winform 핸들러 작성
-            //만석이면 만석입니다 띄워야함 txt_Hakjung.Clear();
             
         }
 
         private void btn_apply_Click(object sender, EventArgs e)
         {
             //서버에 학번,  20231+학정번호로 신청하기
+
+            if (true)
+            {
+                txt_Hakjung.Clear();
+                txt_CourseName.Clear();
+                txt_CourseType.Clear();
+                txt_CourseCredit.Clear();
+                txt_InstructorName.Clear();
+                txt_CourseTime.Clear();
+                txt_CourseLectRoom.Clear();
+            }
         }
 
         private void btn_delete_Click(object sender, EventArgs e)

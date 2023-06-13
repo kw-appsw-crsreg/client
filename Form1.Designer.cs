@@ -380,15 +380,6 @@
             // cbBox_FavNum
             // 
             this.cbBox_FavNum.FormattingEnabled = true;
-            this.cbBox_FavNum.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"});
             this.cbBox_FavNum.Location = new System.Drawing.Point(6, 18);
             this.cbBox_FavNum.Name = "cbBox_FavNum";
             this.cbBox_FavNum.Size = new System.Drawing.Size(59, 20);
