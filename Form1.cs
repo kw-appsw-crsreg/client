@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 
 namespace _2023AppSWClient
@@ -10,6 +11,28 @@ namespace _2023AppSWClient
     public partial class Form1 : Form
     {
         string testSearch = "{\"Table\":[{\"course_id\":\"20231H0001295701\",\"type\":\"전선\",\"course_name\":\"공학설계입문\",\"credit\":3,\"instructor_name\":\"최상\r\n호\",\"remaining_capacity\":2,\"time\":\"화2.목1.\"},{\"course_id\":\"20231H0001295702\",\"type\":\"전선\",\"course_name\":\"공학설계입문\",\"credit\":3,\"instructor_name\":\"\",\"remaining_capacity\":2,\"time\":\"월3.수4.\"},{\"course_id\":\"20231H0001309501\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"허연실\",\"remaining_capacity\":2,\"time\":\"월1.수2.\"},{\"course_id\":\"20231H0001309502\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"전도현\",\"remaining_capacity\":2,\"time\":\"월2.수1.\"},{\"course_id\":\"20231H0001309503\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"유승호\",\"remaining_capacity\":2,\"time\":\"월5.수6.\"},{\"course_id\":\"20231H0001309504\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"이주영\",\"remaining_capacity\":2,\"time\":\"월6.수5.\"},{\"course_id\":\"20231H0001309505\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"김광섭\",\"remaining_capacity\":2,\"time\":\"화2.목1.\"},{\"course_id\":\"20231H0001309506\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"조영복\",\"remaining_capacity\":2,\"time\":\"화5.목6.\"},{\"course_id\":\"20231H0001309507\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"이지은\",\"remaining_capacity\":2,\"time\":\"화6.목5.\"},{\"course_id\":\"20231H0001309508\",\"type\":\"교필\",\"course_name\":\"융합적사 고와글쓰기\",\"credit\":3,\"instructor_name\":\"이은경\",\"remaining_capacity\":2,\"time\":\"금1.금2.\"},{\"course_id\":\"20231H0001309509\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"신정은\",\"remaining_capacity\":2,\"time\":\"금3.금4.\"},{\"course_id\":\"20231H0001341501\",\"type\":\"기필\",\"course_name\":\"대학화학및실험1\",\"credit\":3,\"instructor_name\":\"사영진\",\"remaining_capacity\":2,\"time\":\"화5.\"},{\"course_id\":\"20231H0001341502\",\"type\":\"기필\",\"course_name\":\"대학화학및실험1\",\"credit\":3,\"instructor_name\":\"사영진\",\"remaining_capacity\":2,\"time\":\"화6.\"},{\"course_id\":\"20231H0001367401\",\"type\":\"전선\",\"course_name\":\"창의설계입문\",\"credit\":3,\"instructor_name\":\"신원경\",\"remaining_capacity\":2,\"time\":\"월2.수1.\"},{\"course_id\":\"20231H0001367402\",\"type\":\"전선\",\"course_name\":\"창의설계입문\",\"credit\":3,\"instructor_name\":\"김미화\",\"remaining_capacity\":2,\"time\":\"금3.금4.\"},{\"course_id\":\"20231H0001462501\",\"type\":\"기필\",\"course_name\":\"대학수학및연습1\",\"credit\":3,\"instructor_name\":\"김순영\",\"remaining_capacity\":2,\"time\":\"월2.수1.\"},{\"course_id\":\"20231H0001462502\",\"type\":\"기필\",\"course_name\":\"대학수학및연습1\",\"credit\":3,\"instructor_name\":\"채형직\",\"remaining_capacity\":2,\"time\":\"월4.수3.\"}]}";
+
+        List<string> CollegeOfEI = new List<string>(new string[] {
+            "전자공학과","전자통신공학과","전자융합공학과","전기공학과","전자재료공학과","로봇학부"," 컴퓨터공학과","컴퓨터소프트웨어학과", "전체검색", "공통"
+            });
+        List<string> CollegeofBusiness = new List<string>(new string[] {
+            "경영학부","국제통상학부", "전체검색", "공통"
+            });
+        List<string> CollegeOfEngineering = new List<string>(new string[] {
+            "건축공학과","화학공학과","환경공학과","건축학과", "전체검색", "공통"
+            });
+        List<string> CollegeOfSoftwareConversion = new List<string>(new string[] {
+            "컴퓨터정보공학부","소프트웨어학부","정보융합학부", "전체검색", "공통"
+            });
+        List<string> CollegeOfHumanities = new List<string>(new string[] {
+            "국어국문학과","영어산업학과","미디어커뮤니케이션학부","산업심리학과","동북아문화산업학부", "전체검색", "공통"
+            });
+        List<string> CollegeOfNatural = new List<string>(new string[] {
+            "수학과","전자바이오물리학과","화학과","스포츠융합과학과","정보콘텐츠학과", "전체검색", "공통"
+            });
+        List<string> CollegeOfLaw = new List<string>(new string[] {
+            "행정학과","법학부","국제학부","자산관리학과", "전체검색", "공통"
+            });
 
         Packet packcet;
         public Form1()
@@ -79,10 +102,15 @@ namespace _2023AppSWClient
             lvw_done.Columns[11].TextAlign = HorizontalAlignment.Center;
 
             //즐겨찾기 번호추가
-            for(int i =1; i <= 8; i++)
+            for (int i = 1; i <= 8; i++)
             {
                 cbBox_FavNum.Items.Add(i);
             }
+            List<string> Departments = new List<string>(new string[] {
+            "경영대학", "공과대학", "소프트웨어융합대학", "인문사회과학대학", "자연과학대학", "전자정보공과대학", "정책법학대학", "전체검색", "공통"
+            });
+            foreach(string str in Departments) cbBox_CollegeOf.Items.Add(str);
+            //단과대선택 아이템추가
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
@@ -101,11 +129,6 @@ namespace _2023AppSWClient
         }
 
         private void textBox44_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -466,6 +489,40 @@ namespace _2023AppSWClient
             while (Connection.stack.Count == 0)
             {
                 continue;
+            }
+        }
+
+        private void cbBox_CollegeOf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string what=(string)cbBox_CollegeOf.SelectedText;
+            cbBox_Department.Items.Clear();
+            cbBox_Department.ResetText();
+            switch (what)
+            {
+                case "경영대학":
+                    foreach(string str in CollegeofBusiness) cbBox_Department.Items.Add(str);
+                    break;
+                case "공과대학":
+                    foreach (string str in CollegeOfEngineering) cbBox_Department.Items.Add(str);
+                    break;
+                case "소프트웨어융합대학":
+                    foreach (string str in CollegeOfSoftwareConversion) cbBox_Department.Items.Add(str);
+                    break;
+                case "인문사회과학대학":
+                    foreach (string str in CollegeOfHumanities) cbBox_Department.Items.Add(str);
+                    break;
+                case "자연과학대학":
+                    foreach (string str in CollegeOfNatural) cbBox_Department.Items.Add(str);
+                    break;
+                case "전자정보공과대학":
+                    foreach (string str in CollegeOfEI) cbBox_Department.Items.Add(str);
+                    break;
+                case "정책법학대학":
+                    foreach (string str in CollegeOfLaw) cbBox_Department.Items.Add(str);
+                    break;
+                case "전체검색" :
+                case "공통":
+                    break;
             }
         }
     }

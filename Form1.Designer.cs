@@ -274,44 +274,6 @@
             // cbBox_Department
             // 
             this.cbBox_Department.FormattingEnabled = true;
-            this.cbBox_Department.Items.AddRange(new object[] {
-            "전체 검색",
-            "건축공학과",
-            "건축학과",
-            "경영학부",
-            "국어국문학과",
-            "국제통상학부",
-            "국제학부",
-            "국제학부",
-            "동북아문화산업학부",
-            "로봇학부",
-            "미디어커뮤니케이션학부",
-            "법학부",
-            "법학부",
-            "산업심리학과",
-            "소프트웨어학부",
-            "소프트웨어학부",
-            "수학과",
-            "스포츠융합과학과",
-            "영어산업학과",
-            "자산관리학과",
-            "전기공학과",
-            "전자공학과",
-            "전자바이오물리학과",
-            "전자융합공학과",
-            "전자재료공학과",
-            "전자통신공학과",
-            "정보융합학부",
-            "정보콘텐츠학과",
-            "컴퓨터공학과",
-            "컴퓨터소프트웨어학과",
-            "컴퓨터정보공학부",
-            "컴퓨터정보공학부",
-            "행정학과",
-            "행정학과",
-            "화학공학과",
-            "화학과",
-            "환경공학과"});
             this.cbBox_Department.Location = new System.Drawing.Point(152, 17);
             this.cbBox_Department.Name = "cbBox_Department";
             this.cbBox_Department.Size = new System.Drawing.Size(105, 20);
@@ -320,20 +282,11 @@
             // cbBox_CollegeOf
             // 
             this.cbBox_CollegeOf.FormattingEnabled = true;
-            this.cbBox_CollegeOf.Items.AddRange(new object[] {
-            "전체검색",
-            "경영대학",
-            "공과대학",
-            "소프트웨어융합대학",
-            "인문사회과학대학",
-            "자연과학대학",
-            "전자정보공과대학",
-            "정책법학대학"});
             this.cbBox_CollegeOf.Location = new System.Drawing.Point(59, 17);
             this.cbBox_CollegeOf.Name = "cbBox_CollegeOf";
             this.cbBox_CollegeOf.Size = new System.Drawing.Size(87, 20);
             this.cbBox_CollegeOf.TabIndex = 3;
-            this.cbBox_CollegeOf.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cbBox_CollegeOf.SelectedIndexChanged += new System.EventHandler(this.cbBox_CollegeOf_SelectedIndexChanged);
             // 
             // textBox2
             // 
