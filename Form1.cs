@@ -494,7 +494,7 @@ namespace _2023AppSWClient
 
         private void cbBox_CollegeOf_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string what=(string)cbBox_CollegeOf.SelectedText;
+            string what=(string)cbBox_CollegeOf.SelectedItem;
             cbBox_Department.Items.Clear();
             cbBox_Department.ResetText();
             switch (what)
