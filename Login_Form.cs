@@ -63,7 +63,7 @@ namespace _2023AppSWClient
             {
                 MessageBox.Show("로그인 완료");
                 sndThread.Abort();
-                form1 = new Form1();
+                form1 = new Form1(login);
                 form1.Show();
                 this.Hide();
             }

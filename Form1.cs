@@ -35,16 +35,22 @@ namespace _2023AppSWClient
             });
 
         Packet packcet;
-        public Form1()
+        Login userInfo;
+        public Form1(Login login)
         {
             packcet = Connection.init;
             InitializeComponent();
+            userInfo = login; //로그인폼으로부터 넘어온 사용자정보
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             lvw_search_res.View = View.Details;
             lvw_done.View = View.Details;
+
+            //사용자정보 추가
+            userInfo.stuID = "12333333";
+            txt_StuID.Text = userInfo.stuID;
 
             //검색결과란에 column 추가
             lvw_search_res.Columns.Add("순번", "순번");
@@ -480,8 +486,7 @@ namespace _2023AppSWClient
         private void btn_close_Click(object sender, EventArgs e)
         {
             //프로그램 종료하기
-            Form1 form1 = new Form1();
-            form1.Close();
+            this.Close();
         }
 
         private void wait()
