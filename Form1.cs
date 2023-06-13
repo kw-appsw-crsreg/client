@@ -70,12 +70,9 @@ namespace _2023AppSWClient
             lvw_done.Columns.Add("과목명", "과목명");
             lvw_done.Columns.Add("학점", "학점");
             lvw_done.Columns.Add("담당교수", "담당교수");
-            lvw_done.Columns.Add("요일1", "요일1");
-            lvw_done.Columns.Add("시간1", "시간1");
-            lvw_done.Columns.Add("강의실1", "강의실1");
-            lvw_done.Columns.Add("요일2", "요일2");
-            lvw_done.Columns.Add("시간2", "시간2");
-            lvw_done.Columns.Add("강의실2", "강의실2");
+            lvw_done.Columns.Add("요일", "요일");
+            lvw_done.Columns.Add("시간", "시간");
+            lvw_done.Columns.Add("강의실", "강의실");
             lvw_done.Columns.Add("last", "last");
 
             //width header size auto rezsize
@@ -103,9 +100,6 @@ namespace _2023AppSWClient
             lvw_done.Columns[6].TextAlign = HorizontalAlignment.Center;
             lvw_done.Columns[7].TextAlign = HorizontalAlignment.Left;
             lvw_done.Columns[8].TextAlign = HorizontalAlignment.Center;
-            lvw_done.Columns[9].TextAlign = HorizontalAlignment.Center;
-            lvw_done.Columns[10].TextAlign = HorizontalAlignment.Left;
-            lvw_done.Columns[11].TextAlign = HorizontalAlignment.Center;
 
             //즐겨찾기 번호추가
             for (int i = 1; i <= 8; i++)
