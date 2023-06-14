@@ -38,7 +38,7 @@ namespace _2023AppSWClient
         Login userInfo;
         public Form1(Login login)
         {
-            packcet = Connection.init;
+            packcet = Connection.pac;
             InitializeComponent();
             userInfo = login; //로그인폼으로부터 넘어온 사용자정보
         }
@@ -523,6 +523,11 @@ namespace _2023AppSWClient
                 case "공통":
                     break;
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Connection.AbortThread();
         }
     }
 }

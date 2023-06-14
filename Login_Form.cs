@@ -46,7 +46,7 @@ namespace _2023AppSWClient
             login = new Login();
             login.stuID = textBox1.Text;
             login.pwd = textBox2.Text;
-            
+  /*
             using (SHA1 sha = SHA1.Create())
             {
                 byte[] sourceBytes = Encoding.UTF8.GetBytes(login.pwd);
@@ -54,7 +54,7 @@ namespace _2023AppSWClient
                 string studentPWHash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
                 login.pwd = studentPWHash;
             }
-
+  */
             sndThread.Start(login);
 
             wait();
@@ -92,6 +92,7 @@ namespace _2023AppSWClient
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+            Connection.AbortThread();
         }
 
 
@@ -113,5 +114,9 @@ namespace _2023AppSWClient
             }
         }
 
+        private void Login_Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Connection.AbortThread();
+        }
     }
 }

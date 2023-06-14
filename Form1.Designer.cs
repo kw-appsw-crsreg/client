@@ -157,9 +157,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lvw_done);
-            this.groupBox1.Location = new System.Drawing.Point(8, 3);
+            this.groupBox1.Location = new System.Drawing.Point(9, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(662, 320);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(757, 400);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "수강신청교과목";
@@ -167,9 +169,10 @@
             // lvw_done
             // 
             this.lvw_done.HideSelection = false;
-            this.lvw_done.Location = new System.Drawing.Point(4, 17);
+            this.lvw_done.Location = new System.Drawing.Point(5, 21);
+            this.lvw_done.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvw_done.Name = "lvw_done";
-            this.lvw_done.Size = new System.Drawing.Size(653, 297);
+            this.lvw_done.Size = new System.Drawing.Size(746, 370);
             this.lvw_done.TabIndex = 0;
             this.lvw_done.UseCompatibleStateImageBehavior = false;
             // 
@@ -189,9 +192,11 @@
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.groupBox2.Location = new System.Drawing.Point(676, 3);
+            this.groupBox2.Location = new System.Drawing.Point(773, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(646, 320);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(738, 400);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "과목검색";
@@ -199,9 +204,10 @@
             // btn_ViewLectPlan
             // 
             this.btn_ViewLectPlan.ForeColor = System.Drawing.Color.Black;
-            this.btn_ViewLectPlan.Location = new System.Drawing.Point(6, 291);
+            this.btn_ViewLectPlan.Location = new System.Drawing.Point(7, 364);
+            this.btn_ViewLectPlan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ViewLectPlan.Name = "btn_ViewLectPlan";
-            this.btn_ViewLectPlan.Size = new System.Drawing.Size(202, 23);
+            this.btn_ViewLectPlan.Size = new System.Drawing.Size(231, 29);
             this.btn_ViewLectPlan.TabIndex = 3;
             this.btn_ViewLectPlan.Text = "KLAS에서 강의계획서 조회";
             this.btn_ViewLectPlan.UseVisualStyleBackColor = true;
@@ -210,25 +216,28 @@
             // lvw_search_res
             // 
             this.lvw_search_res.HideSelection = false;
-            this.lvw_search_res.Location = new System.Drawing.Point(6, 67);
+            this.lvw_search_res.Location = new System.Drawing.Point(7, 84);
+            this.lvw_search_res.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvw_search_res.Name = "lvw_search_res";
-            this.lvw_search_res.Size = new System.Drawing.Size(634, 219);
+            this.lvw_search_res.Size = new System.Drawing.Size(724, 273);
             this.lvw_search_res.TabIndex = 11;
             this.lvw_search_res.UseCompatibleStateImageBehavior = false;
             // 
             // txt_subject
             // 
-            this.txt_subject.Location = new System.Drawing.Point(59, 40);
+            this.txt_subject.Location = new System.Drawing.Point(67, 50);
+            this.txt_subject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_subject.Name = "txt_subject";
-            this.txt_subject.Size = new System.Drawing.Size(199, 21);
+            this.txt_subject.Size = new System.Drawing.Size(227, 25);
             this.txt_subject.TabIndex = 10;
             // 
             // btn_SearchCourse
             // 
             this.btn_SearchCourse.ForeColor = System.Drawing.Color.Black;
-            this.btn_SearchCourse.Location = new System.Drawing.Point(383, 17);
+            this.btn_SearchCourse.Location = new System.Drawing.Point(438, 21);
+            this.btn_SearchCourse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_SearchCourse.Name = "btn_SearchCourse";
-            this.btn_SearchCourse.Size = new System.Drawing.Size(51, 42);
+            this.btn_SearchCourse.Size = new System.Drawing.Size(58, 52);
             this.btn_SearchCourse.TabIndex = 9;
             this.btn_SearchCourse.Text = "검색";
             this.btn_SearchCourse.UseVisualStyleBackColor = true;
@@ -237,9 +246,10 @@
             // chk_only_valid
             // 
             this.chk_only_valid.AutoSize = true;
-            this.chk_only_valid.Location = new System.Drawing.Point(307, 45);
+            this.chk_only_valid.Location = new System.Drawing.Point(351, 56);
+            this.chk_only_valid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chk_only_valid.Name = "chk_only_valid";
-            this.chk_only_valid.Size = new System.Drawing.Size(15, 14);
+            this.chk_only_valid.Size = new System.Drawing.Size(18, 17);
             this.chk_only_valid.TabIndex = 8;
             this.chk_only_valid.UseVisualStyleBackColor = true;
             // 
@@ -247,9 +257,10 @@
             // 
             this.textBox4.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(270, 45);
+            this.textBox4.Location = new System.Drawing.Point(309, 56);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(37, 14);
+            this.textBox4.Size = new System.Drawing.Size(42, 18);
             this.textBox4.TabIndex = 7;
             this.textBox4.Text = "여석";
             // 
@@ -257,34 +268,38 @@
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(270, 23);
+            this.textBox3.Location = new System.Drawing.Point(309, 29);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(37, 14);
+            this.textBox3.Size = new System.Drawing.Size(42, 18);
             this.textBox3.TabIndex = 6;
             this.textBox3.Text = "이수";
             // 
             // cbBox_LectType
             // 
             this.cbBox_LectType.FormattingEnabled = true;
-            this.cbBox_LectType.Location = new System.Drawing.Point(307, 19);
+            this.cbBox_LectType.Location = new System.Drawing.Point(351, 24);
+            this.cbBox_LectType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbBox_LectType.Name = "cbBox_LectType";
-            this.cbBox_LectType.Size = new System.Drawing.Size(70, 20);
+            this.cbBox_LectType.Size = new System.Drawing.Size(79, 23);
             this.cbBox_LectType.TabIndex = 5;
             // 
             // cbBox_Department
             // 
             this.cbBox_Department.FormattingEnabled = true;
-            this.cbBox_Department.Location = new System.Drawing.Point(152, 17);
+            this.cbBox_Department.Location = new System.Drawing.Point(174, 21);
+            this.cbBox_Department.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbBox_Department.Name = "cbBox_Department";
-            this.cbBox_Department.Size = new System.Drawing.Size(105, 20);
+            this.cbBox_Department.Size = new System.Drawing.Size(119, 23);
             this.cbBox_Department.TabIndex = 4;
             // 
             // cbBox_CollegeOf
             // 
             this.cbBox_CollegeOf.FormattingEnabled = true;
-            this.cbBox_CollegeOf.Location = new System.Drawing.Point(59, 17);
+            this.cbBox_CollegeOf.Location = new System.Drawing.Point(67, 21);
+            this.cbBox_CollegeOf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbBox_CollegeOf.Name = "cbBox_CollegeOf";
-            this.cbBox_CollegeOf.Size = new System.Drawing.Size(87, 20);
+            this.cbBox_CollegeOf.Size = new System.Drawing.Size(99, 23);
             this.cbBox_CollegeOf.TabIndex = 3;
             this.cbBox_CollegeOf.SelectedIndexChanged += new System.EventHandler(this.cbBox_CollegeOf_SelectedIndexChanged);
             // 
@@ -292,9 +307,10 @@
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(16, 45);
+            this.textBox2.Location = new System.Drawing.Point(18, 56);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(37, 14);
+            this.textBox2.Size = new System.Drawing.Size(42, 18);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "과목";
             // 
@@ -302,9 +318,10 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(16, 23);
+            this.textBox1.Location = new System.Drawing.Point(18, 29);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(37, 14);
+            this.textBox1.Size = new System.Drawing.Size(42, 18);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "학과";
             // 
@@ -312,9 +329,11 @@
             // 
             this.groupBox7.Controls.Add(this.btn_AddToFav);
             this.groupBox7.Controls.Add(this.cbBox_FavNum);
-            this.groupBox7.Location = new System.Drawing.Point(440, 9);
+            this.groupBox7.Location = new System.Drawing.Point(503, 11);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(200, 50);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox7.Size = new System.Drawing.Size(229, 62);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "즐겨찾기 추가";
@@ -322,9 +341,10 @@
             // btn_AddToFav
             // 
             this.btn_AddToFav.ForeColor = System.Drawing.Color.Black;
-            this.btn_AddToFav.Location = new System.Drawing.Point(71, 18);
+            this.btn_AddToFav.Location = new System.Drawing.Point(81, 22);
+            this.btn_AddToFav.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_AddToFav.Name = "btn_AddToFav";
-            this.btn_AddToFav.Size = new System.Drawing.Size(123, 23);
+            this.btn_AddToFav.Size = new System.Drawing.Size(141, 29);
             this.btn_AddToFav.TabIndex = 2;
             this.btn_AddToFav.Text = "즐겨찾기 추가";
             this.btn_AddToFav.UseVisualStyleBackColor = true;
@@ -333,9 +353,10 @@
             // cbBox_FavNum
             // 
             this.cbBox_FavNum.FormattingEnabled = true;
-            this.cbBox_FavNum.Location = new System.Drawing.Point(6, 18);
+            this.cbBox_FavNum.Location = new System.Drawing.Point(7, 22);
+            this.cbBox_FavNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbBox_FavNum.Name = "cbBox_FavNum";
-            this.cbBox_FavNum.Size = new System.Drawing.Size(59, 20);
+            this.cbBox_FavNum.Size = new System.Drawing.Size(67, 23);
             this.cbBox_FavNum.TabIndex = 1;
             // 
             // groupBox3
@@ -355,25 +376,29 @@
             this.groupBox3.Controls.Add(this.textBox62);
             this.groupBox3.Controls.Add(this.textBox61);
             this.groupBox3.Controls.Add(this.textBox60);
-            this.groupBox3.Location = new System.Drawing.Point(215, 329);
+            this.groupBox3.Location = new System.Drawing.Point(246, 411);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(455, 218);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(520, 272);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "과목선택";
             // 
             // txt_CourseLectRoom
             // 
-            this.txt_CourseLectRoom.Location = new System.Drawing.Point(131, 106);
+            this.txt_CourseLectRoom.Location = new System.Drawing.Point(150, 132);
+            this.txt_CourseLectRoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_CourseLectRoom.Name = "txt_CourseLectRoom";
-            this.txt_CourseLectRoom.Size = new System.Drawing.Size(210, 21);
+            this.txt_CourseLectRoom.Size = new System.Drawing.Size(239, 25);
             this.txt_CourseLectRoom.TabIndex = 36;
             // 
             // txt_CourseTime
             // 
-            this.txt_CourseTime.Location = new System.Drawing.Point(131, 79);
+            this.txt_CourseTime.Location = new System.Drawing.Point(150, 99);
+            this.txt_CourseTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_CourseTime.Name = "txt_CourseTime";
-            this.txt_CourseTime.Size = new System.Drawing.Size(210, 21);
+            this.txt_CourseTime.Size = new System.Drawing.Size(239, 25);
             this.txt_CourseTime.TabIndex = 35;
             // 
             // textBox72
@@ -381,17 +406,19 @@
             this.textBox72.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox72.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox72.ForeColor = System.Drawing.Color.Blue;
-            this.textBox72.Location = new System.Drawing.Point(26, 82);
+            this.textBox72.Location = new System.Drawing.Point(30, 102);
+            this.textBox72.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox72.Name = "textBox72";
-            this.textBox72.Size = new System.Drawing.Size(152, 14);
+            this.textBox72.Size = new System.Drawing.Size(174, 18);
             this.textBox72.TabIndex = 34;
             this.textBox72.Text = "강의시간, 강의실";
             // 
             // txt_isajesugang
             // 
-            this.txt_isajesugang.Location = new System.Drawing.Point(227, 175);
+            this.txt_isajesugang.Location = new System.Drawing.Point(259, 219);
+            this.txt_isajesugang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_isajesugang.Name = "txt_isajesugang";
-            this.txt_isajesugang.Size = new System.Drawing.Size(67, 21);
+            this.txt_isajesugang.Size = new System.Drawing.Size(76, 25);
             this.txt_isajesugang.TabIndex = 33;
             // 
             // textBox70
@@ -399,38 +426,43 @@
             this.textBox70.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox70.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox70.ForeColor = System.Drawing.Color.Blue;
-            this.textBox70.Location = new System.Drawing.Point(156, 178);
+            this.textBox70.Location = new System.Drawing.Point(178, 222);
+            this.textBox70.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox70.Name = "textBox70";
-            this.textBox70.Size = new System.Drawing.Size(77, 14);
+            this.textBox70.Size = new System.Drawing.Size(88, 18);
             this.textBox70.TabIndex = 32;
             this.textBox70.Text = "수강현황";
             // 
             // txt_InstructorName
             // 
-            this.txt_InstructorName.Location = new System.Drawing.Point(359, 39);
+            this.txt_InstructorName.Location = new System.Drawing.Point(410, 49);
+            this.txt_InstructorName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_InstructorName.Name = "txt_InstructorName";
-            this.txt_InstructorName.Size = new System.Drawing.Size(78, 21);
+            this.txt_InstructorName.Size = new System.Drawing.Size(89, 25);
             this.txt_InstructorName.TabIndex = 31;
             // 
             // txt_CourseCredit
             // 
-            this.txt_CourseCredit.Location = new System.Drawing.Point(227, 38);
+            this.txt_CourseCredit.Location = new System.Drawing.Point(259, 48);
+            this.txt_CourseCredit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_CourseCredit.Name = "txt_CourseCredit";
-            this.txt_CourseCredit.Size = new System.Drawing.Size(67, 21);
+            this.txt_CourseCredit.Size = new System.Drawing.Size(76, 25);
             this.txt_CourseCredit.TabIndex = 30;
             // 
             // txt_CourseName
             // 
-            this.txt_CourseName.Location = new System.Drawing.Point(227, 15);
+            this.txt_CourseName.Location = new System.Drawing.Point(259, 19);
+            this.txt_CourseName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_CourseName.Name = "txt_CourseName";
-            this.txt_CourseName.Size = new System.Drawing.Size(210, 21);
+            this.txt_CourseName.Size = new System.Drawing.Size(239, 25);
             this.txt_CourseName.TabIndex = 29;
             // 
             // txt_CourseType
             // 
-            this.txt_CourseType.Location = new System.Drawing.Point(83, 38);
+            this.txt_CourseType.Location = new System.Drawing.Point(95, 48);
+            this.txt_CourseType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_CourseType.Name = "txt_CourseType";
-            this.txt_CourseType.Size = new System.Drawing.Size(90, 21);
+            this.txt_CourseType.Size = new System.Drawing.Size(102, 25);
             this.txt_CourseType.TabIndex = 28;
             // 
             // textBox65
@@ -438,9 +470,10 @@
             this.textBox65.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox65.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox65.ForeColor = System.Drawing.Color.Blue;
-            this.textBox65.Location = new System.Drawing.Point(300, 42);
+            this.textBox65.Location = new System.Drawing.Point(343, 52);
+            this.textBox65.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox65.Name = "textBox65";
-            this.textBox65.Size = new System.Drawing.Size(77, 14);
+            this.textBox65.Size = new System.Drawing.Size(88, 18);
             this.textBox65.TabIndex = 27;
             this.textBox65.Text = "담당교수";
             // 
@@ -449,17 +482,19 @@
             this.textBox64.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox64.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox64.ForeColor = System.Drawing.Color.Blue;
-            this.textBox64.Location = new System.Drawing.Point(184, 43);
+            this.textBox64.Location = new System.Drawing.Point(210, 54);
+            this.textBox64.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox64.Name = "textBox64";
-            this.textBox64.Size = new System.Drawing.Size(77, 14);
+            this.textBox64.Size = new System.Drawing.Size(88, 18);
             this.textBox64.TabIndex = 26;
             this.textBox64.Text = "학  점";
             // 
             // txt_Hakjung
             // 
-            this.txt_Hakjung.Location = new System.Drawing.Point(83, 14);
+            this.txt_Hakjung.Location = new System.Drawing.Point(95, 18);
+            this.txt_Hakjung.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Hakjung.Name = "txt_Hakjung";
-            this.txt_Hakjung.Size = new System.Drawing.Size(90, 21);
+            this.txt_Hakjung.Size = new System.Drawing.Size(102, 25);
             this.txt_Hakjung.TabIndex = 25;
             this.txt_Hakjung.TextChanged += new System.EventHandler(this.txt_Hakjung_TextChanged);
             // 
@@ -468,9 +503,10 @@
             this.textBox62.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox62.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox62.ForeColor = System.Drawing.Color.Blue;
-            this.textBox62.Location = new System.Drawing.Point(182, 20);
+            this.textBox62.Location = new System.Drawing.Point(208, 25);
+            this.textBox62.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox62.Name = "textBox62";
-            this.textBox62.Size = new System.Drawing.Size(77, 14);
+            this.textBox62.Size = new System.Drawing.Size(88, 18);
             this.textBox62.TabIndex = 4;
             this.textBox62.Text = "과목명";
             // 
@@ -479,9 +515,10 @@
             this.textBox61.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox61.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox61.ForeColor = System.Drawing.Color.Blue;
-            this.textBox61.Location = new System.Drawing.Point(26, 42);
+            this.textBox61.Location = new System.Drawing.Point(30, 52);
+            this.textBox61.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox61.Name = "textBox61";
-            this.textBox61.Size = new System.Drawing.Size(77, 14);
+            this.textBox61.Size = new System.Drawing.Size(88, 18);
             this.textBox61.TabIndex = 3;
             this.textBox61.Text = "이수구분";
             // 
@@ -490,9 +527,10 @@
             this.textBox60.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox60.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox60.ForeColor = System.Drawing.Color.Blue;
-            this.textBox60.Location = new System.Drawing.Point(26, 20);
+            this.textBox60.Location = new System.Drawing.Point(30, 25);
+            this.textBox60.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(77, 14);
+            this.textBox60.Size = new System.Drawing.Size(88, 18);
             this.textBox60.TabIndex = 2;
             this.textBox60.Text = "학정번호";
             // 
@@ -504,32 +542,37 @@
             this.groupBox4.Controls.Add(this.textBox8);
             this.groupBox4.Controls.Add(this.textBox7);
             this.groupBox4.Controls.Add(this.textBox6);
-            this.groupBox4.Location = new System.Drawing.Point(8, 329);
+            this.groupBox4.Location = new System.Drawing.Point(9, 411);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(201, 96);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Size = new System.Drawing.Size(230, 120);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "신청자정보";
             // 
             // txt_YearSemester
             // 
-            this.txt_YearSemester.Location = new System.Drawing.Point(94, 69);
+            this.txt_YearSemester.Location = new System.Drawing.Point(107, 86);
+            this.txt_YearSemester.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_YearSemester.Name = "txt_YearSemester";
-            this.txt_YearSemester.Size = new System.Drawing.Size(90, 21);
+            this.txt_YearSemester.Size = new System.Drawing.Size(102, 25);
             this.txt_YearSemester.TabIndex = 28;
             // 
             // txt_StuName
             // 
-            this.txt_StuName.Location = new System.Drawing.Point(94, 44);
+            this.txt_StuName.Location = new System.Drawing.Point(107, 55);
+            this.txt_StuName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_StuName.Name = "txt_StuName";
-            this.txt_StuName.Size = new System.Drawing.Size(90, 21);
+            this.txt_StuName.Size = new System.Drawing.Size(102, 25);
             this.txt_StuName.TabIndex = 27;
             // 
             // txt_StuID
             // 
-            this.txt_StuID.Location = new System.Drawing.Point(94, 17);
+            this.txt_StuID.Location = new System.Drawing.Point(107, 21);
+            this.txt_StuID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_StuID.Name = "txt_StuID";
-            this.txt_StuID.Size = new System.Drawing.Size(90, 21);
+            this.txt_StuID.Size = new System.Drawing.Size(102, 25);
             this.txt_StuID.TabIndex = 26;
             // 
             // textBox8
@@ -538,9 +581,10 @@
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox8.ForeColor = System.Drawing.Color.Blue;
-            this.textBox8.Location = new System.Drawing.Point(4, 72);
+            this.textBox8.Location = new System.Drawing.Point(5, 90);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(69, 14);
+            this.textBox8.Size = new System.Drawing.Size(79, 18);
             this.textBox8.TabIndex = 2;
             this.textBox8.Text = "년도학기";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -551,9 +595,10 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox7.ForeColor = System.Drawing.Color.Blue;
-            this.textBox7.Location = new System.Drawing.Point(4, 47);
+            this.textBox7.Location = new System.Drawing.Point(5, 59);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(69, 14);
+            this.textBox7.Size = new System.Drawing.Size(79, 18);
             this.textBox7.TabIndex = 1;
             this.textBox7.Text = "성     명";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -564,9 +609,10 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox6.ForeColor = System.Drawing.Color.Blue;
-            this.textBox6.Location = new System.Drawing.Point(4, 20);
+            this.textBox6.Location = new System.Drawing.Point(5, 25);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(69, 14);
+            this.textBox6.Size = new System.Drawing.Size(79, 18);
             this.textBox6.TabIndex = 0;
             this.textBox6.Text = "학     번";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -579,32 +625,37 @@
             this.groupBox5.Controls.Add(this.textBox11);
             this.groupBox5.Controls.Add(this.textBox10);
             this.groupBox5.Controls.Add(this.textBox9);
-            this.groupBox5.Location = new System.Drawing.Point(8, 431);
+            this.groupBox5.Location = new System.Drawing.Point(9, 539);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(201, 116);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox5.Size = new System.Drawing.Size(230, 145);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "신청정보";
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(94, 85);
+            this.textBox21.Location = new System.Drawing.Point(107, 106);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(90, 21);
+            this.textBox21.Size = new System.Drawing.Size(102, 25);
             this.textBox21.TabIndex = 28;
             // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(94, 53);
+            this.textBox20.Location = new System.Drawing.Point(107, 66);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(90, 21);
+            this.textBox20.Size = new System.Drawing.Size(102, 25);
             this.textBox20.TabIndex = 27;
             // 
             // textBox19
             // 
-            this.textBox19.Location = new System.Drawing.Point(94, 17);
+            this.textBox19.Location = new System.Drawing.Point(107, 21);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(90, 21);
+            this.textBox19.Size = new System.Drawing.Size(102, 25);
             this.textBox19.TabIndex = 26;
             // 
             // textBox11
@@ -613,9 +664,10 @@
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox11.ForeColor = System.Drawing.Color.Blue;
-            this.textBox11.Location = new System.Drawing.Point(4, 89);
+            this.textBox11.Location = new System.Drawing.Point(5, 111);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(69, 14);
+            this.textBox11.Size = new System.Drawing.Size(79, 18);
             this.textBox11.TabIndex = 5;
             this.textBox11.Text = "총  신  청";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -626,9 +678,10 @@
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox10.ForeColor = System.Drawing.Color.Blue;
-            this.textBox10.Location = new System.Drawing.Point(4, 56);
+            this.textBox10.Location = new System.Drawing.Point(5, 70);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(69, 14);
+            this.textBox10.Size = new System.Drawing.Size(79, 18);
             this.textBox10.TabIndex = 4;
             this.textBox10.Text = "본교신청";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -639,9 +692,10 @@
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox9.ForeColor = System.Drawing.Color.Blue;
-            this.textBox9.Location = new System.Drawing.Point(4, 20);
+            this.textBox9.Location = new System.Drawing.Point(5, 25);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(69, 14);
+            this.textBox9.Size = new System.Drawing.Size(79, 18);
             this.textBox9.TabIndex = 3;
             this.textBox9.Text = "타교신청";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -711,9 +765,11 @@
             this.groupBox6.Controls.Add(this.textBox12);
             this.groupBox6.Controls.Add(this.textBox5);
             this.groupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.groupBox6.Location = new System.Drawing.Point(676, 329);
+            this.groupBox6.Location = new System.Drawing.Point(773, 411);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(646, 320);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox6.Size = new System.Drawing.Size(738, 400);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "즐겨찾기";
@@ -723,300 +779,342 @@
             this.textBox56.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox56.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox56.ForeColor = System.Drawing.Color.Blue;
-            this.textBox56.Location = new System.Drawing.Point(16, 291);
+            this.textBox56.Location = new System.Drawing.Point(18, 364);
+            this.textBox56.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox56.Name = "textBox56";
-            this.textBox56.Size = new System.Drawing.Size(596, 14);
+            this.textBox56.Size = new System.Drawing.Size(681, 18);
             this.textBox56.TabIndex = 71;
             this.textBox56.Text = "※ 인증번호는 없습니다";
             // 
             // txt_lect8
             // 
-            this.txt_lect8.Location = new System.Drawing.Point(474, 243);
+            this.txt_lect8.Location = new System.Drawing.Point(542, 304);
+            this.txt_lect8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lect8.Name = "txt_lect8";
-            this.txt_lect8.Size = new System.Drawing.Size(111, 21);
+            this.txt_lect8.Size = new System.Drawing.Size(126, 25);
             this.txt_lect8.TabIndex = 70;
             // 
             // txt_lect7
             // 
-            this.txt_lect7.Location = new System.Drawing.Point(474, 214);
+            this.txt_lect7.Location = new System.Drawing.Point(542, 268);
+            this.txt_lect7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lect7.Name = "txt_lect7";
-            this.txt_lect7.Size = new System.Drawing.Size(111, 21);
+            this.txt_lect7.Size = new System.Drawing.Size(126, 25);
             this.txt_lect7.TabIndex = 69;
             // 
             // txt_lect6
             // 
-            this.txt_lect6.Location = new System.Drawing.Point(474, 185);
+            this.txt_lect6.Location = new System.Drawing.Point(542, 231);
+            this.txt_lect6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lect6.Name = "txt_lect6";
-            this.txt_lect6.Size = new System.Drawing.Size(111, 21);
+            this.txt_lect6.Size = new System.Drawing.Size(126, 25);
             this.txt_lect6.TabIndex = 68;
             // 
             // txt_lect5
             // 
-            this.txt_lect5.Location = new System.Drawing.Point(474, 156);
+            this.txt_lect5.Location = new System.Drawing.Point(542, 195);
+            this.txt_lect5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lect5.Name = "txt_lect5";
-            this.txt_lect5.Size = new System.Drawing.Size(111, 21);
+            this.txt_lect5.Size = new System.Drawing.Size(126, 25);
             this.txt_lect5.TabIndex = 67;
             // 
             // txt_lect4
             // 
-            this.txt_lect4.Location = new System.Drawing.Point(474, 127);
+            this.txt_lect4.Location = new System.Drawing.Point(542, 159);
+            this.txt_lect4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lect4.Name = "txt_lect4";
-            this.txt_lect4.Size = new System.Drawing.Size(111, 21);
+            this.txt_lect4.Size = new System.Drawing.Size(126, 25);
             this.txt_lect4.TabIndex = 66;
             // 
             // txt_lect3
             // 
-            this.txt_lect3.Location = new System.Drawing.Point(474, 98);
+            this.txt_lect3.Location = new System.Drawing.Point(542, 122);
+            this.txt_lect3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lect3.Name = "txt_lect3";
-            this.txt_lect3.Size = new System.Drawing.Size(111, 21);
+            this.txt_lect3.Size = new System.Drawing.Size(126, 25);
             this.txt_lect3.TabIndex = 65;
             // 
             // txt_lect2
             // 
-            this.txt_lect2.Location = new System.Drawing.Point(474, 69);
+            this.txt_lect2.Location = new System.Drawing.Point(542, 86);
+            this.txt_lect2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lect2.Name = "txt_lect2";
-            this.txt_lect2.Size = new System.Drawing.Size(111, 21);
+            this.txt_lect2.Size = new System.Drawing.Size(126, 25);
             this.txt_lect2.TabIndex = 64;
             // 
             // txt_lect1
             // 
-            this.txt_lect1.Location = new System.Drawing.Point(474, 38);
+            this.txt_lect1.Location = new System.Drawing.Point(542, 48);
+            this.txt_lect1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lect1.Name = "txt_lect1";
-            this.txt_lect1.Size = new System.Drawing.Size(111, 21);
+            this.txt_lect1.Size = new System.Drawing.Size(126, 25);
             this.txt_lect1.TabIndex = 63;
             // 
             // txt_prof8
             // 
-            this.txt_prof8.Location = new System.Drawing.Point(402, 243);
+            this.txt_prof8.Location = new System.Drawing.Point(459, 304);
+            this.txt_prof8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_prof8.Name = "txt_prof8";
-            this.txt_prof8.Size = new System.Drawing.Size(66, 21);
+            this.txt_prof8.Size = new System.Drawing.Size(75, 25);
             this.txt_prof8.TabIndex = 62;
             // 
             // txt_prof7
             // 
-            this.txt_prof7.Location = new System.Drawing.Point(402, 214);
+            this.txt_prof7.Location = new System.Drawing.Point(459, 268);
+            this.txt_prof7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_prof7.Name = "txt_prof7";
-            this.txt_prof7.Size = new System.Drawing.Size(66, 21);
+            this.txt_prof7.Size = new System.Drawing.Size(75, 25);
             this.txt_prof7.TabIndex = 61;
             // 
             // txt_prof6
             // 
-            this.txt_prof6.Location = new System.Drawing.Point(402, 185);
+            this.txt_prof6.Location = new System.Drawing.Point(459, 231);
+            this.txt_prof6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_prof6.Name = "txt_prof6";
-            this.txt_prof6.Size = new System.Drawing.Size(66, 21);
+            this.txt_prof6.Size = new System.Drawing.Size(75, 25);
             this.txt_prof6.TabIndex = 60;
             // 
             // txt_prof5
             // 
-            this.txt_prof5.Location = new System.Drawing.Point(402, 156);
+            this.txt_prof5.Location = new System.Drawing.Point(459, 195);
+            this.txt_prof5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_prof5.Name = "txt_prof5";
-            this.txt_prof5.Size = new System.Drawing.Size(66, 21);
+            this.txt_prof5.Size = new System.Drawing.Size(75, 25);
             this.txt_prof5.TabIndex = 59;
             this.txt_prof5.TextChanged += new System.EventHandler(this.textBox44_TextChanged);
             // 
             // txt_prof4
             // 
-            this.txt_prof4.Location = new System.Drawing.Point(402, 127);
+            this.txt_prof4.Location = new System.Drawing.Point(459, 159);
+            this.txt_prof4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_prof4.Name = "txt_prof4";
-            this.txt_prof4.Size = new System.Drawing.Size(66, 21);
+            this.txt_prof4.Size = new System.Drawing.Size(75, 25);
             this.txt_prof4.TabIndex = 58;
             // 
             // txt_prof3
             // 
-            this.txt_prof3.Location = new System.Drawing.Point(402, 98);
+            this.txt_prof3.Location = new System.Drawing.Point(459, 122);
+            this.txt_prof3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_prof3.Name = "txt_prof3";
-            this.txt_prof3.Size = new System.Drawing.Size(66, 21);
+            this.txt_prof3.Size = new System.Drawing.Size(75, 25);
             this.txt_prof3.TabIndex = 57;
             // 
             // txt_prof2
             // 
-            this.txt_prof2.Location = new System.Drawing.Point(402, 69);
+            this.txt_prof2.Location = new System.Drawing.Point(459, 86);
+            this.txt_prof2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_prof2.Name = "txt_prof2";
-            this.txt_prof2.Size = new System.Drawing.Size(66, 21);
+            this.txt_prof2.Size = new System.Drawing.Size(75, 25);
             this.txt_prof2.TabIndex = 56;
             // 
             // txt_prof1
             // 
-            this.txt_prof1.Location = new System.Drawing.Point(402, 38);
+            this.txt_prof1.Location = new System.Drawing.Point(459, 48);
+            this.txt_prof1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_prof1.Name = "txt_prof1";
-            this.txt_prof1.Size = new System.Drawing.Size(66, 21);
+            this.txt_prof1.Size = new System.Drawing.Size(75, 25);
             this.txt_prof1.TabIndex = 55;
             // 
             // txt_cred8
             // 
-            this.txt_cred8.Location = new System.Drawing.Point(364, 243);
+            this.txt_cred8.Location = new System.Drawing.Point(416, 304);
+            this.txt_cred8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_cred8.Name = "txt_cred8";
-            this.txt_cred8.Size = new System.Drawing.Size(32, 21);
+            this.txt_cred8.Size = new System.Drawing.Size(36, 25);
             this.txt_cred8.TabIndex = 54;
             // 
             // txt_cred7
             // 
-            this.txt_cred7.Location = new System.Drawing.Point(364, 214);
+            this.txt_cred7.Location = new System.Drawing.Point(416, 268);
+            this.txt_cred7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_cred7.Name = "txt_cred7";
-            this.txt_cred7.Size = new System.Drawing.Size(32, 21);
+            this.txt_cred7.Size = new System.Drawing.Size(36, 25);
             this.txt_cred7.TabIndex = 53;
             // 
             // txt_cred6
             // 
-            this.txt_cred6.Location = new System.Drawing.Point(364, 185);
+            this.txt_cred6.Location = new System.Drawing.Point(416, 231);
+            this.txt_cred6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_cred6.Name = "txt_cred6";
-            this.txt_cred6.Size = new System.Drawing.Size(32, 21);
+            this.txt_cred6.Size = new System.Drawing.Size(36, 25);
             this.txt_cred6.TabIndex = 52;
             // 
             // txt_cred5
             // 
-            this.txt_cred5.Location = new System.Drawing.Point(364, 155);
+            this.txt_cred5.Location = new System.Drawing.Point(416, 194);
+            this.txt_cred5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_cred5.Name = "txt_cred5";
-            this.txt_cred5.Size = new System.Drawing.Size(32, 21);
+            this.txt_cred5.Size = new System.Drawing.Size(36, 25);
             this.txt_cred5.TabIndex = 51;
             // 
             // txt_cred4
             // 
-            this.txt_cred4.Location = new System.Drawing.Point(364, 127);
+            this.txt_cred4.Location = new System.Drawing.Point(416, 159);
+            this.txt_cred4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_cred4.Name = "txt_cred4";
-            this.txt_cred4.Size = new System.Drawing.Size(32, 21);
+            this.txt_cred4.Size = new System.Drawing.Size(36, 25);
             this.txt_cred4.TabIndex = 50;
             // 
             // txt_cred3
             // 
-            this.txt_cred3.Location = new System.Drawing.Point(364, 98);
+            this.txt_cred3.Location = new System.Drawing.Point(416, 122);
+            this.txt_cred3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_cred3.Name = "txt_cred3";
-            this.txt_cred3.Size = new System.Drawing.Size(32, 21);
+            this.txt_cred3.Size = new System.Drawing.Size(36, 25);
             this.txt_cred3.TabIndex = 49;
             // 
             // txt_cred2
             // 
-            this.txt_cred2.Location = new System.Drawing.Point(364, 69);
+            this.txt_cred2.Location = new System.Drawing.Point(416, 86);
+            this.txt_cred2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_cred2.Name = "txt_cred2";
-            this.txt_cred2.Size = new System.Drawing.Size(32, 21);
+            this.txt_cred2.Size = new System.Drawing.Size(36, 25);
             this.txt_cred2.TabIndex = 48;
             // 
             // txt_cred1
             // 
-            this.txt_cred1.Location = new System.Drawing.Point(364, 38);
+            this.txt_cred1.Location = new System.Drawing.Point(416, 48);
+            this.txt_cred1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_cred1.Name = "txt_cred1";
-            this.txt_cred1.Size = new System.Drawing.Size(32, 21);
+            this.txt_cred1.Size = new System.Drawing.Size(36, 25);
             this.txt_cred1.TabIndex = 47;
             // 
             // txt_lec_name8
             // 
-            this.txt_lec_name8.Location = new System.Drawing.Point(183, 243);
+            this.txt_lec_name8.Location = new System.Drawing.Point(209, 304);
+            this.txt_lec_name8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_name8.Name = "txt_lec_name8";
-            this.txt_lec_name8.Size = new System.Drawing.Size(177, 21);
+            this.txt_lec_name8.Size = new System.Drawing.Size(202, 25);
             this.txt_lec_name8.TabIndex = 46;
             // 
             // txt_lec_name7
             // 
-            this.txt_lec_name7.Location = new System.Drawing.Point(183, 214);
+            this.txt_lec_name7.Location = new System.Drawing.Point(209, 268);
+            this.txt_lec_name7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_name7.Name = "txt_lec_name7";
-            this.txt_lec_name7.Size = new System.Drawing.Size(177, 21);
+            this.txt_lec_name7.Size = new System.Drawing.Size(202, 25);
             this.txt_lec_name7.TabIndex = 45;
             // 
             // txt_lec_name6
             // 
-            this.txt_lec_name6.Location = new System.Drawing.Point(183, 183);
+            this.txt_lec_name6.Location = new System.Drawing.Point(209, 229);
+            this.txt_lec_name6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_name6.Name = "txt_lec_name6";
-            this.txt_lec_name6.Size = new System.Drawing.Size(177, 21);
+            this.txt_lec_name6.Size = new System.Drawing.Size(202, 25);
             this.txt_lec_name6.TabIndex = 44;
             // 
             // txt_lec_name5
             // 
-            this.txt_lec_name5.Location = new System.Drawing.Point(183, 156);
+            this.txt_lec_name5.Location = new System.Drawing.Point(209, 195);
+            this.txt_lec_name5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_name5.Name = "txt_lec_name5";
-            this.txt_lec_name5.Size = new System.Drawing.Size(177, 21);
+            this.txt_lec_name5.Size = new System.Drawing.Size(202, 25);
             this.txt_lec_name5.TabIndex = 43;
             // 
             // txt_lec_name4
             // 
-            this.txt_lec_name4.Location = new System.Drawing.Point(183, 127);
+            this.txt_lec_name4.Location = new System.Drawing.Point(209, 159);
+            this.txt_lec_name4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_name4.Name = "txt_lec_name4";
-            this.txt_lec_name4.Size = new System.Drawing.Size(177, 21);
+            this.txt_lec_name4.Size = new System.Drawing.Size(202, 25);
             this.txt_lec_name4.TabIndex = 42;
             // 
             // txt_lec_name3
             // 
-            this.txt_lec_name3.Location = new System.Drawing.Point(183, 98);
+            this.txt_lec_name3.Location = new System.Drawing.Point(209, 122);
+            this.txt_lec_name3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_name3.Name = "txt_lec_name3";
-            this.txt_lec_name3.Size = new System.Drawing.Size(177, 21);
+            this.txt_lec_name3.Size = new System.Drawing.Size(202, 25);
             this.txt_lec_name3.TabIndex = 41;
             // 
             // txt_lec_name2
             // 
-            this.txt_lec_name2.Location = new System.Drawing.Point(183, 69);
+            this.txt_lec_name2.Location = new System.Drawing.Point(209, 86);
+            this.txt_lec_name2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_name2.Name = "txt_lec_name2";
-            this.txt_lec_name2.Size = new System.Drawing.Size(177, 21);
+            this.txt_lec_name2.Size = new System.Drawing.Size(202, 25);
             this.txt_lec_name2.TabIndex = 40;
             // 
             // txt_lec_code8
             // 
-            this.txt_lec_code8.Location = new System.Drawing.Point(87, 243);
+            this.txt_lec_code8.Location = new System.Drawing.Point(99, 304);
+            this.txt_lec_code8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_code8.Name = "txt_lec_code8";
-            this.txt_lec_code8.Size = new System.Drawing.Size(90, 21);
+            this.txt_lec_code8.Size = new System.Drawing.Size(102, 25);
             this.txt_lec_code8.TabIndex = 39;
             // 
             // txt_lec_code7
             // 
-            this.txt_lec_code7.Location = new System.Drawing.Point(87, 214);
+            this.txt_lec_code7.Location = new System.Drawing.Point(99, 268);
+            this.txt_lec_code7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_code7.Name = "txt_lec_code7";
-            this.txt_lec_code7.Size = new System.Drawing.Size(90, 21);
+            this.txt_lec_code7.Size = new System.Drawing.Size(102, 25);
             this.txt_lec_code7.TabIndex = 38;
             // 
             // txt_lec_code6
             // 
-            this.txt_lec_code6.Location = new System.Drawing.Point(87, 185);
+            this.txt_lec_code6.Location = new System.Drawing.Point(99, 231);
+            this.txt_lec_code6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_code6.Name = "txt_lec_code6";
-            this.txt_lec_code6.Size = new System.Drawing.Size(90, 21);
+            this.txt_lec_code6.Size = new System.Drawing.Size(102, 25);
             this.txt_lec_code6.TabIndex = 37;
             // 
             // txt_lec_code5
             // 
-            this.txt_lec_code5.Location = new System.Drawing.Point(87, 156);
+            this.txt_lec_code5.Location = new System.Drawing.Point(99, 195);
+            this.txt_lec_code5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_code5.Name = "txt_lec_code5";
-            this.txt_lec_code5.Size = new System.Drawing.Size(90, 21);
+            this.txt_lec_code5.Size = new System.Drawing.Size(102, 25);
             this.txt_lec_code5.TabIndex = 36;
             // 
             // txt_lec_code4
             // 
-            this.txt_lec_code4.Location = new System.Drawing.Point(87, 127);
+            this.txt_lec_code4.Location = new System.Drawing.Point(99, 159);
+            this.txt_lec_code4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_code4.Name = "txt_lec_code4";
-            this.txt_lec_code4.Size = new System.Drawing.Size(90, 21);
+            this.txt_lec_code4.Size = new System.Drawing.Size(102, 25);
             this.txt_lec_code4.TabIndex = 35;
             this.txt_lec_code4.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
             // txt_lec_code3
             // 
-            this.txt_lec_code3.Location = new System.Drawing.Point(87, 98);
+            this.txt_lec_code3.Location = new System.Drawing.Point(99, 122);
+            this.txt_lec_code3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_code3.Name = "txt_lec_code3";
-            this.txt_lec_code3.Size = new System.Drawing.Size(90, 21);
+            this.txt_lec_code3.Size = new System.Drawing.Size(102, 25);
             this.txt_lec_code3.TabIndex = 34;
             // 
             // txt_lec_code2
             // 
-            this.txt_lec_code2.Location = new System.Drawing.Point(87, 69);
+            this.txt_lec_code2.Location = new System.Drawing.Point(99, 86);
+            this.txt_lec_code2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_code2.Name = "txt_lec_code2";
-            this.txt_lec_code2.Size = new System.Drawing.Size(90, 21);
+            this.txt_lec_code2.Size = new System.Drawing.Size(102, 25);
             this.txt_lec_code2.TabIndex = 33;
             // 
             // txt_lec_name1
             // 
-            this.txt_lec_name1.Location = new System.Drawing.Point(183, 38);
+            this.txt_lec_name1.Location = new System.Drawing.Point(209, 48);
+            this.txt_lec_name1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_name1.Name = "txt_lec_name1";
-            this.txt_lec_name1.Size = new System.Drawing.Size(177, 21);
+            this.txt_lec_name1.Size = new System.Drawing.Size(202, 25);
             this.txt_lec_name1.TabIndex = 32;
             // 
             // txt_lec_code1
             // 
-            this.txt_lec_code1.Location = new System.Drawing.Point(87, 38);
+            this.txt_lec_code1.Location = new System.Drawing.Point(99, 48);
+            this.txt_lec_code1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_lec_code1.Name = "txt_lec_code1";
-            this.txt_lec_code1.Size = new System.Drawing.Size(90, 21);
+            this.txt_lec_code1.Size = new System.Drawing.Size(102, 25);
             this.txt_lec_code1.TabIndex = 24;
             // 
             // btn_inq8
             // 
             this.btn_inq8.ForeColor = System.Drawing.Color.Black;
-            this.btn_inq8.Location = new System.Drawing.Point(6, 241);
+            this.btn_inq8.Location = new System.Drawing.Point(7, 301);
+            this.btn_inq8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_inq8.Name = "btn_inq8";
-            this.btn_inq8.Size = new System.Drawing.Size(75, 23);
+            this.btn_inq8.Size = new System.Drawing.Size(86, 29);
             this.btn_inq8.TabIndex = 23;
             this.btn_inq8.Text = "과목조회8";
             this.btn_inq8.UseVisualStyleBackColor = true;
@@ -1025,9 +1123,10 @@
             // btn_inq7
             // 
             this.btn_inq7.ForeColor = System.Drawing.Color.Black;
-            this.btn_inq7.Location = new System.Drawing.Point(6, 212);
+            this.btn_inq7.Location = new System.Drawing.Point(7, 265);
+            this.btn_inq7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_inq7.Name = "btn_inq7";
-            this.btn_inq7.Size = new System.Drawing.Size(75, 23);
+            this.btn_inq7.Size = new System.Drawing.Size(86, 29);
             this.btn_inq7.TabIndex = 22;
             this.btn_inq7.Text = "과목조회7";
             this.btn_inq7.UseVisualStyleBackColor = true;
@@ -1036,9 +1135,10 @@
             // btn_inq6
             // 
             this.btn_inq6.ForeColor = System.Drawing.Color.Black;
-            this.btn_inq6.Location = new System.Drawing.Point(6, 183);
+            this.btn_inq6.Location = new System.Drawing.Point(7, 229);
+            this.btn_inq6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_inq6.Name = "btn_inq6";
-            this.btn_inq6.Size = new System.Drawing.Size(75, 23);
+            this.btn_inq6.Size = new System.Drawing.Size(86, 29);
             this.btn_inq6.TabIndex = 21;
             this.btn_inq6.Text = "과목조회6";
             this.btn_inq6.UseVisualStyleBackColor = true;
@@ -1047,9 +1147,10 @@
             // btn_inq5
             // 
             this.btn_inq5.ForeColor = System.Drawing.Color.Black;
-            this.btn_inq5.Location = new System.Drawing.Point(6, 154);
+            this.btn_inq5.Location = new System.Drawing.Point(7, 192);
+            this.btn_inq5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_inq5.Name = "btn_inq5";
-            this.btn_inq5.Size = new System.Drawing.Size(75, 23);
+            this.btn_inq5.Size = new System.Drawing.Size(86, 29);
             this.btn_inq5.TabIndex = 20;
             this.btn_inq5.Text = "과목조회5";
             this.btn_inq5.UseVisualStyleBackColor = true;
@@ -1058,9 +1159,10 @@
             // btn_inq4
             // 
             this.btn_inq4.ForeColor = System.Drawing.Color.Black;
-            this.btn_inq4.Location = new System.Drawing.Point(6, 125);
+            this.btn_inq4.Location = new System.Drawing.Point(7, 156);
+            this.btn_inq4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_inq4.Name = "btn_inq4";
-            this.btn_inq4.Size = new System.Drawing.Size(75, 23);
+            this.btn_inq4.Size = new System.Drawing.Size(86, 29);
             this.btn_inq4.TabIndex = 19;
             this.btn_inq4.Text = "과목조회4";
             this.btn_inq4.UseVisualStyleBackColor = true;
@@ -1069,9 +1171,10 @@
             // btn_inq3
             // 
             this.btn_inq3.ForeColor = System.Drawing.Color.Black;
-            this.btn_inq3.Location = new System.Drawing.Point(6, 96);
+            this.btn_inq3.Location = new System.Drawing.Point(7, 120);
+            this.btn_inq3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_inq3.Name = "btn_inq3";
-            this.btn_inq3.Size = new System.Drawing.Size(75, 23);
+            this.btn_inq3.Size = new System.Drawing.Size(86, 29);
             this.btn_inq3.TabIndex = 18;
             this.btn_inq3.Text = "과목조회3";
             this.btn_inq3.UseVisualStyleBackColor = true;
@@ -1080,9 +1183,10 @@
             // btn_inq2
             // 
             this.btn_inq2.ForeColor = System.Drawing.Color.Black;
-            this.btn_inq2.Location = new System.Drawing.Point(6, 67);
+            this.btn_inq2.Location = new System.Drawing.Point(7, 84);
+            this.btn_inq2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_inq2.Name = "btn_inq2";
-            this.btn_inq2.Size = new System.Drawing.Size(75, 23);
+            this.btn_inq2.Size = new System.Drawing.Size(86, 29);
             this.btn_inq2.TabIndex = 17;
             this.btn_inq2.Text = "과목조회2";
             this.btn_inq2.UseVisualStyleBackColor = true;
@@ -1091,9 +1195,10 @@
             // btn_inq1
             // 
             this.btn_inq1.ForeColor = System.Drawing.Color.Black;
-            this.btn_inq1.Location = new System.Drawing.Point(6, 38);
+            this.btn_inq1.Location = new System.Drawing.Point(7, 48);
+            this.btn_inq1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_inq1.Name = "btn_inq1";
-            this.btn_inq1.Size = new System.Drawing.Size(75, 23);
+            this.btn_inq1.Size = new System.Drawing.Size(86, 29);
             this.btn_inq1.TabIndex = 16;
             this.btn_inq1.Text = "과목조회1";
             this.btn_inq1.UseVisualStyleBackColor = true;
@@ -1102,9 +1207,10 @@
             // btn_del8
             // 
             this.btn_del8.ForeColor = System.Drawing.Color.Black;
-            this.btn_del8.Location = new System.Drawing.Point(591, 241);
+            this.btn_del8.Location = new System.Drawing.Point(675, 301);
+            this.btn_del8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_del8.Name = "btn_del8";
-            this.btn_del8.Size = new System.Drawing.Size(43, 23);
+            this.btn_del8.Size = new System.Drawing.Size(49, 29);
             this.btn_del8.TabIndex = 15;
             this.btn_del8.Text = "삭제";
             this.btn_del8.UseVisualStyleBackColor = true;
@@ -1113,9 +1219,10 @@
             // btn_del7
             // 
             this.btn_del7.ForeColor = System.Drawing.Color.Black;
-            this.btn_del7.Location = new System.Drawing.Point(591, 212);
+            this.btn_del7.Location = new System.Drawing.Point(675, 265);
+            this.btn_del7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_del7.Name = "btn_del7";
-            this.btn_del7.Size = new System.Drawing.Size(43, 23);
+            this.btn_del7.Size = new System.Drawing.Size(49, 29);
             this.btn_del7.TabIndex = 14;
             this.btn_del7.Text = "삭제";
             this.btn_del7.UseVisualStyleBackColor = true;
@@ -1124,9 +1231,10 @@
             // btn_del6
             // 
             this.btn_del6.ForeColor = System.Drawing.Color.Black;
-            this.btn_del6.Location = new System.Drawing.Point(591, 183);
+            this.btn_del6.Location = new System.Drawing.Point(675, 229);
+            this.btn_del6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_del6.Name = "btn_del6";
-            this.btn_del6.Size = new System.Drawing.Size(43, 23);
+            this.btn_del6.Size = new System.Drawing.Size(49, 29);
             this.btn_del6.TabIndex = 13;
             this.btn_del6.Text = "삭제";
             this.btn_del6.UseVisualStyleBackColor = true;
@@ -1135,9 +1243,10 @@
             // btn_del3
             // 
             this.btn_del3.ForeColor = System.Drawing.Color.Black;
-            this.btn_del3.Location = new System.Drawing.Point(591, 96);
+            this.btn_del3.Location = new System.Drawing.Point(675, 120);
+            this.btn_del3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_del3.Name = "btn_del3";
-            this.btn_del3.Size = new System.Drawing.Size(43, 23);
+            this.btn_del3.Size = new System.Drawing.Size(49, 29);
             this.btn_del3.TabIndex = 12;
             this.btn_del3.Text = "삭제";
             this.btn_del3.UseVisualStyleBackColor = true;
@@ -1146,9 +1255,10 @@
             // btn_del4
             // 
             this.btn_del4.ForeColor = System.Drawing.Color.Black;
-            this.btn_del4.Location = new System.Drawing.Point(591, 125);
+            this.btn_del4.Location = new System.Drawing.Point(675, 156);
+            this.btn_del4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_del4.Name = "btn_del4";
-            this.btn_del4.Size = new System.Drawing.Size(43, 23);
+            this.btn_del4.Size = new System.Drawing.Size(49, 29);
             this.btn_del4.TabIndex = 11;
             this.btn_del4.Text = "삭제";
             this.btn_del4.UseVisualStyleBackColor = true;
@@ -1157,9 +1267,10 @@
             // btn_del5
             // 
             this.btn_del5.ForeColor = System.Drawing.Color.Black;
-            this.btn_del5.Location = new System.Drawing.Point(591, 154);
+            this.btn_del5.Location = new System.Drawing.Point(675, 192);
+            this.btn_del5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_del5.Name = "btn_del5";
-            this.btn_del5.Size = new System.Drawing.Size(43, 23);
+            this.btn_del5.Size = new System.Drawing.Size(49, 29);
             this.btn_del5.TabIndex = 10;
             this.btn_del5.Text = "삭제";
             this.btn_del5.UseVisualStyleBackColor = true;
@@ -1168,9 +1279,10 @@
             // btn_del2
             // 
             this.btn_del2.ForeColor = System.Drawing.Color.Black;
-            this.btn_del2.Location = new System.Drawing.Point(591, 67);
+            this.btn_del2.Location = new System.Drawing.Point(675, 84);
+            this.btn_del2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_del2.Name = "btn_del2";
-            this.btn_del2.Size = new System.Drawing.Size(43, 23);
+            this.btn_del2.Size = new System.Drawing.Size(49, 29);
             this.btn_del2.TabIndex = 9;
             this.btn_del2.Text = "삭제";
             this.btn_del2.UseVisualStyleBackColor = true;
@@ -1179,9 +1291,10 @@
             // btn_del1
             // 
             this.btn_del1.ForeColor = System.Drawing.Color.Black;
-            this.btn_del1.Location = new System.Drawing.Point(591, 38);
+            this.btn_del1.Location = new System.Drawing.Point(675, 48);
+            this.btn_del1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_del1.Name = "btn_del1";
-            this.btn_del1.Size = new System.Drawing.Size(43, 23);
+            this.btn_del1.Size = new System.Drawing.Size(49, 29);
             this.btn_del1.TabIndex = 8;
             this.btn_del1.Text = "삭제";
             this.btn_del1.UseVisualStyleBackColor = true;
@@ -1191,9 +1304,10 @@
             // 
             this.textBox15.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox15.Location = new System.Drawing.Point(500, 17);
+            this.textBox15.Location = new System.Drawing.Point(571, 21);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(62, 14);
+            this.textBox15.Size = new System.Drawing.Size(71, 18);
             this.textBox15.TabIndex = 7;
             this.textBox15.Text = "강의시간";
             // 
@@ -1201,9 +1315,10 @@
             // 
             this.textBox14.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox14.Location = new System.Drawing.Point(367, 18);
+            this.textBox14.Location = new System.Drawing.Point(419, 22);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(26, 14);
+            this.textBox14.Size = new System.Drawing.Size(30, 18);
             this.textBox14.TabIndex = 6;
             this.textBox14.Text = "학점";
             // 
@@ -1211,9 +1326,10 @@
             // 
             this.textBox13.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox13.Location = new System.Drawing.Point(409, 18);
+            this.textBox13.Location = new System.Drawing.Point(467, 22);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(59, 14);
+            this.textBox13.Size = new System.Drawing.Size(67, 18);
             this.textBox13.TabIndex = 5;
             this.textBox13.Text = "담당교수";
             // 
@@ -1221,9 +1337,10 @@
             // 
             this.textBox12.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Location = new System.Drawing.Point(249, 18);
+            this.textBox12.Location = new System.Drawing.Point(285, 22);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(37, 14);
+            this.textBox12.Size = new System.Drawing.Size(42, 18);
             this.textBox12.TabIndex = 4;
             this.textBox12.Text = "과목명";
             this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
@@ -1232,17 +1349,19 @@
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(104, 18);
+            this.textBox5.Location = new System.Drawing.Point(119, 22);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(52, 14);
+            this.textBox5.Size = new System.Drawing.Size(59, 18);
             this.textBox5.TabIndex = 3;
             this.textBox5.Text = "학정번호";
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(8, 553);
+            this.btn_close.Location = new System.Drawing.Point(9, 691);
+            this.btn_close.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(95, 36);
+            this.btn_close.Size = new System.Drawing.Size(109, 45);
             this.btn_close.TabIndex = 6;
             this.btn_close.Text = "종료";
             this.btn_close.UseVisualStyleBackColor = true;
@@ -1250,9 +1369,10 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(442, 553);
+            this.btn_delete.Location = new System.Drawing.Point(505, 691);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(95, 36);
+            this.btn_delete.Size = new System.Drawing.Size(109, 45);
             this.btn_delete.TabIndex = 7;
             this.btn_delete.Text = "수강삭제";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -1260,9 +1380,10 @@
             // 
             // btn_apply
             // 
-            this.btn_apply.Location = new System.Drawing.Point(543, 553);
+            this.btn_apply.Location = new System.Drawing.Point(621, 691);
+            this.btn_apply.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_apply.Name = "btn_apply";
-            this.btn_apply.Size = new System.Drawing.Size(127, 36);
+            this.btn_apply.Size = new System.Drawing.Size(145, 45);
             this.btn_apply.TabIndex = 8;
             this.btn_apply.Text = "수강신청";
             this.btn_apply.UseVisualStyleBackColor = true;
@@ -1273,9 +1394,10 @@
             this.textBox57.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox57.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox57.ForeColor = System.Drawing.Color.Black;
-            this.textBox57.Location = new System.Drawing.Point(8, 608);
+            this.textBox57.Location = new System.Drawing.Point(9, 760);
+            this.textBox57.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox57.Name = "textBox57";
-            this.textBox57.Size = new System.Drawing.Size(644, 14);
+            this.textBox57.Size = new System.Drawing.Size(736, 18);
             this.textBox57.TabIndex = 72;
             this.textBox57.Text = "* 즐겨찾기 등록 방법 : 과목검색 => 해당과목 선택(클릭) => 즐겨찾기번호 선택 => 즐겨찾기 추가 버튼(클릭)";
             // 
@@ -1284,9 +1406,10 @@
             this.textBox58.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox58.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox58.ForeColor = System.Drawing.Color.Black;
-            this.textBox58.Location = new System.Drawing.Point(8, 628);
+            this.textBox58.Location = new System.Drawing.Point(9, 785);
+            this.textBox58.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(644, 14);
+            this.textBox58.Size = new System.Drawing.Size(736, 18);
             this.textBox58.TabIndex = 73;
             this.textBox58.Text = "* 즐겨찾기 수강신청 : 신청하고자 하는 과목조회 버튼(클릭) => 수강신청 버튼(클릭)";
             // 
@@ -1295,19 +1418,20 @@
             this.textBox59.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox59.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox59.ForeColor = System.Drawing.Color.Black;
-            this.textBox59.Location = new System.Drawing.Point(188, 553);
+            this.textBox59.Location = new System.Drawing.Point(215, 691);
+            this.textBox59.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox59.Multiline = true;
             this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(248, 40);
+            this.textBox59.Size = new System.Drawing.Size(283, 50);
             this.textBox59.TabIndex = 74;
             this.textBox59.Text = "* 즐겨찾기 수강신청 : 신청하고자 하는 과목조회 버튼(클릭) => 수강신청 버튼(클릭)";
             this.textBox59.TextChanged += new System.EventHandler(this.textBox59_TextChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 661);
+            this.ClientSize = new System.Drawing.Size(1525, 826);
             this.Controls.Add(this.textBox59);
             this.Controls.Add(this.textBox58);
             this.Controls.Add(this.textBox57);
@@ -1320,8 +1444,10 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

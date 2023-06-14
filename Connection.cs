@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Runtime.Remoting;
 using AppswPacket;
+using System.Runtime.CompilerServices;
 
 namespace _2023AppSWClient
 {
@@ -19,10 +20,11 @@ namespace _2023AppSWClient
         public static NetworkStream stream;
         public static StreamReader reader;
         public static StreamWriter writer;
-        public static Packet init;
+        public static Packet pac;
         static byte[] readBuffer = new byte[1024 * 4];
         static byte[] sendBuffer = new byte[1024 * 4];
         public static Stack<Packet> stack = new Stack<Packet>();
+
         static public void Run()
         {
             try
@@ -52,12 +54,12 @@ namespace _2023AppSWClient
                 while (true)
                 {
                     bs = stream.Read(readBuffer, 0, 1024 * 4);
-                    Packet packet = (Packet)Packet.Desserialize(readBuffer);
+                    Initialize init = (Initialize)Packet.Desserialize(readBuffer);
 
-                    if (packet != null)
+                    if (init != null)
                     {
-                        init = ServerRst(packet);
-                        stack.Push(init);
+                        pac = ServerRst(init);
+                        stack.Push(pac);
                     }
                 }
             }
@@ -102,74 +104,89 @@ namespace _2023AppSWClient
             }
         }
 
-        static Packet ServerRst(Packet packet)
+        static Packet ServerRst(Initialize packet)
         {
             switch ((int)packet.Type)
             {
                 case (int)RegisterResult.OK:
                     {
                         Register register = new Register();
+                        register.Type = (int)RegisterResult.OK;
+                        register.ds = packet.ds;
                         return register;
                     }
                 case (int)RegisterResult.ForeignerOnly:
                     {
                         Register register = new Register();
+                        register.Type = (int)RegisterResult.ForeignerOnly;
                         return register;
                     }
                 case (int)RegisterResult.ExceedsCredit:
                     {
                         Register register = new Register();
+                        register.Type = (int)RegisterResult.ExceedsCredit;
                         return register;
                     }
                 case (int)RegisterResult.TimeConflicts:
                     {
                         Register register = new Register();
+                        register.Type = (int)RegisterResult.TimeConflicts;
                         return register;
                     }
                 case (int)RegisterResult.AlreadyRegistered:
                     {
                         Register register = new Register();
+                        register.Type = (int)RegisterResult.AlreadyRegistered;
                         return register;
                     }
                 case (int)RegisterResult.OverCapacity:
                     {
                         Register register = new Register();
+                        register.Type = (int)RegisterResult.OverCapacity;
                         return register;
                     }
                 case (int)RegisterResult.Error:
                     {
                         Register register = new Register();
+                        register.Type = (int)RegisterResult.Error;
                         return register;
                     }
                 case (int)InquireResult.OK:
                     {
                         inquire inquire = new inquire();
+                        inquire.Type = (int)InquireResult.OK;
+                        inquire.ds = packet.ds;
                         return inquire;
                     }
                 case (int)InquireResult.WrongCourseNumber:
                     {
                         inquire inquire = new inquire();
+                        inquire.Type = (int)InquireResult.WrongCourseNumber;
                         return inquire;
                     }
                 case (int)InquireResult.AlreadyTaken:
                     {
                         inquire inquire = new inquire();
+                        inquire.Type = (int)InquireResult.AlreadyTaken;
                         return inquire;
                     }
                 case (int)InquireResult.AlreadyFull:
                     {
                         inquire inquire = new inquire();
+                        inquire.Type = (int)InquireResult.AlreadyFull;
                         return inquire;
                     }
                 case (int)InquireResult.Error:
                     {
                         inquire inquire = new inquire();
+                        inquire.Type = (int)InquireResult.Error;
                         return inquire;
                     }
                 case (int)LoginResult.OK:
                     {
                         Login login = new Login();
                         login.Type = (int)LoginResult.OK;
+                        login.ds = packet.ds;
                         return login;
                     }
                 case (int)LoginResult.WrongPassword:
@@ -193,26 +210,33 @@ namespace _2023AppSWClient
                 case (int)FavoritesResult.OK:
                     {
                         Favorites favorites = new Favorites();
+                        favorites.Type = (int)FavoritesResult.OK;
+                        favorites.ds = packet.ds;
                         return favorites;
                     }
                 case (int)FavoritesResult.FAIL:
                     {
                         Favorites favorites = new Favorites();
+                        favorites.Type = (int)FavoritesResult.FAIL;
                         return favorites;
                     }
                 case (int)FavoritesResult.AlreadyExist:
                     {
                         Favorites favorites = new Favorites();
+                        favorites.Type = (int)FavoritesResult.AlreadyExist;
                         return favorites;
                     }
                 case (int)First_ProcessResult.OK:
                     {
                         Initialize init = new Initialize();
+                        init.Type = (int)First_ProcessResult.OK;
+                        init.ds = packet.ds;
                         return init;
                     }
                 case (int)First_ProcessResult.Error:
                     {
                         Initialize init = new Initialize();
+                        init.Type = (int)First_ProcessResult.Error;
                         return init;
                     }
             }
@@ -224,6 +248,16 @@ namespace _2023AppSWClient
         {
             Packet p = stack.Pop();
             return p;
+        }
+
+        public static void AbortThread()
+        {
+            try
+            {
+                client.Close();
+                rcvThread.Abort();
+            } catch(Exception e)
+            {}
         }
     }
 }
