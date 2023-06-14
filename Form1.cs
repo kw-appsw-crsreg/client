@@ -4,7 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
-
+using System.Threading;
+using System.Reflection;
+using Newtonsoft.Json;
 
 namespace _2023AppSWClient
 {
@@ -34,22 +36,131 @@ namespace _2023AppSWClient
             "행정학과","법학부","국제학부","자산관리학과", "전체검색", "공통"
             });
 
-        Packet packcet;
+        Packet packet;
+        private Thread sndThread;
         Login userInfo;
         public Form1(Login login)
         {
-            packcet = Connection.pac;
+            packet = Connection.pac;
             InitializeComponent();
             userInfo = login; //로그인폼으로부터 넘어온 사용자정보
+
+            string json = userInfo.ds;
+            DataSet ds = JsonConvert.DeserializeObject<DataSet>(json);
+
+            DataTable studentInfo = ds.Tables["student_info"];
+            DataTable favoritesList = ds.Tables["favorites_list"];
+            DataTable registeredList = ds.Tables["registered_list"];
+
+            txt_StuName.Text = studentInfo.Rows[0]["name"].ToString();
+
+            foreach (DataRow row in favoritesList.Rows)
+            {
+                int idx = Convert.ToInt32(row["idx"]);
+                string courseName = row["course_name"].ToString();
+                string courseID = row["course_id"].ToString();
+                int credit = Convert.ToInt32(row["credit"]);
+                string instructorName = row["instructor_Name"].ToString();
+                string time = row["time"].ToString();
+
+                if (idx == 1)
+                {
+                    txt_lec_code1.Text = courseID;
+                    txt_lec_name1.Text = courseName;
+                    txt_cred1.Text = credit.ToString();
+                    txt_prof1.Text = instructorName;
+                    txt_lect1.Text = time;
+                }
+                else if (idx == 2)
+                {
+                    txt_lec_code2.Text = courseID;
+                    txt_lec_name2.Text = courseName;
+                    txt_cred2.Text = credit.ToString();
+                    txt_prof2.Text = instructorName;
+                    txt_lect2.Text = time;
+                }
+                else if (idx == 3)
+                {
+                    txt_lec_code3.Text = courseID;
+                    txt_lec_name3.Text = courseName;
+                    txt_cred3.Text = credit.ToString();
+                    txt_prof3.Text = instructorName;
+                    txt_lect3.Text = time;
+                }
+                else if (idx == 4)
+                {
+                    txt_lec_code4.Text = courseID;
+                    txt_lec_name4.Text = courseName;
+                    txt_cred4.Text = credit.ToString();
+                    txt_prof4.Text = instructorName;
+                    txt_lect4.Text = time;
+                }
+                else if (idx == 5)
+                {
+                    txt_lec_code5.Text = courseID;
+                    txt_lec_name5.Text = courseName;
+                    txt_cred5.Text = credit.ToString();
+                    txt_prof5.Text = instructorName;
+                    txt_lect5.Text = time;
+                }
+                else if (idx == 6)
+                {
+                    txt_lec_code6.Text = courseID;
+                    txt_lec_name6.Text = courseName;
+                    txt_cred6.Text = credit.ToString();
+                    txt_prof6.Text = instructorName;
+                    txt_lect6.Text = time;
+                }
+                else if (idx == 7)
+                {
+                    txt_lec_code7.Text = courseID;
+                    txt_lec_name7.Text = courseName;
+                    txt_cred7.Text = credit.ToString();
+                    txt_prof7.Text = instructorName;
+                    txt_lect7.Text = time;
+                }
+                else if (idx == 8)
+                {
+                    txt_lec_code8.Text = courseID;
+                    txt_lec_name8.Text = courseName;
+                    txt_cred8.Text = credit.ToString();
+                    txt_prof8.Text = instructorName;
+                    txt_lect8.Text = time;
+                }
+            }
+
+            foreach (DataRow row in registeredList.Rows)
+            {
+                string courseID = row["course_id"].ToString();
+                string type = row["type"].ToString();
+                string courseName = row["course_name"].ToString();
+                string credit = row["credit"].ToString();
+                string instructorName = row["instructor_name"].ToString();
+                string time = row["time"].ToString();
+                string lectRoom = row["lect_room"].ToString();
+
+                var listViewItem = new ListViewItem(courseID);
+                listViewItem.SubItems.Add(type);
+                listViewItem.SubItems.Add(courseName);
+                listViewItem.SubItems.Add(credit);
+                listViewItem.SubItems.Add(instructorName);
+                listViewItem.SubItems.Add(time);
+                listViewItem.SubItems.Add(lectRoom);
+
+                lvw_done.Items.Add(listViewItem);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
+            Initialize init = new Initialize();
+            init.Type = (int)Packet_Type.GetTypes;
+           
             lvw_search_res.View = View.Details;
             lvw_done.View = View.Details;
 
             //사용자정보 추가
-            userInfo.stuID = "12333333";
             txt_StuID.Text = userInfo.stuID;
 
             //검색결과란에 column 추가
@@ -109,8 +220,17 @@ namespace _2023AppSWClient
             List<string> Departments = new List<string>(new string[] {
             "경영대학", "공과대학", "소프트웨어융합대학", "인문사회과학대학", "자연과학대학", "전자정보공과대학", "정책법학대학", "전체검색", "공통"
             });
-            foreach(string str in Departments) cbBox_CollegeOf.Items.Add(str);
-            //단과대선택 아이템추가
+            foreach (string str in Departments) cbBox_CollegeOf.Items.Add(str);
+            //단과대선택 아이템추가          
+            sndThread.Start(init);
+            wait();
+            init = (Initialize)Connection.GetServerPacket();
+            System.Data.DataSet dataSet = DatasetConvertor.DeserializeFromJSON(init.ds);
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                cbBox_LectType.Items.Add(row[0].ToString());
+            }
+            //과목 타입들 추가
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
@@ -156,25 +276,40 @@ namespace _2023AppSWClient
              */
             ////////////////////////////////////////////////////////////////////////
             //받아온 검색결과 Listview에 띄워주기
-            string sourceJson = "";
-            sourceJson = testSearch;
-            System.Data.DataSet dataSet = DatasetConvertor.DeserializeFromJSON(sourceJson);
-            long i = 1;
-            foreach (DataRow row in dataSet.Tables[0].Rows)
-            {
-                ListViewItem item = new ListViewItem(i.ToString());
-                item.SubItems.Add(row[0].ToString());
-                item.SubItems.Add(row[1].ToString());
-                item.SubItems.Add(row[2].ToString());
-                item.SubItems.Add(row[3].ToString());
-                item.SubItems.Add(row[4].ToString());
-                item.SubItems.Add(row[5].ToString());
-                item.SubItems.Add(row[6].ToString());
+            sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
+            inquire init = new inquire();
+            init.Type = (int)Packet_Type.SearchCouse;
+            init.isOnlyRemaining = chk_only_valid.Checked;
+            init.var = txt_subject.Text;
+            init.courseType = cbBox_LectType.SelectedText;
+            init.department = ""; // 학과/대학 id 로 변환 필요
 
-                lvw_search_res.Items.Add(item);
-                i++;
+            sndThread.Start(init);
+
+            wait();
+            init = (inquire)Connection.GetServerPacket();
+            if (init.Type == (int)InquireResult.OK)
+            {
+                string sourceJson = "";
+                sourceJson = testSearch;
+                System.Data.DataSet dataSet = DatasetConvertor.DeserializeFromJSON(init.ds);
+                long i = 1;
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    ListViewItem item = new ListViewItem(i.ToString());
+                    item.SubItems.Add(row[0].ToString());
+                    item.SubItems.Add(row[1].ToString());
+                    item.SubItems.Add(row[2].ToString());
+                    item.SubItems.Add(row[3].ToString());
+                    item.SubItems.Add(row[4].ToString());
+                    item.SubItems.Add(row[5].ToString());
+                    item.SubItems.Add(row[6].ToString());
+
+                    lvw_search_res.Items.Add(item);
+                    i++;
+                }
+                lvw_search_res.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent); //모든 열 사이즈 자동조절
             }
-            lvw_search_res.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent); //모든 열 사이즈 자동조절
         }
 
         private void btn_AddToFav_Click(object sender, EventArgs e) //Winform조작 작동 확인 완료
@@ -187,16 +322,27 @@ namespace _2023AppSWClient
             요 5개 채우기
             */
             int index = (int)cbBox_FavNum.SelectedItem;
+            sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
+            Favorites fv = new Favorites();
 
             ListViewItem selectedItem = lvw_search_res.SelectedItems.Cast<ListViewItem>().FirstOrDefault();
 
             if (selectedItem != null)
             {
-                int favRes= (int)FavoritesResult.OK;
+                //   int favRes = (int)FavoritesResult.OK;
+                fv.Type = (int)Packet_Type.AddToFavorites;
+                fv.idx = (short)index;
+                fv.ci = selectedItem.SubItems[1].Text;
+
+                sndThread.Start(fv);
+
+                wait();
+                fv = (Favorites)Connection.GetServerPacket();
                 // 여기에 패킷 추가(서버에 즐겨찾기 추가)!!!!!!)!!!!!!)!!!!!!)!!!!!!)!!!!!!
-                if (favRes != (int)FavoritesResult.OK)
+                if (fv.Type != (int)FavoritesResult.OK)
                 {
-                    MessageBox.Show("오류!!");
+                    MessageBox.Show("오류!!" + fv.Type);
+                    return;
                 }
                 if (index == 1)
                 {
@@ -284,72 +430,148 @@ namespace _2023AppSWClient
              * txt_lec_codeN    txt_lec_nameN   txt_credN   txt_profN   txt_lectN(강의시간)
              * 요 5개 텍스트 비우기
              */
+            sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
+            Favorites fv = new Favorites();
+            fv.Type = (int)Packet_Type.DeleteFromFavorites;
+            fv.stuID = userInfo.stuID;
 
             // 서버 통신부분 여기에 추가하기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! (서버에 삭제요청 보내도록)
             Button whichPushed = (Button)sender;
             if (whichPushed == btn_del1)
             {
-                txt_lec_code1.Text = "";
-                txt_lec_name1.Text = "";
-                txt_cred1.Text = "";
-                txt_prof1.Text = "";
-                txt_lect1.Text = "";
+                fv.idx = 1;
+                sndThread.Start(fv);
+                wait();
+                fv = (Favorites)Connection.GetServerPacket();
+                if (fv.Type == (int)FavoritesResult.OK)
+                {
+                    txt_lec_code1.Text = "";
+                    txt_lec_name1.Text = "";
+                    txt_cred1.Text = "";
+                    txt_prof1.Text = "";
+                    txt_lect1.Text = "";
+                }
+                else
+                    MessageBox.Show("오류!!");
             }
             else if (whichPushed == btn_del2)
             {
-                txt_lec_code2.Text = "";
-                txt_lec_name2.Text = "";
-                txt_cred2.Text = "";
-                txt_prof2.Text = "";
-                txt_lect2.Text = "";
+                fv.idx = 2;
+                sndThread.Start(fv);
+                wait();
+                fv = (Favorites)Connection.GetServerPacket();
+                if (fv.Type == (int)FavoritesResult.OK)
+                {
+                    txt_lec_code2.Text = "";
+                    txt_lec_name2.Text = "";
+                    txt_cred2.Text = "";
+                    txt_prof2.Text = "";
+                    txt_lect2.Text = "";
+                }
+                else
+                    MessageBox.Show("오류!!");
             }
             else if (whichPushed == btn_del3)
             {
-                txt_lec_code3.Text = "";
-                txt_lec_name3.Text = "";
-                txt_cred3.Text = "";
-                txt_prof3.Text = "";
-                txt_lect3.Text = "";
+                fv.idx = 3;
+                sndThread.Start(fv);
+                wait();
+                fv = (Favorites)Connection.GetServerPacket();
+                if (fv.Type == (int)FavoritesResult.OK)
+                {
+                    txt_lec_code3.Text = "";
+                    txt_lec_name3.Text = "";
+                    txt_cred3.Text = "";
+                    txt_prof3.Text = "";
+                    txt_lect3.Text = "";
+                }
+                else
+                    MessageBox.Show("오류!!");
             }
             else if (whichPushed == btn_del4)
             {
-                txt_lec_code4.Text = "";
-                txt_lec_name4.Text = "";
-                txt_cred4.Text = "";
-                txt_prof4.Text = "";
-                txt_lect4.Text = "";
+                fv.idx = 4;
+                sndThread.Start(fv);
+                wait();
+                fv = (Favorites)Connection.GetServerPacket();
+                if (fv.Type == (int)FavoritesResult.OK)
+                {
+                    txt_lec_code4.Text = "";
+                    txt_lec_name4.Text = "";
+                    txt_cred4.Text = "";
+                    txt_prof4.Text = "";
+                    txt_lect4.Text = "";
+                }
+                else
+                    MessageBox.Show("오류!!");
             }
             else if (whichPushed == btn_del5)
             {
-                txt_lec_code5.Text = "";
-                txt_lec_name5.Text = "";
-                txt_cred5.Text = "";
-                txt_prof5.Text = "";
-                txt_lect5.Text = "";
+                fv.idx = 5;
+                sndThread.Start(fv);
+                wait();
+                fv = (Favorites)Connection.GetServerPacket();
+                if (fv.Type == (int)FavoritesResult.OK)
+                {
+                    txt_lec_code5.Text = "";
+                    txt_lec_name5.Text = "";
+                    txt_cred5.Text = "";
+                    txt_prof5.Text = "";
+                    txt_lect5.Text = "";
+                }
+                else
+                    MessageBox.Show("오류!!");
             }
             else if (whichPushed == btn_del6)
             {
-                txt_lec_code6.Text = "";
-                txt_lec_name6.Text = "";
-                txt_cred6.Text = "";
-                txt_prof6.Text = "";
-                txt_lect6.Text = "";
+                fv.idx = 6;
+                sndThread.Start(fv);
+                wait();
+                fv = (Favorites)Connection.GetServerPacket();
+                if (fv.Type == (int)FavoritesResult.OK)
+                {
+                    txt_lec_code6.Text = "";
+                    txt_lec_name6.Text = "";
+                    txt_cred6.Text = "";
+                    txt_prof6.Text = "";
+                    txt_lect6.Text = "";
+                }
+                else
+                    MessageBox.Show("오류!!");
             }
             else if (whichPushed == btn_del7)
             {
-                txt_lec_code7.Text = "";
-                txt_lec_name7.Text = "";
-                txt_cred7.Text = "";
-                txt_prof7.Text = "";
-                txt_lect7.Text = "";
+                fv.idx = 7;
+                sndThread.Start(fv);
+                wait();
+                fv = (Favorites)Connection.GetServerPacket();
+                if (fv.Type == (int)FavoritesResult.OK)
+                {
+                    txt_lec_code7.Text = "";
+                    txt_lec_name7.Text = "";
+                    txt_cred7.Text = "";
+                    txt_prof7.Text = "";
+                    txt_lect7.Text = "";
+                }
+                else
+                    MessageBox.Show("오류!!");
             }
             else if (whichPushed == btn_del8)
             {
-                txt_lec_code8.Text = "";
-                txt_lec_name8.Text = "";
-                txt_cred8.Text = "";
-                txt_prof8.Text = "";
-                txt_lect8.Text = "";
+                fv.idx = 8;
+                sndThread.Start(fv);
+                wait();
+                fv = (Favorites)Connection.GetServerPacket();
+                if (fv.Type == (int)FavoritesResult.OK)
+                {
+                    txt_lec_code8.Text = "";
+                    txt_lec_name8.Text = "";
+                    txt_cred8.Text = "";
+                    txt_prof8.Text = "";
+                    txt_lect8.Text = "";
+                }
+                else
+                    MessageBox.Show("오류!!");
             }
         }
 
@@ -418,16 +640,22 @@ namespace _2023AppSWClient
         //학정번호 수동조회칸이 꽉 찼다면 체크
         private void txt_Hakjung_TextChanged(object sender, EventArgs e)
         {
+            sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
             string search_res; // 검색결과 저장할 string
             string test = "{\"course_info\":[{\"year\":2023,\"semester\":1,\"department\":\"H040\",\"level\":3,\"subject\":\"7737\",\"class\":1,\"course_id\":\"20231H0403773701\",\"type\":\"전선\",\"course_name\":\"UX/UI디자인\",\"credit\":3,\"instructor_name\":\"김현경\",\"num_of_students\":0,\"remaining_capacity\":3,\"time\":\"월2.수1.\",\"lect_room\":\"미지정\",\"is_foreignerOnly\":false}]}";
-
+            inquire inquire = new inquire();
             if (txt_Hakjung.TextLength == 16)
             {
                 //서버에 학번, 20231+학정번호로 요청보내서 과목정보 조회
 
                 //서버로부터받은 data예제
-
-                DataSet classinfo = DatasetConvertor.DeserializeFromJSON(test);
+                inquire.Type = (int)Packet_Type.GoInquire;
+                inquire.stuID = userInfo.stuID;
+                inquire.ci = txt_Hakjung.Text;
+                sndThread.Start(inquire);
+                wait();
+                inquire = (inquire)Connection.GetServerPacket();
+                DataSet classinfo = DatasetConvertor.DeserializeFromJSON(inquire.ds);
 
                 txt_Hakjung.Text = classinfo.Tables[0].Rows[0]["course_id"].ToString();
                 txt_CourseName.Text = classinfo.Tables[0].Rows[0]["course_name"].ToString();
@@ -449,14 +677,23 @@ namespace _2023AppSWClient
                     txt_CourseLectRoom.Clear();
                 }
             }
-            
+
         }
 
         private void btn_apply_Click(object sender, EventArgs e)
         {
             //서버에 학번,  20231+학정번호로 신청하기
+            sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
+            Register register = new Register();
 
-            if (true)
+            register.Type = (int)Packet_Type.GoRegister;
+            register.stuID = userInfo.stuID;
+            register.ci = 20231 + txt_Hakjung.Text;
+            sndThread.Start(register);
+            wait();
+            register = (Register)Connection.GetServerPacket();
+
+            if (register.Type == (int)RegisterResult.OK)
             {
                 txt_Hakjung.Clear();
                 txt_CourseName.Clear();
@@ -470,16 +707,27 @@ namespace _2023AppSWClient
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
+            Register register = new Register();
             if (lvw_done.SelectedItems == null)
             {
                 MessageBox.Show("수강취소할 과목을 선택하세요");
             }
             //서버에 학번,  20231+학정번호로 과목 드랍하기
+            register.Type = (int)Packet_Type.DropCourse;
+            register.stuID = userInfo.stuID;
+            register.ci = 20231 + lvw_done.SelectedItems[1].Text;
+            sndThread.Start(register);
+            wait();
+            register = (Register)Connection.GetServerPacket();
+            if (register.Type != (int)First_ProcessResult.OK)
+                MessageBox.Show("작업에 실패했습니다");
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
             //프로그램 종료하기
+            Connection.AbortThread();
             this.Close();
         }
 
@@ -493,13 +741,13 @@ namespace _2023AppSWClient
 
         private void cbBox_CollegeOf_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string what=(string)cbBox_CollegeOf.SelectedItem;
+            string what = (string)cbBox_CollegeOf.SelectedItem;
             cbBox_Department.Items.Clear();
             cbBox_Department.ResetText();
             switch (what)
             {
                 case "경영대학":
-                    foreach(string str in CollegeofBusiness) cbBox_Department.Items.Add(str);
+                    foreach (string str in CollegeofBusiness) cbBox_Department.Items.Add(str);
                     break;
                 case "공과대학":
                     foreach (string str in CollegeOfEngineering) cbBox_Department.Items.Add(str);
@@ -519,11 +767,12 @@ namespace _2023AppSWClient
                 case "정책법학대학":
                     foreach (string str in CollegeOfLaw) cbBox_Department.Items.Add(str);
                     break;
-                case "전체검색" :
+                case "전체검색":
                 case "공통":
                     break;
             }
         }
+
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {

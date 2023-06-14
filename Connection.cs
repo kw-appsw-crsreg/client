@@ -21,8 +21,8 @@ namespace _2023AppSWClient
         public static StreamReader reader;
         public static StreamWriter writer;
         public static Packet pac;
-        static byte[] readBuffer = new byte[1024 * 4];
-        static byte[] sendBuffer = new byte[1024 * 4];
+        static byte[] readBuffer = new byte[1024 * 4000];
+        static byte[] sendBuffer = new byte[1024 * 4000];
         public static Stack<Packet> stack = new Stack<Packet>();
 
         static public void Run()
@@ -53,7 +53,7 @@ namespace _2023AppSWClient
 
                 while (true)
                 {
-                    bs = stream.Read(readBuffer, 0, 1024 * 4);
+                    bs = stream.Read(readBuffer, 0, 1024 * 4000);
                     Initialize init = (Initialize)Packet.Desserialize(readBuffer);
 
                     if (init != null)

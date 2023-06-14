@@ -44,6 +44,7 @@ namespace _2023AppSWClient
         {
             sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
             login = new Login();
+            login.Type = (int)Packet_Type.GoLogin;
             login.stuID = textBox1.Text;
             login.pwd = textBox2.Text;
   /*
