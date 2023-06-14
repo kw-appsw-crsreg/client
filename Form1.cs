@@ -4,13 +4,13 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 
 namespace _2023AppSWClient
 {
     public partial class Form1 : Form
     {
-        string testSearch = "{\"Table\":[{\"course_id\":\"20231H0001295701\",\"type\":\"전선\",\"course_name\":\"공학설계입문\",\"credit\":3,\"instructor_name\":\"최상\r\n호\",\"remaining_capacity\":2,\"time\":\"화2.목1.\"},{\"course_id\":\"20231H0001295702\",\"type\":\"전선\",\"course_name\":\"공학설계입문\",\"credit\":3,\"instructor_name\":\"\",\"remaining_capacity\":2,\"time\":\"월3.수4.\"},{\"course_id\":\"20231H0001309501\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"허연실\",\"remaining_capacity\":2,\"time\":\"월1.수2.\"},{\"course_id\":\"20231H0001309502\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"전도현\",\"remaining_capacity\":2,\"time\":\"월2.수1.\"},{\"course_id\":\"20231H0001309503\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"유승호\",\"remaining_capacity\":2,\"time\":\"월5.수6.\"},{\"course_id\":\"20231H0001309504\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"이주영\",\"remaining_capacity\":2,\"time\":\"월6.수5.\"},{\"course_id\":\"20231H0001309505\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"김광섭\",\"remaining_capacity\":2,\"time\":\"화2.목1.\"},{\"course_id\":\"20231H0001309506\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"조영복\",\"remaining_capacity\":2,\"time\":\"화5.목6.\"},{\"course_id\":\"20231H0001309507\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"이지은\",\"remaining_capacity\":2,\"time\":\"화6.목5.\"},{\"course_id\":\"20231H0001309508\",\"type\":\"교필\",\"course_name\":\"융합적사 고와글쓰기\",\"credit\":3,\"instructor_name\":\"이은경\",\"remaining_capacity\":2,\"time\":\"금1.금2.\"},{\"course_id\":\"20231H0001309509\",\"type\":\"교필\",\"course_name\":\"융합적사고와글쓰기\",\"credit\":3,\"instructor_name\":\"신정은\",\"remaining_capacity\":2,\"time\":\"금3.금4.\"},{\"course_id\":\"20231H0001341501\",\"type\":\"기필\",\"course_name\":\"대학화학및실험1\",\"credit\":3,\"instructor_name\":\"사영진\",\"remaining_capacity\":2,\"time\":\"화5.\"},{\"course_id\":\"20231H0001341502\",\"type\":\"기필\",\"course_name\":\"대학화학및실험1\",\"credit\":3,\"instructor_name\":\"사영진\",\"remaining_capacity\":2,\"time\":\"화6.\"},{\"course_id\":\"20231H0001367401\",\"type\":\"전선\",\"course_name\":\"창의설계입문\",\"credit\":3,\"instructor_name\":\"신원경\",\"remaining_capacity\":2,\"time\":\"월2.수1.\"},{\"course_id\":\"20231H0001367402\",\"type\":\"전선\",\"course_name\":\"창의설계입문\",\"credit\":3,\"instructor_name\":\"김미화\",\"remaining_capacity\":2,\"time\":\"금3.금4.\"},{\"course_id\":\"20231H0001462501\",\"type\":\"기필\",\"course_name\":\"대학수학및연습1\",\"credit\":3,\"instructor_name\":\"김순영\",\"remaining_capacity\":2,\"time\":\"월2.수1.\"},{\"course_id\":\"20231H0001462502\",\"type\":\"기필\",\"course_name\":\"대학수학및연습1\",\"credit\":3,\"instructor_name\":\"채형직\",\"remaining_capacity\":2,\"time\":\"월4.수3.\"}]}";
 
         List<string> CollegeOfEI = new List<string>(new string[] {
             "전자공학과","전자통신공학과","전자융합공학과","전기공학과","전자재료공학과","로봇학부"," 컴퓨터공학과","컴퓨터소프트웨어학과", "전체검색", "공통"
@@ -36,12 +36,120 @@ namespace _2023AppSWClient
 
         Packet packcet;
         Login userInfo;
+
+
         public Form1(Login login)
         {
             packcet = Connection.pac;
             InitializeComponent();
             userInfo = login; //로그인폼으로부터 넘어온 사용자정보
+
+            string json = userInfo.ds;
+            DataSet ds = JsonConvert.DeserializeObject<DataSet>(json);
+
+            DataTable studentInfo = ds.Tables["student_info"];
+            DataTable favoritesList = ds.Tables["favorites_list"];
+            DataTable registeredList = ds.Tables["registered_list"];
+
+            txt_StuName.Text = studentInfo.Rows[0]["name"].ToString();
+
+            foreach (DataRow row in favoritesList.Rows)
+            {
+                int idx = Convert.ToInt32(row["idx"]);
+                string courseName = row["course_name"].ToString();
+                string courseID = row["course_id"].ToString();
+                int credit = Convert.ToInt32(row["credit"]);
+                string instructorName = row["instructor_Name"].ToString();
+                string time = row["time"].ToString();
+
+                if (idx == 1)
+                {
+                    txt_lec_code1.Text = courseID;
+                    txt_lec_name1.Text = courseName;
+                    txt_cred1.Text = credit.ToString();
+                    txt_prof1.Text = instructorName;
+                    txt_lect1.Text = time;
+                }
+                else if (idx == 2)
+                {
+                    txt_lec_code2.Text = courseID;
+                    txt_lec_name2.Text = courseName;
+                    txt_cred2.Text = credit.ToString();
+                    txt_prof2.Text = instructorName;
+                    txt_lect2.Text = time;
+                }
+                else if (idx == 3)
+                {
+                    txt_lec_code3.Text = courseID;
+                    txt_lec_name3.Text = courseName;
+                    txt_cred3.Text = credit.ToString();
+                    txt_prof3.Text = instructorName;
+                    txt_lect3.Text = time;
+                }
+                else if (idx == 4)
+                {
+                    txt_lec_code4.Text = courseID;
+                    txt_lec_name4.Text = courseName;
+                    txt_cred4.Text = credit.ToString();
+                    txt_prof4.Text = instructorName;
+                    txt_lect4.Text = time;
+                }
+                else if (idx == 5)
+                {
+                    txt_lec_code5.Text = courseID;
+                    txt_lec_name5.Text = courseName;
+                    txt_cred5.Text = credit.ToString();
+                    txt_prof5.Text = instructorName;
+                    txt_lect5.Text = time;
+                }
+                else if (idx == 6)
+                {
+                    txt_lec_code6.Text = courseID;
+                    txt_lec_name6.Text = courseName;
+                    txt_cred6.Text = credit.ToString();
+                    txt_prof6.Text = instructorName;
+                    txt_lect6.Text = time;
+                }
+                else if (idx == 7)
+                {
+                    txt_lec_code7.Text = courseID;
+                    txt_lec_name7.Text = courseName;
+                    txt_cred7.Text = credit.ToString();
+                    txt_prof7.Text = instructorName;
+                    txt_lect7.Text = time;
+                }
+                else if (idx == 8)
+                {
+                    txt_lec_code8.Text = courseID;
+                    txt_lec_name8.Text = courseName;
+                    txt_cred8.Text = credit.ToString();
+                    txt_prof8.Text = instructorName;
+                    txt_lect8.Text = time;
+                }
+            }
+
+            foreach (DataRow row in registeredList.Rows)
+            {
+                string courseID = row["course_id"].ToString();
+                string type = row["type"].ToString();
+                string courseName = row["course_name"].ToString();
+                string credit = row["credit"].ToString();
+                string instructorName = row["instructor_name"].ToString();
+                string time = row["time"].ToString();
+                string lectRoom = row["lect_room"].ToString();
+
+                var listViewItem = new ListViewItem(courseID);
+                listViewItem.SubItems.Add(type);
+                listViewItem.SubItems.Add(courseName);
+                listViewItem.SubItems.Add(credit);
+                listViewItem.SubItems.Add(instructorName); 
+                listViewItem.SubItems.Add(time);
+                listViewItem.SubItems.Add(lectRoom);
+
+                lvw_done.Items.Add(listViewItem);
+            }
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -157,7 +265,6 @@ namespace _2023AppSWClient
             ////////////////////////////////////////////////////////////////////////
             //받아온 검색결과 Listview에 띄워주기
             string sourceJson = "";
-            sourceJson = testSearch;
             System.Data.DataSet dataSet = DatasetConvertor.DeserializeFromJSON(sourceJson);
             long i = 1;
             foreach (DataRow row in dataSet.Tables[0].Rows)
