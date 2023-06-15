@@ -184,8 +184,7 @@ namespace _2023AppSWClient
             lvw_done.Columns.Add("과목명", "과목명");
             lvw_done.Columns.Add("학점", "학점");
             lvw_done.Columns.Add("담당교수", "담당교수");
-            lvw_done.Columns.Add("요일", "요일");
-            lvw_done.Columns.Add("시간", "시간");
+            lvw_done.Columns.Add("강의요일,시간", "강의요일,시간");
             lvw_done.Columns.Add("강의실", "강의실");
             lvw_done.Columns.Add("last", "last");
 
