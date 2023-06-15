@@ -235,7 +235,10 @@ namespace _2023AppSWClient
             }
             //과목 타입들 추가
 
-            //즐겨찾기번호 미선택으로인한 예외방지
+            //단과대, 학과, 전공유형, 즐겨찾기번호 미선택으로인한 예외방지
+            cbBox_CollegeOf.SelectedItem = cbBox_CollegeOf.Items[8];
+            cbBox_Department.SelectedItem= cbBox_CollegeOf.Items[8];
+            cbBox_LectType.SelectedItem = cbBox_LectType.Items[0];
             cbBox_FavNum.SelectedItem= cbBox_FavNum.Items[0];
         }
 
@@ -871,8 +874,10 @@ namespace _2023AppSWClient
                     break;
                 case "전체검색":
                 case "공통":
+                    cbBox_Department.Items.Add("전체검색");
                     break;
             }
+            cbBox_Department.SelectedItem = cbBox_Department.Items[0];
         }
         private string GetErrorMsg(int type)
         {
