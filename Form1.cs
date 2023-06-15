@@ -131,6 +131,7 @@ namespace _2023AppSWClient
             }
 
             int cnt = 1;
+            int hakjum = 0;
             foreach (DataRow row in registeredList.Rows)
             {
                 string courseID = row["course_id"].ToString();
@@ -151,8 +152,10 @@ namespace _2023AppSWClient
                 listViewItem.SubItems.Add(lectRoom);
 
                 lvw_done.Items.Add(listViewItem);
+                hakjum = hakjum + int.Parse(credit);
                 cnt++;
             }
+            txt_RegisteredCred.Text = hakjum.ToString(); txt_TotalCred.Text = hakjum.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -816,6 +819,7 @@ namespace _2023AppSWClient
             DataTable registerinfo = ds.Tables[0];
 
             int cnt = 1;
+            int hakjum = 0;
             foreach (DataRow row in registerinfo.Rows)
             {
                 string courseID = row["course_id"].ToString();
@@ -837,7 +841,10 @@ namespace _2023AppSWClient
 
                 lvw_done.Items.Add(listViewItem);
                 cnt++;
+                hakjum = hakjum + int.Parse(credit);
             }
+            txt_RegisteredCred.Text = hakjum.ToString();
+            txt_TotalCred.Text = hakjum.ToString();
         }
         private void btn_close_Click(object sender, EventArgs e)
         {

@@ -47,6 +47,23 @@
             this.btn_AddToFav = new System.Windows.Forms.Button();
             this.cbBox_FavNum = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_retakeCredit = new System.Windows.Forms.TextBox();
+            this.txt_retakeGrade = new System.Windows.Forms.TextBox();
+            this.txt_retakeCourseName = new System.Windows.Forms.TextBox();
+            this.txt_retakeType = new System.Windows.Forms.TextBox();
+            this.txt_retakeSemester = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txt_CourseLectRoom = new System.Windows.Forms.TextBox();
             this.txt_CourseTime = new System.Windows.Forms.TextBox();
             this.txt_isajesugang = new System.Windows.Forms.TextBox();
@@ -63,13 +80,14 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txt_TotalCred = new System.Windows.Forms.TextBox();
+            this.txt_RegisteredCred = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txt_lect8 = new System.Windows.Forms.TextBox();
             this.txt_lect7 = new System.Windows.Forms.TextBox();
             this.txt_lect6 = new System.Windows.Forms.TextBox();
@@ -137,24 +155,6 @@
             this.textBox57 = new System.Windows.Forms.TextBox();
             this.textBox58 = new System.Windows.Forms.TextBox();
             this.textBox59 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_retakeCredit = new System.Windows.Forms.TextBox();
-            this.txt_retakeGrade = new System.Windows.Forms.TextBox();
-            this.txt_retakeCourseName = new System.Windows.Forms.TextBox();
-            this.txt_retakeType = new System.Windows.Forms.TextBox();
-            this.txt_retakeSemester = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -383,6 +383,172 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "과목선택";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label9.Location = new System.Drawing.Point(300, 184);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "성적";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label10.Location = new System.Drawing.Point(180, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 12);
+            this.label10.TabIndex = 52;
+            this.label10.Text = "학점";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label11.Location = new System.Drawing.Point(180, 160);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "과목명";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label12.Location = new System.Drawing.Point(24, 160);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "수강학기";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label13.Location = new System.Drawing.Point(24, 184);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 12);
+            this.label13.TabIndex = 49;
+            this.label13.Text = "이수구분";
+            // 
+            // txt_retakeCredit
+            // 
+            this.txt_retakeCredit.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeCredit.Location = new System.Drawing.Point(227, 178);
+            this.txt_retakeCredit.Name = "txt_retakeCredit";
+            this.txt_retakeCredit.ReadOnly = true;
+            this.txt_retakeCredit.Size = new System.Drawing.Size(67, 21);
+            this.txt_retakeCredit.TabIndex = 48;
+            // 
+            // txt_retakeGrade
+            // 
+            this.txt_retakeGrade.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeGrade.Location = new System.Drawing.Point(359, 178);
+            this.txt_retakeGrade.Name = "txt_retakeGrade";
+            this.txt_retakeGrade.ReadOnly = true;
+            this.txt_retakeGrade.Size = new System.Drawing.Size(78, 21);
+            this.txt_retakeGrade.TabIndex = 47;
+            // 
+            // txt_retakeCourseName
+            // 
+            this.txt_retakeCourseName.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeCourseName.Location = new System.Drawing.Point(227, 155);
+            this.txt_retakeCourseName.Name = "txt_retakeCourseName";
+            this.txt_retakeCourseName.ReadOnly = true;
+            this.txt_retakeCourseName.Size = new System.Drawing.Size(210, 21);
+            this.txt_retakeCourseName.TabIndex = 46;
+            // 
+            // txt_retakeType
+            // 
+            this.txt_retakeType.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeType.Location = new System.Drawing.Point(83, 178);
+            this.txt_retakeType.Name = "txt_retakeType";
+            this.txt_retakeType.ReadOnly = true;
+            this.txt_retakeType.Size = new System.Drawing.Size(90, 21);
+            this.txt_retakeType.TabIndex = 45;
+            // 
+            // txt_retakeSemester
+            // 
+            this.txt_retakeSemester.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeSemester.Location = new System.Drawing.Point(83, 154);
+            this.txt_retakeSemester.Name = "txt_retakeSemester";
+            this.txt_retakeSemester.ReadOnly = true;
+            this.txt_retakeSemester.Size = new System.Drawing.Size(90, 21);
+            this.txt_retakeSemester.TabIndex = 44;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label7.Location = new System.Drawing.Point(24, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "재수강";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label6.Location = new System.Drawing.Point(24, 82);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 12);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "강의시간, 강의실";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label5.Location = new System.Drawing.Point(300, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "담당교수";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label4.Location = new System.Drawing.Point(180, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "학점";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label3.Location = new System.Drawing.Point(180, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "과목명";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(24, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "학정번호";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(24, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "이수구분";
+            // 
             // txt_CourseLectRoom
             // 
             this.txt_CourseLectRoom.BackColor = System.Drawing.SystemColors.Window;
@@ -477,6 +643,7 @@
             this.txt_YearSemester.ReadOnly = true;
             this.txt_YearSemester.Size = new System.Drawing.Size(90, 21);
             this.txt_YearSemester.TabIndex = 28;
+            this.txt_YearSemester.Text = "2023-1";
             // 
             // txt_StuName
             // 
@@ -535,8 +702,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox21);
-            this.groupBox5.Controls.Add(this.textBox20);
+            this.groupBox5.Controls.Add(this.txt_TotalCred);
+            this.groupBox5.Controls.Add(this.txt_RegisteredCred);
             this.groupBox5.Controls.Add(this.textBox19);
             this.groupBox5.Controls.Add(this.textBox11);
             this.groupBox5.Controls.Add(this.textBox10);
@@ -548,23 +715,23 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "신청정보";
             // 
-            // textBox21
+            // txt_TotalCred
             // 
-            this.textBox21.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox21.Location = new System.Drawing.Point(94, 85);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(90, 21);
-            this.textBox21.TabIndex = 28;
+            this.txt_TotalCred.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_TotalCred.Location = new System.Drawing.Point(94, 85);
+            this.txt_TotalCred.Name = "txt_TotalCred";
+            this.txt_TotalCred.ReadOnly = true;
+            this.txt_TotalCred.Size = new System.Drawing.Size(90, 21);
+            this.txt_TotalCred.TabIndex = 28;
             // 
-            // textBox20
+            // txt_RegisteredCred
             // 
-            this.textBox20.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox20.Location = new System.Drawing.Point(94, 53);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(90, 21);
-            this.textBox20.TabIndex = 27;
+            this.txt_RegisteredCred.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_RegisteredCred.Location = new System.Drawing.Point(94, 53);
+            this.txt_RegisteredCred.Name = "txt_RegisteredCred";
+            this.txt_RegisteredCred.ReadOnly = true;
+            this.txt_RegisteredCred.Size = new System.Drawing.Size(90, 21);
+            this.txt_RegisteredCred.TabIndex = 27;
             // 
             // textBox19
             // 
@@ -685,6 +852,16 @@
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "즐겨찾기";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label8.Location = new System.Drawing.Point(14, 291);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(133, 12);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "※ 인증번호는 없습니다";
             // 
             // txt_lect8
             // 
@@ -1339,182 +1516,6 @@
             this.textBox59.Text = "* 즐겨찾기 수강신청 : 신청하고자 하는 과목조회 버튼(클릭) => 수강신청 버튼(클릭)";
             this.textBox59.TextChanged += new System.EventHandler(this.textBox59_TextChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(24, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "이수구분";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(24, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "학정번호";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(180, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "과목명";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(180, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "학점";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label5.Location = new System.Drawing.Point(300, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "담당교수";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(24, 82);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 12);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "강의시간, 강의실";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label8.Location = new System.Drawing.Point(14, 291);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 12);
-            this.label8.TabIndex = 72;
-            this.label8.Text = "※ 인증번호는 없습니다";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label7.Location = new System.Drawing.Point(24, 135);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 12);
-            this.label7.TabIndex = 43;
-            this.label7.Text = "재수강";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label9.Location = new System.Drawing.Point(300, 184);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 12);
-            this.label9.TabIndex = 53;
-            this.label9.Text = "성적";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label10.Location = new System.Drawing.Point(180, 184);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 12);
-            this.label10.TabIndex = 52;
-            this.label10.Text = "학점";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label11.Location = new System.Drawing.Point(180, 160);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 12);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "과목명";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label12.Location = new System.Drawing.Point(24, 160);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 12);
-            this.label12.TabIndex = 50;
-            this.label12.Text = "수강학기";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label13.Location = new System.Drawing.Point(24, 184);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 12);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "이수구분";
-            // 
-            // txt_retakeCredit
-            // 
-            this.txt_retakeCredit.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_retakeCredit.Location = new System.Drawing.Point(227, 178);
-            this.txt_retakeCredit.Name = "txt_retakeCredit";
-            this.txt_retakeCredit.ReadOnly = true;
-            this.txt_retakeCredit.Size = new System.Drawing.Size(67, 21);
-            this.txt_retakeCredit.TabIndex = 48;
-            // 
-            // txt_retakeGrade
-            // 
-            this.txt_retakeGrade.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_retakeGrade.Location = new System.Drawing.Point(359, 178);
-            this.txt_retakeGrade.Name = "txt_retakeGrade";
-            this.txt_retakeGrade.ReadOnly = true;
-            this.txt_retakeGrade.Size = new System.Drawing.Size(78, 21);
-            this.txt_retakeGrade.TabIndex = 47;
-            // 
-            // txt_retakeCourseName
-            // 
-            this.txt_retakeCourseName.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_retakeCourseName.Location = new System.Drawing.Point(227, 155);
-            this.txt_retakeCourseName.Name = "txt_retakeCourseName";
-            this.txt_retakeCourseName.ReadOnly = true;
-            this.txt_retakeCourseName.Size = new System.Drawing.Size(210, 21);
-            this.txt_retakeCourseName.TabIndex = 46;
-            // 
-            // txt_retakeType
-            // 
-            this.txt_retakeType.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_retakeType.Location = new System.Drawing.Point(83, 178);
-            this.txt_retakeType.Name = "txt_retakeType";
-            this.txt_retakeType.ReadOnly = true;
-            this.txt_retakeType.Size = new System.Drawing.Size(90, 21);
-            this.txt_retakeType.TabIndex = 45;
-            // 
-            // txt_retakeSemester
-            // 
-            this.txt_retakeSemester.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_retakeSemester.Location = new System.Drawing.Point(83, 154);
-            this.txt_retakeSemester.Name = "txt_retakeSemester";
-            this.txt_retakeSemester.ReadOnly = true;
-            this.txt_retakeSemester.Size = new System.Drawing.Size(90, 21);
-            this.txt_retakeSemester.TabIndex = 44;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1660,8 +1661,8 @@
         private System.Windows.Forms.TextBox txt_YearSemester;
         private System.Windows.Forms.TextBox txt_StuName;
         private System.Windows.Forms.TextBox txt_StuID;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txt_TotalCred;
+        private System.Windows.Forms.TextBox txt_RegisteredCred;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Button btn_ViewLectPlan;
         private System.Windows.Forms.Label label2;
