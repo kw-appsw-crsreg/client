@@ -385,15 +385,19 @@
             // 
             // txt_CourseLectRoom
             // 
+            this.txt_CourseLectRoom.BackColor = System.Drawing.SystemColors.Window;
             this.txt_CourseLectRoom.Location = new System.Drawing.Point(247, 79);
             this.txt_CourseLectRoom.Name = "txt_CourseLectRoom";
+            this.txt_CourseLectRoom.ReadOnly = true;
             this.txt_CourseLectRoom.Size = new System.Drawing.Size(110, 21);
             this.txt_CourseLectRoom.TabIndex = 36;
             // 
             // txt_CourseTime
             // 
+            this.txt_CourseTime.BackColor = System.Drawing.SystemColors.Window;
             this.txt_CourseTime.Location = new System.Drawing.Point(131, 79);
             this.txt_CourseTime.Name = "txt_CourseTime";
+            this.txt_CourseTime.ReadOnly = true;
             this.txt_CourseTime.Size = new System.Drawing.Size(110, 21);
             this.txt_CourseTime.TabIndex = 35;
             // 
@@ -408,29 +412,37 @@
             // 
             // txt_InstructorName
             // 
+            this.txt_InstructorName.BackColor = System.Drawing.SystemColors.Window;
             this.txt_InstructorName.Location = new System.Drawing.Point(359, 39);
             this.txt_InstructorName.Name = "txt_InstructorName";
+            this.txt_InstructorName.ReadOnly = true;
             this.txt_InstructorName.Size = new System.Drawing.Size(78, 21);
             this.txt_InstructorName.TabIndex = 31;
             // 
             // txt_CourseCredit
             // 
+            this.txt_CourseCredit.BackColor = System.Drawing.SystemColors.Window;
             this.txt_CourseCredit.Location = new System.Drawing.Point(227, 38);
             this.txt_CourseCredit.Name = "txt_CourseCredit";
+            this.txt_CourseCredit.ReadOnly = true;
             this.txt_CourseCredit.Size = new System.Drawing.Size(67, 21);
             this.txt_CourseCredit.TabIndex = 30;
             // 
             // txt_CourseName
             // 
+            this.txt_CourseName.BackColor = System.Drawing.SystemColors.Window;
             this.txt_CourseName.Location = new System.Drawing.Point(227, 15);
             this.txt_CourseName.Name = "txt_CourseName";
+            this.txt_CourseName.ReadOnly = true;
             this.txt_CourseName.Size = new System.Drawing.Size(210, 21);
             this.txt_CourseName.TabIndex = 29;
             // 
             // txt_CourseType
             // 
+            this.txt_CourseType.BackColor = System.Drawing.SystemColors.Window;
             this.txt_CourseType.Location = new System.Drawing.Point(83, 38);
             this.txt_CourseType.Name = "txt_CourseType";
+            this.txt_CourseType.ReadOnly = true;
             this.txt_CourseType.Size = new System.Drawing.Size(90, 21);
             this.txt_CourseType.TabIndex = 28;
             // 
@@ -459,15 +471,19 @@
             // 
             // txt_YearSemester
             // 
+            this.txt_YearSemester.BackColor = System.Drawing.SystemColors.Window;
             this.txt_YearSemester.Location = new System.Drawing.Point(94, 69);
             this.txt_YearSemester.Name = "txt_YearSemester";
+            this.txt_YearSemester.ReadOnly = true;
             this.txt_YearSemester.Size = new System.Drawing.Size(90, 21);
             this.txt_YearSemester.TabIndex = 28;
             // 
             // txt_StuName
             // 
+            this.txt_StuName.BackColor = System.Drawing.SystemColors.Window;
             this.txt_StuName.Location = new System.Drawing.Point(94, 44);
             this.txt_StuName.Name = "txt_StuName";
+            this.txt_StuName.ReadOnly = true;
             this.txt_StuName.Size = new System.Drawing.Size(90, 21);
             this.txt_StuName.TabIndex = 27;
             // 
@@ -534,22 +550,28 @@
             // 
             // textBox21
             // 
+            this.textBox21.BackColor = System.Drawing.SystemColors.Window;
             this.textBox21.Location = new System.Drawing.Point(94, 85);
             this.textBox21.Name = "textBox21";
+            this.textBox21.ReadOnly = true;
             this.textBox21.Size = new System.Drawing.Size(90, 21);
             this.textBox21.TabIndex = 28;
             // 
             // textBox20
             // 
+            this.textBox20.BackColor = System.Drawing.SystemColors.Window;
             this.textBox20.Location = new System.Drawing.Point(94, 53);
             this.textBox20.Name = "textBox20";
+            this.textBox20.ReadOnly = true;
             this.textBox20.Size = new System.Drawing.Size(90, 21);
             this.textBox20.TabIndex = 27;
             // 
             // textBox19
             // 
+            this.textBox19.BackColor = System.Drawing.SystemColors.Window;
             this.textBox19.Location = new System.Drawing.Point(94, 22);
             this.textBox19.Name = "textBox19";
+            this.textBox19.ReadOnly = true;
             this.textBox19.Size = new System.Drawing.Size(90, 21);
             this.textBox19.TabIndex = 26;
             // 
@@ -666,283 +688,363 @@
             // 
             // txt_lect8
             // 
+            this.txt_lect8.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lect8.Location = new System.Drawing.Point(474, 243);
             this.txt_lect8.Name = "txt_lect8";
+            this.txt_lect8.ReadOnly = true;
             this.txt_lect8.Size = new System.Drawing.Size(111, 21);
             this.txt_lect8.TabIndex = 70;
             // 
             // txt_lect7
             // 
+            this.txt_lect7.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lect7.Location = new System.Drawing.Point(474, 214);
             this.txt_lect7.Name = "txt_lect7";
+            this.txt_lect7.ReadOnly = true;
             this.txt_lect7.Size = new System.Drawing.Size(111, 21);
             this.txt_lect7.TabIndex = 69;
             // 
             // txt_lect6
             // 
+            this.txt_lect6.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lect6.Location = new System.Drawing.Point(474, 185);
             this.txt_lect6.Name = "txt_lect6";
+            this.txt_lect6.ReadOnly = true;
             this.txt_lect6.Size = new System.Drawing.Size(111, 21);
             this.txt_lect6.TabIndex = 68;
             // 
             // txt_lect5
             // 
+            this.txt_lect5.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lect5.Location = new System.Drawing.Point(474, 156);
             this.txt_lect5.Name = "txt_lect5";
+            this.txt_lect5.ReadOnly = true;
             this.txt_lect5.Size = new System.Drawing.Size(111, 21);
             this.txt_lect5.TabIndex = 67;
             // 
             // txt_lect4
             // 
+            this.txt_lect4.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lect4.Location = new System.Drawing.Point(474, 127);
             this.txt_lect4.Name = "txt_lect4";
+            this.txt_lect4.ReadOnly = true;
             this.txt_lect4.Size = new System.Drawing.Size(111, 21);
             this.txt_lect4.TabIndex = 66;
             // 
             // txt_lect3
             // 
+            this.txt_lect3.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lect3.Location = new System.Drawing.Point(474, 98);
             this.txt_lect3.Name = "txt_lect3";
+            this.txt_lect3.ReadOnly = true;
             this.txt_lect3.Size = new System.Drawing.Size(111, 21);
             this.txt_lect3.TabIndex = 65;
             // 
             // txt_lect2
             // 
+            this.txt_lect2.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lect2.Location = new System.Drawing.Point(474, 69);
             this.txt_lect2.Name = "txt_lect2";
+            this.txt_lect2.ReadOnly = true;
             this.txt_lect2.Size = new System.Drawing.Size(111, 21);
             this.txt_lect2.TabIndex = 64;
             // 
             // txt_lect1
             // 
+            this.txt_lect1.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lect1.Location = new System.Drawing.Point(474, 38);
             this.txt_lect1.Name = "txt_lect1";
+            this.txt_lect1.ReadOnly = true;
             this.txt_lect1.Size = new System.Drawing.Size(111, 21);
             this.txt_lect1.TabIndex = 63;
             // 
             // txt_prof8
             // 
+            this.txt_prof8.BackColor = System.Drawing.SystemColors.Window;
             this.txt_prof8.Location = new System.Drawing.Point(402, 243);
             this.txt_prof8.Name = "txt_prof8";
+            this.txt_prof8.ReadOnly = true;
             this.txt_prof8.Size = new System.Drawing.Size(66, 21);
             this.txt_prof8.TabIndex = 62;
             // 
             // txt_prof7
             // 
+            this.txt_prof7.BackColor = System.Drawing.SystemColors.Window;
             this.txt_prof7.Location = new System.Drawing.Point(402, 214);
             this.txt_prof7.Name = "txt_prof7";
+            this.txt_prof7.ReadOnly = true;
             this.txt_prof7.Size = new System.Drawing.Size(66, 21);
             this.txt_prof7.TabIndex = 61;
             // 
             // txt_prof6
             // 
+            this.txt_prof6.BackColor = System.Drawing.SystemColors.Window;
             this.txt_prof6.Location = new System.Drawing.Point(402, 185);
             this.txt_prof6.Name = "txt_prof6";
+            this.txt_prof6.ReadOnly = true;
             this.txt_prof6.Size = new System.Drawing.Size(66, 21);
             this.txt_prof6.TabIndex = 60;
             // 
             // txt_prof5
             // 
+            this.txt_prof5.BackColor = System.Drawing.SystemColors.Window;
             this.txt_prof5.Location = new System.Drawing.Point(402, 156);
             this.txt_prof5.Name = "txt_prof5";
+            this.txt_prof5.ReadOnly = true;
             this.txt_prof5.Size = new System.Drawing.Size(66, 21);
             this.txt_prof5.TabIndex = 59;
             this.txt_prof5.TextChanged += new System.EventHandler(this.textBox44_TextChanged);
             // 
             // txt_prof4
             // 
+            this.txt_prof4.BackColor = System.Drawing.SystemColors.Window;
             this.txt_prof4.Location = new System.Drawing.Point(402, 127);
             this.txt_prof4.Name = "txt_prof4";
+            this.txt_prof4.ReadOnly = true;
             this.txt_prof4.Size = new System.Drawing.Size(66, 21);
             this.txt_prof4.TabIndex = 58;
             // 
             // txt_prof3
             // 
+            this.txt_prof3.BackColor = System.Drawing.SystemColors.Window;
             this.txt_prof3.Location = new System.Drawing.Point(402, 98);
             this.txt_prof3.Name = "txt_prof3";
+            this.txt_prof3.ReadOnly = true;
             this.txt_prof3.Size = new System.Drawing.Size(66, 21);
             this.txt_prof3.TabIndex = 57;
             // 
             // txt_prof2
             // 
+            this.txt_prof2.BackColor = System.Drawing.SystemColors.Window;
             this.txt_prof2.Location = new System.Drawing.Point(402, 69);
             this.txt_prof2.Name = "txt_prof2";
+            this.txt_prof2.ReadOnly = true;
             this.txt_prof2.Size = new System.Drawing.Size(66, 21);
             this.txt_prof2.TabIndex = 56;
             // 
             // txt_prof1
             // 
+            this.txt_prof1.BackColor = System.Drawing.SystemColors.Window;
             this.txt_prof1.Location = new System.Drawing.Point(402, 38);
             this.txt_prof1.Name = "txt_prof1";
+            this.txt_prof1.ReadOnly = true;
             this.txt_prof1.Size = new System.Drawing.Size(66, 21);
             this.txt_prof1.TabIndex = 55;
             // 
             // txt_cred8
             // 
+            this.txt_cred8.BackColor = System.Drawing.SystemColors.Window;
             this.txt_cred8.Location = new System.Drawing.Point(364, 243);
             this.txt_cred8.Name = "txt_cred8";
+            this.txt_cred8.ReadOnly = true;
             this.txt_cred8.Size = new System.Drawing.Size(32, 21);
             this.txt_cred8.TabIndex = 54;
             // 
             // txt_cred7
             // 
+            this.txt_cred7.BackColor = System.Drawing.SystemColors.Window;
             this.txt_cred7.Location = new System.Drawing.Point(364, 214);
             this.txt_cred7.Name = "txt_cred7";
+            this.txt_cred7.ReadOnly = true;
             this.txt_cred7.Size = new System.Drawing.Size(32, 21);
             this.txt_cred7.TabIndex = 53;
             // 
             // txt_cred6
             // 
+            this.txt_cred6.BackColor = System.Drawing.SystemColors.Window;
             this.txt_cred6.Location = new System.Drawing.Point(364, 185);
             this.txt_cred6.Name = "txt_cred6";
+            this.txt_cred6.ReadOnly = true;
             this.txt_cred6.Size = new System.Drawing.Size(32, 21);
             this.txt_cred6.TabIndex = 52;
             // 
             // txt_cred5
             // 
+            this.txt_cred5.BackColor = System.Drawing.SystemColors.Window;
             this.txt_cred5.Location = new System.Drawing.Point(364, 155);
             this.txt_cred5.Name = "txt_cred5";
+            this.txt_cred5.ReadOnly = true;
             this.txt_cred5.Size = new System.Drawing.Size(32, 21);
             this.txt_cred5.TabIndex = 51;
             // 
             // txt_cred4
             // 
+            this.txt_cred4.BackColor = System.Drawing.SystemColors.Window;
             this.txt_cred4.Location = new System.Drawing.Point(364, 127);
             this.txt_cred4.Name = "txt_cred4";
+            this.txt_cred4.ReadOnly = true;
             this.txt_cred4.Size = new System.Drawing.Size(32, 21);
             this.txt_cred4.TabIndex = 50;
             // 
             // txt_cred3
             // 
+            this.txt_cred3.BackColor = System.Drawing.SystemColors.Window;
             this.txt_cred3.Location = new System.Drawing.Point(364, 98);
             this.txt_cred3.Name = "txt_cred3";
+            this.txt_cred3.ReadOnly = true;
             this.txt_cred3.Size = new System.Drawing.Size(32, 21);
             this.txt_cred3.TabIndex = 49;
             // 
             // txt_cred2
             // 
+            this.txt_cred2.BackColor = System.Drawing.SystemColors.Window;
             this.txt_cred2.Location = new System.Drawing.Point(364, 69);
             this.txt_cred2.Name = "txt_cred2";
+            this.txt_cred2.ReadOnly = true;
             this.txt_cred2.Size = new System.Drawing.Size(32, 21);
             this.txt_cred2.TabIndex = 48;
             // 
             // txt_cred1
             // 
+            this.txt_cred1.BackColor = System.Drawing.SystemColors.Window;
             this.txt_cred1.Location = new System.Drawing.Point(364, 38);
             this.txt_cred1.Name = "txt_cred1";
+            this.txt_cred1.ReadOnly = true;
             this.txt_cred1.Size = new System.Drawing.Size(32, 21);
             this.txt_cred1.TabIndex = 47;
             // 
             // txt_lec_name8
             // 
+            this.txt_lec_name8.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_name8.Location = new System.Drawing.Point(183, 243);
             this.txt_lec_name8.Name = "txt_lec_name8";
+            this.txt_lec_name8.ReadOnly = true;
             this.txt_lec_name8.Size = new System.Drawing.Size(177, 21);
             this.txt_lec_name8.TabIndex = 46;
             // 
             // txt_lec_name7
             // 
+            this.txt_lec_name7.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_name7.Location = new System.Drawing.Point(183, 214);
             this.txt_lec_name7.Name = "txt_lec_name7";
+            this.txt_lec_name7.ReadOnly = true;
             this.txt_lec_name7.Size = new System.Drawing.Size(177, 21);
             this.txt_lec_name7.TabIndex = 45;
             // 
             // txt_lec_name6
             // 
+            this.txt_lec_name6.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_name6.Location = new System.Drawing.Point(183, 183);
             this.txt_lec_name6.Name = "txt_lec_name6";
+            this.txt_lec_name6.ReadOnly = true;
             this.txt_lec_name6.Size = new System.Drawing.Size(177, 21);
             this.txt_lec_name6.TabIndex = 44;
             // 
             // txt_lec_name5
             // 
+            this.txt_lec_name5.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_name5.Location = new System.Drawing.Point(183, 156);
             this.txt_lec_name5.Name = "txt_lec_name5";
+            this.txt_lec_name5.ReadOnly = true;
             this.txt_lec_name5.Size = new System.Drawing.Size(177, 21);
             this.txt_lec_name5.TabIndex = 43;
             // 
             // txt_lec_name4
             // 
+            this.txt_lec_name4.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_name4.Location = new System.Drawing.Point(183, 127);
             this.txt_lec_name4.Name = "txt_lec_name4";
+            this.txt_lec_name4.ReadOnly = true;
             this.txt_lec_name4.Size = new System.Drawing.Size(177, 21);
             this.txt_lec_name4.TabIndex = 42;
             // 
             // txt_lec_name3
             // 
+            this.txt_lec_name3.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_name3.Location = new System.Drawing.Point(183, 98);
             this.txt_lec_name3.Name = "txt_lec_name3";
+            this.txt_lec_name3.ReadOnly = true;
             this.txt_lec_name3.Size = new System.Drawing.Size(177, 21);
             this.txt_lec_name3.TabIndex = 41;
             // 
             // txt_lec_name2
             // 
+            this.txt_lec_name2.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_name2.Location = new System.Drawing.Point(183, 69);
             this.txt_lec_name2.Name = "txt_lec_name2";
+            this.txt_lec_name2.ReadOnly = true;
             this.txt_lec_name2.Size = new System.Drawing.Size(177, 21);
             this.txt_lec_name2.TabIndex = 40;
             // 
             // txt_lec_code8
             // 
+            this.txt_lec_code8.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_code8.Location = new System.Drawing.Point(87, 243);
             this.txt_lec_code8.Name = "txt_lec_code8";
+            this.txt_lec_code8.ReadOnly = true;
             this.txt_lec_code8.Size = new System.Drawing.Size(90, 21);
             this.txt_lec_code8.TabIndex = 39;
             // 
             // txt_lec_code7
             // 
+            this.txt_lec_code7.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_code7.Location = new System.Drawing.Point(87, 214);
             this.txt_lec_code7.Name = "txt_lec_code7";
+            this.txt_lec_code7.ReadOnly = true;
             this.txt_lec_code7.Size = new System.Drawing.Size(90, 21);
             this.txt_lec_code7.TabIndex = 38;
             // 
             // txt_lec_code6
             // 
+            this.txt_lec_code6.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_code6.Location = new System.Drawing.Point(87, 185);
             this.txt_lec_code6.Name = "txt_lec_code6";
+            this.txt_lec_code6.ReadOnly = true;
             this.txt_lec_code6.Size = new System.Drawing.Size(90, 21);
             this.txt_lec_code6.TabIndex = 37;
             // 
             // txt_lec_code5
             // 
+            this.txt_lec_code5.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_code5.Location = new System.Drawing.Point(87, 156);
             this.txt_lec_code5.Name = "txt_lec_code5";
+            this.txt_lec_code5.ReadOnly = true;
             this.txt_lec_code5.Size = new System.Drawing.Size(90, 21);
             this.txt_lec_code5.TabIndex = 36;
             // 
             // txt_lec_code4
             // 
+            this.txt_lec_code4.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_code4.Location = new System.Drawing.Point(87, 127);
             this.txt_lec_code4.Name = "txt_lec_code4";
+            this.txt_lec_code4.ReadOnly = true;
             this.txt_lec_code4.Size = new System.Drawing.Size(90, 21);
             this.txt_lec_code4.TabIndex = 35;
             this.txt_lec_code4.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
             // txt_lec_code3
             // 
+            this.txt_lec_code3.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_code3.Location = new System.Drawing.Point(87, 98);
             this.txt_lec_code3.Name = "txt_lec_code3";
+            this.txt_lec_code3.ReadOnly = true;
             this.txt_lec_code3.Size = new System.Drawing.Size(90, 21);
             this.txt_lec_code3.TabIndex = 34;
             // 
             // txt_lec_code2
             // 
+            this.txt_lec_code2.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_code2.Location = new System.Drawing.Point(87, 69);
             this.txt_lec_code2.Name = "txt_lec_code2";
+            this.txt_lec_code2.ReadOnly = true;
             this.txt_lec_code2.Size = new System.Drawing.Size(90, 21);
             this.txt_lec_code2.TabIndex = 33;
             // 
             // txt_lec_name1
             // 
+            this.txt_lec_name1.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_name1.Location = new System.Drawing.Point(183, 38);
             this.txt_lec_name1.Name = "txt_lec_name1";
+            this.txt_lec_name1.ReadOnly = true;
             this.txt_lec_name1.Size = new System.Drawing.Size(177, 21);
             this.txt_lec_name1.TabIndex = 32;
             // 
             // txt_lec_code1
             // 
+            this.txt_lec_code1.BackColor = System.Drawing.SystemColors.Window;
             this.txt_lec_code1.Location = new System.Drawing.Point(87, 38);
             this.txt_lec_code1.Name = "txt_lec_code1";
+            this.txt_lec_code1.ReadOnly = true;
             this.txt_lec_code1.Size = new System.Drawing.Size(90, 21);
             this.txt_lec_code1.TabIndex = 24;
             // 
