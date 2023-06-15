@@ -677,6 +677,13 @@ namespace _2023AppSWClient
         //학정번호 수동조회칸이 꽉 찼다면 체크
         private void txt_Hakjung_TextChanged(object sender, EventArgs e)
         {
+            txt_isajesugang.Clear();
+            txt_retakeCourseName.Clear();
+            txt_retakeCredit.Clear();
+            txt_retakeGrade.Clear();
+            txt_retakeSemester.Clear();
+            txt_retakeType.Clear();
+
             if (txt_Hakjung.TextLength == 0)
             {
                 txt_CourseName.Clear();
@@ -686,12 +693,7 @@ namespace _2023AppSWClient
                 txt_CourseTime.Clear();
                 txt_CourseLectRoom.Clear();
 
-                txt_isajesugang.Clear();
-                txt_retakeCourseName.Clear();
-                txt_retakeCredit.Clear();
-                txt_retakeGrade.Clear();
-                txt_retakeSemester.Clear();
-                txt_retakeType.Clear();
+
             }
             sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
             string search_res; // 검색결과 저장할 string
