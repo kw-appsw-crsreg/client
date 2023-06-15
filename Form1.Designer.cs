@@ -652,7 +652,7 @@
             // 
             // textBox19
             // 
-            this.textBox19.Location = new System.Drawing.Point(107, 21);
+            this.textBox19.Location = new System.Drawing.Point(107, 28);
             this.textBox19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(102, 25);

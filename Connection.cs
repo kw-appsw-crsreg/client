@@ -92,7 +92,6 @@ namespace _2023AppSWClient
                     sendBuffer[i] = 0;
                 }
                 stream.Flush();
-
             }
             catch (Exception e)
             {
@@ -106,6 +105,10 @@ namespace _2023AppSWClient
 
         static Packet ServerRst(Initialize packet)
         {
+          /*
+          * server에서 반환된 쿼리 작업 결과물을 패킷 타입을 통해서 해당 작업의 결과를 결정.
+          * 쿼리 작업이 수행된 후에 나온 실패의 유무와 성공했다면 그 작업의 결과물을 패킷에 담아서 반환해줌.
+          */
             switch ((int)packet.Type)
             {
                 case (int)RegisterResult.OK:
