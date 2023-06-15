@@ -739,25 +739,28 @@ namespace _2023AppSWClient
             ListViewItem selectedItem = lvw_done.SelectedItems.Cast<ListViewItem>().FirstOrDefault();
             sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
             Register register = new Register();
-            if (lvw_done.SelectedItems == null)
+            try
+            {
+                //서버에 학번,  20231+학정번호로 과목 드랍하기
+                register.Type = (int)Packet_Type.DropCourse;
+                register.stuID = userInfo.stuID;
+                register.ci = selectedItem.SubItems[1].Text;
+                sndThread.Start(register);
+                wait();
+                register = (Register)Connection.GetServerPacket();
+
+                if (register.Type != (int)RegisterResult.OK)
+                    MessageBox.Show("작업에 실패했습니다");
+                else
+                    Update_lvw_done();
+            }
+            catch
             {
                 //선택된과목 없을때
                 MessageBox.Show("수강취소할 과목을 선택하세요");
-                return;
             }
 
-            //서버에 학번,  20231+학정번호로 과목 드랍하기
-            register.Type = (int)Packet_Type.DropCourse;
-            register.stuID = userInfo.stuID;
-            register.ci = selectedItem.SubItems[1].Text;
-            sndThread.Start(register);
-            wait();
-            register = (Register)Connection.GetServerPacket();
-
-            if (register.Type != (int)RegisterResult.OK)
-                MessageBox.Show("작업에 실패했습니다");
-            else
-                Update_lvw_done();
+            
         }
         private void Update_lvw_done()
         {
