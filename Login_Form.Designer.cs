@@ -82,6 +82,7 @@
             this.textBox2.Location = new System.Drawing.Point(314, 308);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(148, 21);
             this.textBox2.TabIndex = 4;
             // 
@@ -114,7 +115,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 385);
+            this.label3.Location = new System.Drawing.Point(26, 340);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 12);
             this.label3.TabIndex = 7;
@@ -123,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 404);
+            this.ClientSize = new System.Drawing.Size(787, 361);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
