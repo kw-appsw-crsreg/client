@@ -280,13 +280,19 @@ namespace _2023AppSWClient
             ////////////////////////////////////////////////////////////////////////
             //받아온 검색결과 Listview에 띄워주기
             lvw_search_res.Items.Clear();
-
+            String str = "";
+            try
+            {
+                str = cbBox_LectType.SelectedItem.ToString();
+                if (str == null) str = "";
+            }
+            catch (Exception ez) { }
             sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
             inquire init = new inquire();
             init.Type = (int)Packet_Type.SearchCouse;
             init.isOnlyRemaining = chk_only_valid.Checked;
             init.var = txt_subject.Text;
-            init.courseType = cbBox_LectType.SelectedItem.ToString();
+            init.courseType = str;
             init.department = GetCode(cbBox_CollegeOf.Text, cbBox_Department.Text); // 학과/대학 id 로 변환 
 
             sndThread.Start(init);
@@ -949,6 +955,10 @@ namespace _2023AppSWClient
                 else if (department == "공통")
                     return "2000";
             }
+            else if (college == "전체검색")
+            {
+                return "";
+            }
 
             // 매칭되는 학정번호가 없는 경우에 대한 처리
             return "학정번호를 찾을 수 없습니다.";
@@ -956,6 +966,11 @@ namespace _2023AppSWClient
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Connection.AbortThread();
+        }
+
+        private void cbBox_Department_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
