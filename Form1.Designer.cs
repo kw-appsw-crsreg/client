@@ -292,6 +292,7 @@
             this.cbBox_Department.Name = "cbBox_Department";
             this.cbBox_Department.Size = new System.Drawing.Size(119, 23);
             this.cbBox_Department.TabIndex = 4;
+            this.cbBox_Department.SelectedIndexChanged += new System.EventHandler(this.cbBox_Department_SelectedIndexChanged);
             // 
             // cbBox_CollegeOf
             // 

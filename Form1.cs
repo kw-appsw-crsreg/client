@@ -264,8 +264,145 @@ namespace _2023AppSWClient
             System.Diagnostics.Process.Start(lectPlanURLBase + lectCode);
         }
 
-        private void btn_SearchCourse_Click(object sender, EventArgs e) //Winform조작 작동 확인 완료
+        // 대학 코드를 반환하는 함수
+        private string GetCode(string college, string department)
         {
+            if (college == "전자정보공과대학")
+            {
+                if (department == "전자공학과")
+                    return "7060";
+                else if (department == "전자통신공학과")
+                    return "7070";
+                else if (department == "전자융합공학과")
+                    return "7420";
+                else if (department == "전기공학과")
+                    return "7320";
+                else if (department == "전자재료공학과")
+                    return "7340";
+                else if (department == "로봇학부")
+                    return "7410";
+                else if (department == "컴퓨터공학과")
+                    return "컴퓨터공학과의 학정번호";
+                else if (department == "컴퓨터소프트웨어학과")
+                    return "컴퓨터소프트웨어학과의 학정번호";
+                else if (department == "전체검색")
+                    return "7***";
+                else if (department == "공통")
+                    return "7000";
+            }
+            else if (college == "소프트웨어융합대학")
+            {
+                if (department == "컴퓨터정보공학부")
+                    return "H020";
+                else if (department == "소프트웨어학부")
+                    return "H030";
+                else if (department == "정보융합학부")
+                    return "H040";
+                else if (department == "전체검색")
+                    return "H***";
+                else if (department == "공통")
+                    return "H000";
+            }
+            else if (college == "공과대학")
+            {
+                if (department == "건축공학과")
+                    return "1170";
+                else if (department == "화학공학과")
+                    return "1140";
+                else if (department == "환경공학과")
+                    return "1160";
+                else if (department == "건축학과")
+                    return "1270";
+                else if (department == "전체검색")
+                    return "1***";
+                else if (department == "공통")
+                    return "1000";
+            }
+            else if (college == "자연과학대학")
+            {
+                if (department == "수학과")
+                    return "6030";
+                else if (department == "전자바이오물리학과")
+                    return "6100";
+                else if (department == "화학과")
+                    return "6050";
+                else if (department == "스포츠융합과학과")
+                    return "6130";
+                else if (department == "정보콘텐츠학과")
+                    return "6120";
+                else if (department == "전체검색")
+                    return "6***";
+                else if (department == "공통")
+                    return "6000";
+            }
+            else if (college == "인문사회과학대학")
+            {
+                if (department == "국어국문학과")
+                    return "3040";
+                else if (department == "영어산업학과")
+                    return "3220";
+                else if (department == "미디어커뮤니케이션학부")
+                    return "3230";
+                else if (department == "산업심리학과")
+                    return "3110";
+                else if (department == "동북아문화산업학부")
+                    return "3210";
+                else if (department == "전체검색")
+                    return "3***";
+                else if (department == "공통")
+                    return "3000";
+            }
+            else if (college == "정책법학대학")
+            {
+                if (department == "행정학과")
+                    return "F020";
+                else if (department == "법학부")
+                    return "F030";
+                else if (department == "국제학부")
+                    return "F040";
+                else if (department == "자산관리학과")
+                    return "F050";
+                else if (department == "전체검색")
+                    return "F***";
+                else if (department == "공통")
+                    return "F000";
+            }
+            else if (college == "경영대학")
+            {
+                if (department == "경영학부")
+                    return "5080";
+                else if (department == "국제통상학부")
+                    return "5100";
+                else if (department == "전체검색")
+                    return "5***";
+                else if (department == "공통")
+                    return "5000";
+            }
+            else if (college == "소프트웨어융합대학")
+            {
+                if (department == "컴퓨터정보공학부")
+                    return "2020";
+                else if (department == "소프트웨어학부")
+                    return "2030";
+                else if (department == "정보융합학부")
+                    return "2040";
+                else if (department == "전체검색")
+                    return "2***";
+                else if (department == "공통")
+                    return "2000";
+            }
+
+            // 매칭되는 학정번호가 없는 경우에 대한 처리
+            return "학정번호를 찾을 수 없습니다.";
+        }
+
+
+        
+
+
+
+        private void btn_SearchCourse_Click(object sender, EventArgs e) //Winform조작 작동 확인 완료
+             {
             /*
              * cbbox_collegeof
              * cbbox_department
@@ -280,9 +417,9 @@ namespace _2023AppSWClient
             inquire init = new inquire();
             init.Type = (int)Packet_Type.SearchCouse;
             init.isOnlyRemaining = chk_only_valid.Checked;
-            init.var = txt_subject.Text;
+            init.var = txt_subject.Text;//과목이름
             init.courseType = cbBox_LectType.SelectedText;
-            init.department = ""; // 학과/대학 id 로 변환 필요
+            init.department = GetCode(cbBox_CollegeOf.Text, cbBox_Department.Text); // 학과/대학 id 로 변환 필요
 
             sndThread.Start(init);
 
@@ -777,6 +914,11 @@ namespace _2023AppSWClient
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Connection.AbortThread();
+        }
+
+        private void cbBox_Department_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
