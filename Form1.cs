@@ -942,19 +942,7 @@ namespace _2023AppSWClient
                 else if (department == "공통")
                     return "5000";
             }
-            else if (college == "소프트웨어융합대학")
-            {
-                if (department == "컴퓨터정보공학부")
-                    return "2020";
-                else if (department == "소프트웨어학부")
-                    return "2030";
-                else if (department == "정보융합학부")
-                    return "2040";
-                else if (department == "전체검색")
-                    return "2***";
-                else if (department == "공통")
-                    return "2000";
-            }
+       
             else if (college == "전체검색")
             {
                 return "";
