@@ -246,8 +246,13 @@ namespace _2023AppSWClient
 
         public static Packet GetServerPacket()
         {
-            Packet p = stack.Pop();
-            return p;
+            try
+            {
+                Packet p = stack.Pop();
+                return p;
+            }
+            catch (Exception e)
+            { return null; }
         }
 
         public static void AbortThread()
@@ -256,8 +261,9 @@ namespace _2023AppSWClient
             {
                 client.Close();
                 rcvThread.Abort();
-            } catch(Exception e)
-            {}
+            }
+            catch (Exception e)
+            { }
         }
     }
 }

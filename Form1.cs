@@ -413,6 +413,8 @@ namespace _2023AppSWClient
              */
             ////////////////////////////////////////////////////////////////////////
             //받아온 검색결과 Listview에 띄워주기
+            lvw_search_res.Items.Clear();
+
             sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
             inquire init = new inquire();
             init.Type = (int)Packet_Type.SearchCouse;
@@ -468,6 +470,7 @@ namespace _2023AppSWClient
             {
                 //   int favRes = (int)FavoritesResult.OK;
                 fv.Type = (int)Packet_Type.AddToFavorites;
+                fv.stuID = userInfo.stuID;
                 fv.idx = (short)index;
                 fv.ci = selectedItem.SubItems[1].Text;
 

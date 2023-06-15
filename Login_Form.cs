@@ -60,6 +60,8 @@ namespace _2023AppSWClient
 
             wait();
             login = (Login)Connection.GetServerPacket();
+            login.stuID = textBox1.Text;
+            login.pwd = textBox2.Text;
             if (login.Type == (int)LoginResult.OK)
             {
                 MessageBox.Show("로그인 완료");
