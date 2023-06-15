@@ -1051,6 +1051,7 @@ namespace _2023AppSWClient
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Connection.AbortThread();
+            Application.Exit();
         }
 
         private void cbBox_Department_SelectedIndexChanged(object sender, EventArgs e)

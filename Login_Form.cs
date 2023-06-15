@@ -120,6 +120,7 @@ namespace _2023AppSWClient
         private void Login_Form_FormClosed(object sender, FormClosedEventArgs e)
         {
             Connection.AbortThread();
+            Application.Exit();
         }
     }
 }
