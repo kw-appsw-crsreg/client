@@ -356,7 +356,7 @@ namespace _2023AppSWClient
                 wait();
                 fv = (Favorites)Connection.GetServerPacket();
                 // 여기에 패킷 추가(서버에 즐겨찾기 추가)!!!!!!)!!!!!!)!!!!!!)!!!!!!)!!!!!!
-                if (fv.Type != (int)FavoritesResult.OK)
+                if (fv.Type == (int)FavoritesResult.AlreadyExist)
                 {
                     MessageBox.Show(GetErrorMsg((int)fv.Type));
                     return;
