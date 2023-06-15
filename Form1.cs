@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -656,9 +657,24 @@ namespace _2023AppSWClient
         //학정번호 수동조회칸이 꽉 찼다면 체크
         private void txt_Hakjung_TextChanged(object sender, EventArgs e)
         {
+            if (txt_Hakjung.TextLength == 0)
+            {
+                txt_CourseName.Clear();
+                txt_CourseType.Clear();
+                txt_CourseCredit.Clear();
+                txt_InstructorName.Clear();
+                txt_CourseTime.Clear();
+                txt_CourseLectRoom.Clear();
+
+                txt_isajesugang.Clear();
+                txt_retakeCourseName.Clear();
+                txt_retakeCredit.Clear();
+                txt_retakeGrade.Clear();
+                txt_retakeSemester.Clear();
+                txt_retakeType.Clear();
+            }
             sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
             string search_res; // 검색결과 저장할 string
-            string test = "{\"course_info\":[{\"year\":2023,\"semester\":1,\"department\":\"H040\",\"level\":3,\"subject\":\"7737\",\"class\":1,\"course_id\":\"20231H0403773701\",\"type\":\"전선\",\"course_name\":\"UX/UI디자인\",\"credit\":3,\"instructor_name\":\"김현경\",\"num_of_students\":0,\"remaining_capacity\":3,\"time\":\"월2.수1.\",\"lect_room\":\"미지정\",\"is_foreignerOnly\":false}]}";
             inquire inquire = new inquire();
             if (txt_Hakjung.TextLength == 16)
             {
@@ -686,7 +702,13 @@ namespace _2023AppSWClient
 
                     if (classinfo.Tables.Count == 2) //재수강이라면, 재수강과목정보를 포함해서 테이블이 2개 넘어옴!!
                     {
-
+                        txt_isajesugang.Text = "재수강";
+                        txt_isajesugang.ForeColor = Color.Red;
+                        txt_retakeCourseName.Text = classinfo.Tables[1].Rows[0]["course_name"].ToString();
+                        txt_retakeCredit.Text = classinfo.Tables[1].Rows[0]["credit"].ToString();
+                        txt_retakeGrade.Text= classinfo.Tables[1].Rows[0]["grade"].ToString();
+                        txt_retakeSemester.Text = classinfo.Tables[1].Rows[0]["year"].ToString()+"-" +classinfo.Tables[1].Rows[0]["semester"].ToString();
+                        txt_retakeType.Text = classinfo.Tables[1].Rows[0]["type"].ToString();
                     }
 
                     if (inquire.Type != (int)InquireResult.OK)
@@ -698,12 +720,7 @@ namespace _2023AppSWClient
                     {
                         MessageBox.Show("만석입니다!");
                         txt_Hakjung.Clear();
-                        txt_CourseName.Clear();
-                        txt_CourseType.Clear();
-                        txt_CourseCredit.Clear();
-                        txt_InstructorName.Clear();
-                        txt_CourseTime.Clear();
-                        txt_CourseLectRoom.Clear();
+                        
                     }
                 }
 
@@ -813,7 +830,7 @@ namespace _2023AppSWClient
         {
             //프로그램 종료하기
             Connection.AbortThread();
-            this.Close();
+            Application.Exit();
         }
 
         private void wait()
