@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -265,7 +266,22 @@ namespace _2023AppSWClient
             //U 2023   1   0969   H030    02    3 
             //U 년도 학기 과목 개설학과 분반 난이도
             //string lectCode = lvw_search_res.Items[lvw_search_res.FocusedItem.Index].SubItems[0].Text.ToString();
-            string lectCode = "U202310969H030023";
+            string lectCode = "";
+
+            //2023 1 0000 1 3094 02
+            ListViewItem selectedItem = lvw_search_res.SelectedItems.Cast<ListViewItem>().FirstOrDefault();
+            if (selectedItem != null)
+            {
+                string t=selectedItem.SubItems[1].Text;
+
+                lectCode="U" + t.Substring(0, 5) + t.Substring(10, 4) + t.Substring(5, 4) + t.Substring(14,2) +t.Substring(9, 1);
+            }
+            else
+            {
+                //선택된 과목이 없다고 경고메시지 띄우기
+                MessageBox.Show("즐겨찾기에 추가할 과목을 선택하세요!");
+            }
+
             string lectPlanURLBase = "https://klas.kw.ac.kr/std/cps/atnlc/popup/LectrePlanStdView.do?selectSubj=";
 
             System.Diagnostics.Process.Start(lectPlanURLBase + lectCode);
