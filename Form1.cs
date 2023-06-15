@@ -210,9 +210,8 @@ namespace _2023AppSWClient
             lvw_done.Columns[3].TextAlign = HorizontalAlignment.Left;
             lvw_done.Columns[4].TextAlign = HorizontalAlignment.Center;
             lvw_done.Columns[5].TextAlign = HorizontalAlignment.Left;
-            lvw_done.Columns[6].TextAlign = HorizontalAlignment.Center;
+            lvw_done.Columns[6].TextAlign = HorizontalAlignment.Left;
             lvw_done.Columns[7].TextAlign = HorizontalAlignment.Left;
-            lvw_done.Columns[8].TextAlign = HorizontalAlignment.Center;
 
             //즐겨찾기 번호추가
             for (int i = 1; i <= 8; i++)
