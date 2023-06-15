@@ -684,6 +684,11 @@ namespace _2023AppSWClient
                     txt_CourseTime.Text = classinfo.Tables[0].Rows[0]["course_name"].ToString();
                     txt_CourseLectRoom.Text = classinfo.Tables[0].Rows[0]["lect_room"].ToString();
 
+                    if (classinfo.Tables.Count == 2) //재수강이라면, 재수강과목정보를 포함해서 테이블이 2개 넘어옴!!
+                    {
+
+                    }
+
                     if (inquire.Type != (int)InquireResult.OK)
                     {
                         MessageBox.Show(GetErrorMsg(inquire.Type));

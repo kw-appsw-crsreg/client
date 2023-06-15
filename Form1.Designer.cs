@@ -50,7 +50,6 @@
             this.txt_CourseLectRoom = new System.Windows.Forms.TextBox();
             this.txt_CourseTime = new System.Windows.Forms.TextBox();
             this.txt_isajesugang = new System.Windows.Forms.TextBox();
-            this.textBox70 = new System.Windows.Forms.TextBox();
             this.txt_InstructorName = new System.Windows.Forms.TextBox();
             this.txt_CourseCredit = new System.Windows.Forms.TextBox();
             this.txt_CourseName = new System.Windows.Forms.TextBox();
@@ -145,6 +144,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_retakeCredit = new System.Windows.Forms.TextBox();
+            this.txt_retakeGrade = new System.Windows.Forms.TextBox();
+            this.txt_retakeCourseName = new System.Windows.Forms.TextBox();
+            this.txt_retakeType = new System.Windows.Forms.TextBox();
+            this.txt_retakeSemester = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -341,6 +351,17 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.txt_retakeCredit);
+            this.groupBox3.Controls.Add(this.txt_retakeGrade);
+            this.groupBox3.Controls.Add(this.txt_retakeCourseName);
+            this.groupBox3.Controls.Add(this.txt_retakeType);
+            this.groupBox3.Controls.Add(this.txt_retakeSemester);
+            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
@@ -350,7 +371,6 @@
             this.groupBox3.Controls.Add(this.txt_CourseLectRoom);
             this.groupBox3.Controls.Add(this.txt_CourseTime);
             this.groupBox3.Controls.Add(this.txt_isajesugang);
-            this.groupBox3.Controls.Add(this.textBox70);
             this.groupBox3.Controls.Add(this.txt_InstructorName);
             this.groupBox3.Controls.Add(this.txt_CourseCredit);
             this.groupBox3.Controls.Add(this.txt_CourseName);
@@ -365,35 +385,26 @@
             // 
             // txt_CourseLectRoom
             // 
-            this.txt_CourseLectRoom.Location = new System.Drawing.Point(131, 106);
+            this.txt_CourseLectRoom.Location = new System.Drawing.Point(247, 79);
             this.txt_CourseLectRoom.Name = "txt_CourseLectRoom";
-            this.txt_CourseLectRoom.Size = new System.Drawing.Size(210, 21);
+            this.txt_CourseLectRoom.Size = new System.Drawing.Size(110, 21);
             this.txt_CourseLectRoom.TabIndex = 36;
             // 
             // txt_CourseTime
             // 
             this.txt_CourseTime.Location = new System.Drawing.Point(131, 79);
             this.txt_CourseTime.Name = "txt_CourseTime";
-            this.txt_CourseTime.Size = new System.Drawing.Size(210, 21);
+            this.txt_CourseTime.Size = new System.Drawing.Size(110, 21);
             this.txt_CourseTime.TabIndex = 35;
             // 
             // txt_isajesugang
             // 
-            this.txt_isajesugang.Location = new System.Drawing.Point(227, 175);
+            this.txt_isajesugang.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_isajesugang.Location = new System.Drawing.Point(83, 129);
             this.txt_isajesugang.Name = "txt_isajesugang";
-            this.txt_isajesugang.Size = new System.Drawing.Size(67, 21);
+            this.txt_isajesugang.ReadOnly = true;
+            this.txt_isajesugang.Size = new System.Drawing.Size(78, 21);
             this.txt_isajesugang.TabIndex = 33;
-            // 
-            // textBox70
-            // 
-            this.textBox70.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox70.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox70.ForeColor = System.Drawing.Color.Blue;
-            this.textBox70.Location = new System.Drawing.Point(156, 178);
-            this.textBox70.Name = "textBox70";
-            this.textBox70.Size = new System.Drawing.Size(77, 14);
-            this.textBox70.TabIndex = 32;
-            this.textBox70.Text = "수강현황";
             // 
             // txt_InstructorName
             // 
@@ -1218,7 +1229,7 @@
             this.textBox59.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox59.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox59.ForeColor = System.Drawing.Color.Black;
-            this.textBox59.Location = new System.Drawing.Point(188, 553);
+            this.textBox59.Location = new System.Drawing.Point(188, 562);
             this.textBox59.Multiline = true;
             this.textBox59.Name = "textBox59";
             this.textBox59.Size = new System.Drawing.Size(248, 40);
@@ -1295,6 +1306,112 @@
             this.label8.Size = new System.Drawing.Size(133, 12);
             this.label8.TabIndex = 72;
             this.label8.Text = "※ 인증번호는 없습니다";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label7.Location = new System.Drawing.Point(24, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "재수강";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label9.Location = new System.Drawing.Point(300, 184);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "성적";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label10.Location = new System.Drawing.Point(180, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 12);
+            this.label10.TabIndex = 52;
+            this.label10.Text = "학점";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label11.Location = new System.Drawing.Point(180, 160);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "과목명";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label12.Location = new System.Drawing.Point(24, 160);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "수강학기";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label13.Location = new System.Drawing.Point(24, 184);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 12);
+            this.label13.TabIndex = 49;
+            this.label13.Text = "이수구분";
+            // 
+            // txt_retakeCredit
+            // 
+            this.txt_retakeCredit.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeCredit.Location = new System.Drawing.Point(227, 178);
+            this.txt_retakeCredit.Name = "txt_retakeCredit";
+            this.txt_retakeCredit.ReadOnly = true;
+            this.txt_retakeCredit.Size = new System.Drawing.Size(67, 21);
+            this.txt_retakeCredit.TabIndex = 48;
+            // 
+            // txt_retakeGrade
+            // 
+            this.txt_retakeGrade.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeGrade.Location = new System.Drawing.Point(359, 178);
+            this.txt_retakeGrade.Name = "txt_retakeGrade";
+            this.txt_retakeGrade.ReadOnly = true;
+            this.txt_retakeGrade.Size = new System.Drawing.Size(78, 21);
+            this.txt_retakeGrade.TabIndex = 47;
+            // 
+            // txt_retakeCourseName
+            // 
+            this.txt_retakeCourseName.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeCourseName.Location = new System.Drawing.Point(227, 155);
+            this.txt_retakeCourseName.Name = "txt_retakeCourseName";
+            this.txt_retakeCourseName.ReadOnly = true;
+            this.txt_retakeCourseName.Size = new System.Drawing.Size(210, 21);
+            this.txt_retakeCourseName.TabIndex = 46;
+            // 
+            // txt_retakeType
+            // 
+            this.txt_retakeType.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeType.Location = new System.Drawing.Point(83, 178);
+            this.txt_retakeType.Name = "txt_retakeType";
+            this.txt_retakeType.ReadOnly = true;
+            this.txt_retakeType.Size = new System.Drawing.Size(90, 21);
+            this.txt_retakeType.TabIndex = 45;
+            // 
+            // txt_retakeSemester
+            // 
+            this.txt_retakeSemester.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_retakeSemester.Location = new System.Drawing.Point(83, 154);
+            this.txt_retakeSemester.Name = "txt_retakeSemester";
+            this.txt_retakeSemester.ReadOnly = true;
+            this.txt_retakeSemester.Size = new System.Drawing.Size(90, 21);
+            this.txt_retakeSemester.TabIndex = 44;
             // 
             // Form1
             // 
@@ -1433,7 +1550,6 @@
         private System.Windows.Forms.TextBox txt_CourseLectRoom;
         private System.Windows.Forms.TextBox txt_CourseTime;
         private System.Windows.Forms.TextBox txt_isajesugang;
-        private System.Windows.Forms.TextBox textBox70;
         private System.Windows.Forms.TextBox txt_InstructorName;
         private System.Windows.Forms.TextBox txt_CourseCredit;
         private System.Windows.Forms.TextBox txt_CourseName;
@@ -1453,6 +1569,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txt_retakeCredit;
+        private System.Windows.Forms.TextBox txt_retakeGrade;
+        private System.Windows.Forms.TextBox txt_retakeCourseName;
+        private System.Windows.Forms.TextBox txt_retakeType;
+        private System.Windows.Forms.TextBox txt_retakeSemester;
+        private System.Windows.Forms.Label label7;
     }
 }
 
