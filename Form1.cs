@@ -1,12 +1,11 @@
 ﻿using AppswPacket;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Windows.Forms;
-using System.Collections.Generic;
 using System.Threading;
-using System.Reflection;
-using Newtonsoft.Json;
+using System.Windows.Forms;
 
 namespace _2023AppSWClient
 {
@@ -285,7 +284,7 @@ namespace _2023AppSWClient
             {
                 str = cbBox_LectType.SelectedItem.ToString();
             }
-            catch(Exception ex){str = "";}
+            catch (Exception ex) { str = ""; }
             sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
             inquire init = new inquire();
             init.Type = (int)Packet_Type.SearchCouse;
@@ -321,7 +320,7 @@ namespace _2023AppSWClient
                 lvw_search_res.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent); //모든 열 사이즈 자동조절
                 lvw_search_res.Columns[0].Width = 38; //순번
                 lvw_search_res.Columns[4].Width = 38; //학점
-                lvw_search_res.Columns[5].Width =70; // 담당교수
+                lvw_search_res.Columns[5].Width = 70; // 담당교수
                 lvw_search_res.Columns[6].Width = 38; //여석
             }
         }
@@ -356,7 +355,7 @@ namespace _2023AppSWClient
                 // 여기에 패킷 추가(서버에 즐겨찾기 추가)!!!!!!)!!!!!!)!!!!!!)!!!!!!)!!!!!!
                 if (fv.Type != (int)FavoritesResult.OK)
                 {
-                    MessageBox.Show("오류!!" + fv.Type);
+                    MessageBox.Show(GetErrorMsg((int)fv.Type));
                     return;
                 }
                 if (index == 1)
@@ -670,27 +669,38 @@ namespace _2023AppSWClient
                 sndThread.Start(inquire);
                 wait();
                 inquire = (inquire)Connection.GetServerPacket();
-                DataSet classinfo = DatasetConvertor.DeserializeFromJSON(inquire.ds);
 
-                txt_Hakjung.Text = classinfo.Tables[0].Rows[0]["course_id"].ToString();
-                txt_CourseName.Text = classinfo.Tables[0].Rows[0]["course_name"].ToString();
-                txt_CourseType.Text = classinfo.Tables[0].Rows[0]["type"].ToString();
-                txt_CourseCredit.Text = classinfo.Tables[0].Rows[0]["credit"].ToString();
-                txt_InstructorName.Text = classinfo.Tables[0].Rows[0]["instructor_name"].ToString();
-                txt_CourseTime.Text = classinfo.Tables[0].Rows[0]["course_name"].ToString();
-                txt_CourseLectRoom.Text = classinfo.Tables[0].Rows[0]["lect_room"].ToString();
-
-                if (int.Parse(classinfo.Tables[0].Rows[0]["remaining_capacity"].ToString()) == 0)
+                if (inquire.Type != (int)InquireResult.WrongCourseNumber)
                 {
-                    MessageBox.Show("만석입니다!");
-                    txt_Hakjung.Clear();
-                    txt_CourseName.Clear();
-                    txt_CourseType.Clear();
-                    txt_CourseCredit.Clear();
-                    txt_InstructorName.Clear();
-                    txt_CourseTime.Clear();
-                    txt_CourseLectRoom.Clear();
+                    DataSet classinfo = DatasetConvertor.DeserializeFromJSON(inquire.ds);
+
+                    txt_Hakjung.Text = classinfo.Tables[0].Rows[0]["course_id"].ToString();
+                    txt_CourseName.Text = classinfo.Tables[0].Rows[0]["course_name"].ToString();
+                    txt_CourseType.Text = classinfo.Tables[0].Rows[0]["type"].ToString();
+                    txt_CourseCredit.Text = classinfo.Tables[0].Rows[0]["credit"].ToString();
+                    txt_InstructorName.Text = classinfo.Tables[0].Rows[0]["instructor_name"].ToString();
+                    txt_CourseTime.Text = classinfo.Tables[0].Rows[0]["course_name"].ToString();
+                    txt_CourseLectRoom.Text = classinfo.Tables[0].Rows[0]["lect_room"].ToString();
+
+                    if (inquire.Type == (int)InquireResult.OK)
+                    {
+                        MessageBox.Show(GetErrorMsg(inquire.Type));
+                    }
+
+                    if (int.Parse(classinfo.Tables[0].Rows[0]["remaining_capacity"].ToString()) == 0)
+                    {
+                        MessageBox.Show("만석입니다!");
+                        txt_Hakjung.Clear();
+                        txt_CourseName.Clear();
+                        txt_CourseType.Clear();
+                        txt_CourseCredit.Clear();
+                        txt_InstructorName.Clear();
+                        txt_CourseTime.Clear();
+                        txt_CourseLectRoom.Clear();
+                    }
                 }
+
+
             }
 
         }
@@ -718,6 +728,10 @@ namespace _2023AppSWClient
                 txt_CourseTime.Clear();
                 txt_CourseLectRoom.Clear();
                 Update_lvw_done();
+            }
+            else
+            {
+                MessageBox.Show(GetErrorMsg((int)register.Type));
             }
         }
 
@@ -861,7 +875,7 @@ namespace _2023AppSWClient
                     errMsg = "이미 수강한 과목입니다.";
                     break;
                 case (int)InquireResult.AlreadyFull:
-                    errMsg = "만석입니다.";
+                    errMsg = "만석(닭강정)입니다.";
                     break;
                 case (int)InquireResult.Error:
                     errMsg = "오류!!";
@@ -988,7 +1002,7 @@ namespace _2023AppSWClient
                 else if (department == "공통")
                     return "5000";
             }
-       
+
             else if (college == "전체검색")
             {
                 return "";
