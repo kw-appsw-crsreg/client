@@ -233,6 +233,9 @@ namespace _2023AppSWClient
                 cbBox_LectType.Items.Add(row[0].ToString());
             }
             //과목 타입들 추가
+
+            //즐겨찾기번호 미선택으로인한 예외방지
+            cbBox_FavNum.SelectedItem= cbBox_FavNum.Items[0];
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
