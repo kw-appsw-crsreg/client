@@ -284,9 +284,8 @@ namespace _2023AppSWClient
             try
             {
                 str = cbBox_LectType.SelectedItem.ToString();
-                if (str == null) str = "";
             }
-            catch (Exception ez) { }
+            catch(Exception ex){str = "";}
             sndThread = new Thread(new ParameterizedThreadStart(Connection.SendThread));
             inquire init = new inquire();
             init.Type = (int)Packet_Type.SearchCouse;
@@ -320,6 +319,10 @@ namespace _2023AppSWClient
                     i++;
                 }
                 lvw_search_res.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent); //모든 열 사이즈 자동조절
+                lvw_search_res.Columns[0].Width = 38; //순번
+                lvw_search_res.Columns[4].Width = 38; //학점
+                lvw_search_res.Columns[5].Width =70; // 담당교수
+                lvw_search_res.Columns[6].Width = 38; //여석
             }
         }
 
@@ -828,7 +831,50 @@ namespace _2023AppSWClient
                     break;
             }
         }
-
+        private string GetErrorMsg(int type)
+        {
+            string errMsg = "";
+            switch (type)
+            {
+                case (int)RegisterResult.AlreadyRegistered:
+                    errMsg = "이미 수강신청한 과목입니다.";
+                    break;
+                case (int)RegisterResult.TimeConflicts:
+                    errMsg = "시간이 겹치는 과목이 있습니다.";
+                    break;
+                case (int)RegisterResult.OverCapacity:
+                    errMsg = "인원이 초과되어 신청할 수 없습니다.";
+                    break;
+                case (int)RegisterResult.ExceedsCredit:
+                    errMsg = "최대 수강가능학점을 초과합니다.";
+                    break;
+                case (int)RegisterResult.ForeignerOnly:
+                    errMsg = "외국인 전용입니다.";
+                    break;
+                case (int)RegisterResult.Error:
+                    errMsg = "오류!!";
+                    break;
+                case (int)InquireResult.WrongCourseNumber:
+                    errMsg = "잘못된 학정번호입니다.";
+                    break;
+                case (int)InquireResult.AlreadyTaken:
+                    errMsg = "이미 수강한 과목입니다.";
+                    break;
+                case (int)InquireResult.AlreadyFull:
+                    errMsg = "만석입니다.";
+                    break;
+                case (int)InquireResult.Error:
+                    errMsg = "오류!!";
+                    break;
+                case (int)FavoritesResult.AlreadyExist:
+                    errMsg = "해당 번호에 이미 즐겨찾기가 존재합니다.";
+                    break;
+                default:
+                    errMsg = "알수없는오류!!";
+                    break;
+            }
+            return errMsg;
+        }
         private string GetCode(string college, string department)
         {
             if (college == "전자정보공과대학")
