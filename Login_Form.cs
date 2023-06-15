@@ -47,7 +47,7 @@ namespace _2023AppSWClient
             login.Type = (int)Packet_Type.GoLogin;
             login.stuID = textBox1.Text;
             login.pwd = textBox2.Text;
-            /*
+            
             using (SHA1 sha = SHA1.Create())
             {
                 byte[] sourceBytes = Encoding.UTF8.GetBytes(login.pwd);
@@ -55,7 +55,7 @@ namespace _2023AppSWClient
                 string studentPWHash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
                 login.pwd = studentPWHash;
             }
- */
+ 
             sndThread.Start(login);
 
             wait();
