@@ -850,7 +850,7 @@ namespace _2023AppSWClient
                 else if (department == "컴퓨터소프트웨어학과")
                     return "컴퓨터소프트웨어학과의 학정번호";
                 else if (department == "전체검색")
-                    return "7***";
+                    return "7";
                 else if (department == "공통")
                     return "7000";
             }
@@ -863,7 +863,7 @@ namespace _2023AppSWClient
                 else if (department == "정보융합학부")
                     return "H040";
                 else if (department == "전체검색")
-                    return "H***";
+                    return "H";
                 else if (department == "공통")
                     return "H000";
             }
@@ -878,7 +878,7 @@ namespace _2023AppSWClient
                 else if (department == "건축학과")
                     return "1270";
                 else if (department == "전체검색")
-                    return "1***";
+                    return "1";
                 else if (department == "공통")
                     return "1000";
             }
@@ -895,7 +895,7 @@ namespace _2023AppSWClient
                 else if (department == "정보콘텐츠학과")
                     return "6120";
                 else if (department == "전체검색")
-                    return "6***";
+                    return "6";
                 else if (department == "공통")
                     return "6000";
             }
@@ -912,7 +912,7 @@ namespace _2023AppSWClient
                 else if (department == "동북아문화산업학부")
                     return "3210";
                 else if (department == "전체검색")
-                    return "3***";
+                    return "3";
                 else if (department == "공통")
                     return "3000";
             }
@@ -927,7 +927,7 @@ namespace _2023AppSWClient
                 else if (department == "자산관리학과")
                     return "F050";
                 else if (department == "전체검색")
-                    return "F***";
+                    return "F";
                 else if (department == "공통")
                     return "F000";
             }
@@ -938,7 +938,7 @@ namespace _2023AppSWClient
                 else if (department == "국제통상학부")
                     return "5100";
                 else if (department == "전체검색")
-                    return "5***";
+                    return "5";
                 else if (department == "공통")
                     return "5000";
             }
@@ -946,6 +946,11 @@ namespace _2023AppSWClient
             else if (college == "전체검색")
             {
                 return "";
+            }
+
+            else if (college == "공통")
+            {
+                return "0";
             }
 
             // 매칭되는 학정번호가 없는 경우에 대한 처리
