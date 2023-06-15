@@ -342,7 +342,6 @@ namespace _2023AppSWClient
 
             if (selectedItem != null)
             {
-                //   int favRes = (int)FavoritesResult.OK;
                 fv.Type = (int)Packet_Type.AddToFavorites;
                 fv.stuID = userInfo.stuID;
                 fv.idx = (short)index;
@@ -682,7 +681,7 @@ namespace _2023AppSWClient
                     txt_CourseTime.Text = classinfo.Tables[0].Rows[0]["course_name"].ToString();
                     txt_CourseLectRoom.Text = classinfo.Tables[0].Rows[0]["lect_room"].ToString();
 
-                    if (inquire.Type == (int)InquireResult.OK)
+                    if (inquire.Type != (int)InquireResult.OK)
                     {
                         MessageBox.Show(GetErrorMsg(inquire.Type));
                     }
@@ -699,7 +698,6 @@ namespace _2023AppSWClient
                         txt_CourseLectRoom.Clear();
                     }
                 }
-
 
             }
 
@@ -743,8 +741,11 @@ namespace _2023AppSWClient
             Register register = new Register();
             if (lvw_done.SelectedItems == null)
             {
+                //선택된과목 없을때
                 MessageBox.Show("수강취소할 과목을 선택하세요");
+                return;
             }
+
             //서버에 학번,  20231+학정번호로 과목 드랍하기
             register.Type = (int)Packet_Type.DropCourse;
             register.stuID = userInfo.stuID;
