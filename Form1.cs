@@ -705,7 +705,8 @@ namespace _2023AppSWClient
                 wait();
                 inquire = (inquire)Connection.GetServerPacket();
 
-                if (inquire.Type != (int)InquireResult.WrongCourseNumber)
+                //OK = 7,WrongCourseNumber,AlreadyTaken,AlreadyFull,Error
+                if (inquire.Type==(int)InquireResult.OK)
                 {
                     DataSet classinfo = DatasetConvertor.DeserializeFromJSON(inquire.ds);
 
@@ -728,17 +729,12 @@ namespace _2023AppSWClient
                         txt_retakeType.Text = classinfo.Tables[1].Rows[0]["type"].ToString();
                     }
 
-                    if (inquire.Type != (int)InquireResult.OK)
-                    {
-                        MessageBox.Show(GetErrorMsg(inquire.Type));
-                    }
-
-                    if (int.Parse(classinfo.Tables[0].Rows[0]["remaining_capacity"].ToString()) == 0)
-                    {
-                        MessageBox.Show("만석입니다!");
-                        txt_Hakjung.Clear();
-                        
-                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show(GetErrorMsg(inquire.Type));
+                    txt_Hakjung.Clear();
                 }
 
             }
@@ -923,7 +919,7 @@ namespace _2023AppSWClient
                     errMsg = "이미 수강한 과목입니다.";
                     break;
                 case (int)InquireResult.AlreadyFull:
-                    errMsg = "만석(닭강정)입니다.";
+                    errMsg = "만석입니다.";
                     break;
                 case (int)InquireResult.Error:
                     errMsg = "오류!!";
